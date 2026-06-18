@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poly:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Poly", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-brand-primary: #023E8A;
+  --color-brand-light: #E5FAFF;
+}
+
+/* Base style resets and scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #E5FAFF;
+  /* Sleek Ice Blue background */
+  color: #023E8A;
+  /* Premium Deep Navy Blue */
+  overflow-x: hidden;
+}
+
+/* Override all tailwind text utility classes for body text */
+body,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+button,
+input,
+textarea {
+  line-height: 1.5 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Custom visual styles */
+.font-poly {
+  font-family: var(--font-serif);
+}
+
+.font-inter {
+  font-family: var(--font-sans);
+}
+
+/* Sleek Interface glassmorphism cards and borders */
+.sleek-card {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sleek-card:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 62, 138, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(2, 62, 138, 0.1);
+}
+
+.sleek-border {
+  border-color: rgba(2, 62, 138, 0.1);
+}
