@@ -56,8 +56,8 @@ export default function Navbar({ onCtaClick }: NavbarProps) {
             className="flex items-center gap-2 cursor-pointer group"
           >
             <img src="/src/assets/images/logosvg.svg" alt="" className="w-10" />
-            <span className="font-serif text-2xl tracking-tight text-[#023E8A] font-bold">
-              Kinetic <span className="text-slate-800 font-sans font-light text-xl">Studio</span>
+            <span className="font-serif text-xl tracking-tight text-[#023E8A] font-bold">
+              Kinetic <span className="text-slate-800 font-sans font-light text-lg">Studio</span>
               <p className="text-slate-800 font-sans font-light text-xs">Dynamic Designs. Kinetic Results.</p>
             </span>
           </div>
@@ -92,14 +92,14 @@ export default function Navbar({ onCtaClick }: NavbarProps) {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <button 
+            <button
               onClick={() => setLanguage(language === 'en' ? 'id' : 'en')}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors text-sm font-medium cursor-pointer"
             >
               <Globe className="w-4 h-4" />
               {language === 'en' ? 'EN' : 'ID'}
             </button>
-            
+
             <button
               onClick={onCtaClick}
               className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#023E8A] hover:bg-[#023E8A]/90 transition-all shadow-sm hover:shadow-md cursor-pointer group hover:-translate-y-0.5"
@@ -129,7 +129,7 @@ export default function Navbar({ onCtaClick }: NavbarProps) {
         <div className="px-5 py-6 space-y-4 flex flex-col">
           <div className="flex justify-between items-center pb-2 border-b border-slate-100">
             <span className="text-sm font-medium text-slate-500">Language</span>
-            <button 
+            <button
               onClick={() => setLanguage(language === 'en' ? 'id' : 'en')}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium"
             >

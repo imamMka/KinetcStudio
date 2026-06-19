@@ -15,7 +15,7 @@ export const translations = {
       badge: 'Affordable Web Solutions',
       title1: 'Simple Websites for',
       title2: '',
-      subtitle: 'We craft budget‑friendly landing pages, wedding invitations, birthday party sites, and basic CRUD websites—perfect for small and medium businesses.',
+      subtitle: 'We create affordable landing pages, wedding invitations, event websites, and simple company websites—perfect for small and medium businesses.',
       cta1: 'Get Started',
       cta2: 'View Packages',
       stat1_val: '99.4%',
@@ -25,9 +25,9 @@ export const translations = {
       stat3_val: '2x',
       stat3_label: 'Development Speed',
       badge1_title: 'Deploy on Day One',
-      badge1_desc: 'Continuous Integration & Automated DevOps pipeline.',
+      badge1_desc: 'Fast and automated setup process.',
       badge2_label: 'Expertise',
-      badge2_val: 'Clean Architecture',
+      badge2_val: 'Quality Results',
       badge3_label: 'Clients',
       badge3_val: '100% Satisfied',
     },
@@ -38,25 +38,25 @@ export const translations = {
       items: {
         'scalable-solutions': {
           title: 'Scalable Solutions',
-          desc: 'We build with high-velocity backends and cloud native frameworks engineered to handle sudden spikes and endless organic growth organically.',
+          desc: 'We build websites and apps that can easily handle lots of visitors without slowing down.',
         },
         'expert-developers': {
           title: 'Expert Developers',
-          desc: 'Our engineers are senior product minds who understand business workflows, code cleanliness, testing paradigms, and secure containerization.',
+          desc: 'Our team consists of experienced professionals who know how to build reliable, safe, and easy-to-use software.',
         },
         'transparent-process': {
           title: 'Transparent Process',
-          desc: 'Track daily progress on virtual boards and see live software staging updates. We speak clearly, report early, and run regular agile sprint reviews.',
+          desc: 'Follow our progress easily online. We keep you updated every step of the way with clear and regular communication.',
         },
         'on-time-delivery': {
           title: 'On-Time Delivery',
-          desc: 'No broken promises or endless rollouts. Our modern estimation engine and focused scope controls get your software polished and shipped right.',
+          desc: 'We deliver what we promise, exactly when we promised it. No delays, just great results.',
         }
       },
       guarantee: 'Guaranteed Standards',
-      cta_badge: 'Enterprise Readiness',
+      cta_badge: 'Ready for Business',
       cta_title: 'Ready to build robust software systems tailored to your workflows?',
-      cta_desc: 'We design and maintain private cloud mesh architectures, high-performance web applications, and safe compliance environments. Let’s sit down to design your roadmap.',
+      cta_desc: 'We create secure, fast, and reliable digital systems for businesses of all sizes. Let\'s talk about your needs.',
       cta_btn: 'Get Started Now',
     },
     services: {
@@ -66,80 +66,80 @@ export const translations = {
       items: {
         'custom-software': {
           title: 'Landing Pages & Simple Websites',
-          desc: 'Affordable one‑page landing pages, wedding invitation sites, birthday or party pages, and basic CRUD websites built quickly and reliably.',
-          tags: ['SaaS Engineering', 'API Integration', 'React / NextJS', 'Go Backends'],
+          desc: 'Affordable landing pages, wedding invitations, event pages, and simple company websites built quickly and reliably.',
+          tags: ['Custom Websites', 'Easy Updates', 'Fast Loading', 'Secure'],
           props: [
-            'Strictly modular TypeScript & typed structures.',
-            'Comprehensive unit and integration testing suite.',
-            'Sub-second first-paint speeds and lightweight bundles.'
+            'Built with modern, reliable technology.',
+            'Thoroughly tested to ensure everything works perfectly.',
+            'Extremely fast loading times for your visitors.'
           ],
-          tech: 'React, Node.js, NestJS, Go, Postgres, Redis, TailwindCSS'
+          tech: 'Modern Web Technologies'
         },
         'cloud-architecture': {
-          title: 'Cloud Architecture & Scalability',
-          desc: 'Infrastructure designed for 99.99% availability. Secure cloud meshes, database replicas, serverless computing, and private multi-region setups.',
-          tags: ['Google Cloud / AWS', 'Managed DBs', 'Cybersecurity', 'Disaster Recovery'],
+          title: 'Hosting & Reliability',
+          desc: 'We make sure your website stays online all the time, runs fast, and keeps your data safe.',
+          tags: ['Always Online', 'Data Protection', 'High Security', 'Backup Systems'],
           props: [
-            'Scale-to-zero capabilities with cloud integrations.',
-            'Distributed multi-zone failovers and live replication.',
-            'IAM least-privilege security matrices protecting user tables.'
+            'Automatically adjusts to handle busy periods.',
+            'Your data is backed up and safe in multiple locations.',
+            'Top-tier security to protect your sensitive information.'
           ],
-          tech: 'GCP, AWS, PostgreSQL, MongoDB, Redis, Apache Kafka'
+          tech: 'Reliable Cloud Servers'
         },
         'devops-automation': {
-          title: 'DevOps Automation & Pipelines',
-          desc: 'Say goodbye to manual deployments. We optimize build speeds, package secure Docker containers, manage Kubernetes, and write Terraform code.',
-          tags: ['CI/CD Pipelines', 'Docker & K8s', 'Terraform IaC', 'Monitoring & Alerts'],
+          title: 'Smooth Updates & Maintenance',
+          desc: 'We make updating your website easy and safe, without causing any downtime for your users.',
+          tags: ['Automatic Updates', 'No Downtime', 'Constant Monitoring', 'Quick Fixes'],
           props: [
-            'Under 5-minute automated pipeline staging builds.',
-            'Zero-downtime rolling upgrades and canary releases.',
-            'Infrastructure as Code (IaC) for fast replication.'
+            'Updates are applied quickly and smoothly.',
+            'Your site stays live even when we add new features.',
+            'We can easily set up and restore your systems if needed.'
           ],
-          tech: 'Github Actions, Terraform, Docker, Kubernetes, Prometheus'
+          tech: 'Automated Systems'
         },
         'ui-ux-strategy': {
-          title: 'Product & UI/UX Design System',
-          desc: 'High-converting user interfaces mapped down to fine interactions. We conduct target user research, map user paths, and build flawless Figma assets.',
-          tags: ['UX Strategy', 'Figma Libraries', 'Interactive Mockups', 'Visual Design'],
+          title: 'Beautiful & User-Friendly Design',
+          desc: 'We design websites that not only look amazing but are also very easy for your customers to use.',
+          tags: ['User Research', 'Modern Look', 'Easy to Use', 'Mobile Friendly'],
           props: [
-            'Intricate research backed by clickable user feedback.',
-            'W3C WCAG accessibility and touch target comfort compliance.',
-            'Developer-friendly Figma handoffs with layout tokens.'
+            'Designed based on what users actually want and need.',
+            'Accessible and comfortable to use on any device.',
+            'Smooth transition from design to the final product.'
           ],
-          tech: 'Figma, Tailwind, Adobe CC, Framer, UserTesting'
+          tech: 'Professional Design Tools'
         }
       },
-      radar_badge: 'DELIVERABLES RADAR',
-      tech_caps: 'TECH CAPABILITIES:',
+      radar_badge: 'WHAT WE DELIVER',
+      tech_caps: 'OUR EXPERTISE:',
       included: 'What’s Included:',
-      custom_needs_title: 'Have custom legacy needs?',
-      custom_needs_desc: 'We comfortably refactor complex monoliths, migrate heavy server deployments, and sync multiple internal API pipelines cleanly.',
+      custom_needs_title: 'Have an existing system that needs an upgrade?',
+      custom_needs_desc: 'We can help modernize your old systems, make them faster, and connect them with new technologies easily.',
       cta_btn: 'Scope Out Your Solution',
       select_prompt: 'Select a service on the left to inspect its parameters.',
     },
     process: {
       badge: 'Our Execution System',
       title: 'How We Partner: The Kinetic Pipeline',
-      subtitle: 'We reject slow, legacy client-agency feedback loops. Our 4-stage process guarantees ultimate delivery velocity with absolute quality consistency.',
+      subtitle: 'We believe in working fast and keeping you in the loop. Our simple 4-step process ensures top quality without the wait.',
       items: [
         {
           title: 'Discovery & Strategy',
-          desc: 'We host interactive alignment sessions, draft comprehensive technical flowcharts, refine custom user stories, and outline the precise project scope bounds. No guesswork allowed.',
+          desc: 'We start by understanding your goals, discussing your ideas, and clearly defining what we will build together. No guesswork.',
           duration: 'Week 1',
         },
         {
           title: 'Design & Architecture',
-          desc: 'Our team crafts high-fidelity, interactive viewport prototypes in Figma. Simultaneously, our cloud engineers draft system schematics, cluster topologies, and entity relationship diagrams.',
+          desc: 'Our designers create beautiful layouts for your app or website, while our technical team plans the best way to build it securely.',
           duration: 'Weeks 2-3',
         },
         {
           title: 'Agile Software Development',
-          desc: 'We code in bi-weekly sprints, continuously shipping modular features to a secure private staging server. You receive transparent sprint review recordings and demo links.',
+          desc: 'We build your project step-by-step and show you our progress regularly. You can test features as they are completed.',
           duration: 'Weeks 4-8',
         },
         {
           title: 'Pristine QA & Deployment',
-          desc: 'We trigger automated testing models, perform penetration testing sweeps, audit responsive viewports, set up clean cloud monitoring dashboards, and carry out a seamless launch.',
+          desc: 'We test everything thoroughly to ensure there are no bugs. Once everything is perfect, we launch your project smoothly.',
           duration: 'Weeks 9+',
         }
       ],
@@ -149,25 +149,25 @@ export const translations = {
     portfolio: {
       badge: 'Our Work',
       title: 'Pioneering Pristine Products',
-      subtitle: 'Each release represents a masterclass in frontend fluidness, deep database resilience, and structural speed. Click any badge to view mock case studies.',
+      subtitle: 'We take pride in building fast, beautiful, and reliable digital products. Check out some of our recent work.',
       categories: {
         all: 'All',
-        saas: 'SaaS Systems',
-        cloud: 'Cloud & DevOps',
+        saas: 'Custom Software',
+        cloud: 'Hosting Solutions',
         mobile: 'Mobile Apps'
       },
       items: {
         'banking-saas': {
           title: 'Acme Wealth Global Dashboard',
-          desc: 'A multi-currency banking system with instantaneous transaction streams, real-time balance calculations, and custom compliance reports.',
+          desc: 'A secure financial platform that handles multiple currencies and provides real-time updates.',
         },
         'nexus-cloud': {
           title: 'Nexus DataMesh Cloud Infra',
-          desc: 'An enterprise cloud deployment orchestrating isolated customer VPC networks, smart caching servers, and scalable cloud compute clusters.',
+          desc: 'A large-scale hosting solution designed to keep data secure and ensure the system runs smoothly at all times.',
         },
         'workspace-mobile': {
           title: 'Kinetic Shift Enterprise Mobile Hub',
-          desc: 'A premium native mobile workspace facilitating secure corporate chats, tasks syncing, offline databases, and swift notifications.',
+          desc: 'A business app that helps teams communicate safely, manage tasks, and work even without an internet connection.',
         }
       },
       preview_summary: 'Preview case summary',
@@ -182,32 +182,32 @@ export const translations = {
       items: {
         'pricing': {
           question: 'How does Kinetic Studio price its agency projects?',
-          answer: 'We provide itemized, milestone-based pricing. We strictly avoid surprise extensions or vague retainer schemes. Every quote features flat fees linked to transparent functional outputs (e.g., Figma deliverables, database clusters, ready-to-test MVPs). If the product scope remains stable, your price stays exactly identical.',
+          answer: 'We offer clear, fixed pricing based on the features you need. There are no hidden fees or surprise costs. As long as the project requirements do not change, the price stays exactly the same.',
         },
         'timeline': {
           question: 'What is the average timeline to launch an MVP or system?',
-          answer: 'A standard custom dashboard, native product app, or cloud migration takes between 4 and 8 weeks from kick-off to secure DNS mapping. We work in disciplined 2-week active sprints and give you access to a live, continuous-deployment staging environment so you can monitor features as we compile them.',
+          answer: 'A typical project takes about 4 to 8 weeks from start to finish. We keep you involved throughout the process, allowing you to see and test the progress regularly before the final launch.',
         },
         'tech-stack': {
           question: 'What is your preferred technology stack?',
-          answer: 'We write modular and typed systems for long-term scalability. On the client side, we specialize in React, Next.js, and Tailwind CSS. On the backend, we run high-velocity services built in Go, Node.js, and Python, backed by PostgreSQL, Redis, and secure instances hosted on GCP or AWS.',
+          answer: 'We use modern, reliable tools to ensure your website or app is fast and secure. Whether it is what the users see or what runs behind the scenes, we choose the best technology for your specific needs.',
         },
         'support': {
           question: 'Do you offer post-launch support and security patches?',
-          answer: 'Absolutely. We offer customized Service Level Agreements (SLAs) ranging from standard bug preservation to 24/7 high-availability infrastructure maintenance. This includes weekly dependency security patching, database optimization sweeps, and server performance profiling.',
+          answer: 'Yes! We offer ongoing support to keep your software running smoothly. This includes fixing any issues, updating security, and making sure your system stays fast and reliable.',
         },
         'nda': {
           question: 'Are my business roadmap, ideas, and intellectual property secure?',
-          answer: 'Yes. Before discussing any project details or database architectures, we sign formal mutual Non-Disclosure Agreements (NDAs). Upon final project payment, full intellectual property rights, repository ownership, deployment credentials, and Figma assets are fully transferred to your company.',
+          answer: 'Yes. Your ideas and business secrets are safe with us. We sign agreements to keep everything confidential. Once the project is finished and paid for, you own everything we created for you.',
         }
       },
-      support_prompt: 'Have different technical questions regarding complex systems integrations, legacy system migrations, or strict corporate hosting constraints?',
-      support_btn: 'Speak to our Architect',
+      support_prompt: 'Do you have specific questions about your unique business needs or how we can help upgrade your current systems?',
+      support_btn: 'Talk to our Team',
     },
     contact: {
       badge: 'Get a Proposal',
       title: 'Let’s Design Your System Architecture',
-      subtitle: 'Ready to deploy? Fill out our system brief. Our Chief Technical Officer will review your parameters and respond with customized budget layouts within 24 hours.',
+      subtitle: 'Ready to start? Fill out our short form below. Our team will review your needs and get back to you with a clear plan and pricing within 24 hours.',
       status: 'ONLINE CORE STATUS',
       hq_title: 'Kinetic Studio HQ',
       hq_desc: 'Our core engineers operate in Jakarta, Indonesia & Singapore, assisting global clients across Asian, European, and Pacific tech zones.',
@@ -215,7 +215,7 @@ export const translations = {
       email_label: 'PROJECT OFFERS',
       phone_label: 'CALL / WHATSAPP CHANNEL',
       nda_title: 'NDA & Cloud Sovereignty Guaranteed',
-      nda_desc: 'All customer records, database inputs, and visual diagrams transmitted through this form are guarded by strict TLS encryption layer audits. Commercial property IP transfers seamlessly upon contract signing.',
+      nda_desc: 'All the information you share with us is kept strictly confidential and secure. Your privacy is our top priority.',
       form: {
         name_label: 'Full Name',
         name_placeholder: 'E.g., Michael Chen',
@@ -225,20 +225,20 @@ export const translations = {
         company_placeholder: 'E.g., Acme Wealth Corp',
         budget_label: 'Estimated Project Budget',
         message_label: 'Project Details & Technical Goals',
-        message_placeholder: 'Tell us about the software features you want to build, user counts, existing stack, and expected timeline parameters...',
-        submit_btn: 'Apply for Architecture Blueprint',
-        loading: 'Encrypting parameters...',
-        nda_notice: 'Clicking submit initiates our strict mutual Non-Disclosure Agreement. Your parameters remain confidential.',
+        message_placeholder: 'Tell us about your project, what features you need, and when you hope to have it finished...',
+        submit_btn: 'Get Your Custom Proposal',
+        loading: 'Sending securely...',
+        nda_notice: 'By submitting this form, you agree to keep our communication confidential. We will keep your details private too.',
       },
       success: {
         title: 'Brief Transmitted Securely!',
-        desc: 'Thank you for reaching out to Kinetic Studio. Our Chief Technical Officer has received your blueprint specifications under mutual NDA. We will contact you via your business email address within 24 hours.',
-        next_steps: '**What happens next?** We are structuring an initial high-level system draft with estimated pricing scopes. Check your inbox for our invite.',
-        reset_btn: 'Submit Another Blueprint Brief',
+        desc: 'Thank you for reaching out to Kinetic Studio! We have received your request and will get back to you via email within 24 hours.',
+        next_steps: '**What happens next?** We are reviewing your details and preparing a plan with estimated costs. Please keep an eye on your inbox.',
+        reset_btn: 'Send Another Request',
       }
     },
     footer: {
-      desc: 'We design and engineering top-tier software systems, modular microservice databases, CI/CD automated deployments, and custom Figma visual assets for global high-growth partners.',
+      desc: 'We create beautiful websites and reliable software solutions to help businesses grow and succeed in the digital world.',
       links: {
         deliverables: 'Deliverables',
         saas: 'Custom SaaS Apps',
@@ -275,10 +275,10 @@ export const translations = {
       quote: 'Dapatkan Penawaran',
     },
     hero: {
-      badge: 'Solusi TI Generasi Berikutnya',
+      badge: 'Solusi Digital Terbaik untuk Anda',
       title1: 'Akselerasi Pertumbuhan Anda dengan Kecepatan',
       title2: '',
-      subtitle: 'Kami membangun sistem digital premium, arsitektur cloud, dan perangkat lunak yang skalabel. Kinetic Studio menangani kerumitan agar organisasi Anda dapat bergerak lebih cepat.',
+      subtitle: 'Kami membuat website dan aplikasi berkualitas tinggi yang mudah digunakan. Kinetic Studio siap membantu mewujudkan ide digital Anda dengan cepat dan tanpa ribet.',
       cta1: 'Mulai Proyek Anda',
       cta2: 'Jelajahi Layanan',
       stat1_val: '99.4%',
@@ -288,9 +288,9 @@ export const translations = {
       stat3_val: '2x',
       stat3_label: 'Kecepatan Development',
       badge1_title: 'Deploy di Hari Pertama',
-      badge1_desc: 'Continuous Integration & pipeline DevOps Otomatis.',
+      badge1_desc: 'Proses pengerjaan cepat dan otomatis.',
       badge2_label: 'Keahlian',
-      badge2_val: 'Clean Architecture',
+      badge2_val: 'Kualitas Terjamin',
       badge3_label: 'Klien',
       badge3_val: '100% Puas',
     },
@@ -300,141 +300,141 @@ export const translations = {
       subtitle: 'Kami menggabungkan skalabilitas perangkat lunak ekstrim dengan desain digital premium. Kami tidak berkompromi pada keamanan, arsitektur, atau kecepatan.',
       items: {
         'scalable-solutions': {
-          title: 'Solusi Skalabel',
-          desc: 'Kami membangun dengan backend berkecepatan tinggi dan framework cloud native yang direkayasa untuk menangani lonjakan mendadak dan pertumbuhan organik secara alami.',
+          title: 'Aplikasi Cepat & Tangguh',
+          desc: 'Kami membangun website dan aplikasi yang tetap cepat dan lancar meski dikunjungi banyak orang sekaligus.',
         },
         'expert-developers': {
-          title: 'Developer Ahli',
-          desc: 'Insinyur kami adalah pemikir produk senior yang memahami alur kerja bisnis, kebersihan kode, paradigma pengujian, dan kontainerisasi yang aman.',
+          title: 'Tim Berpengalaman',
+          desc: 'Tim kami terdiri dari para ahli yang tahu cara membuat aplikasi yang aman, andal, dan mudah digunakan.',
         },
         'transparent-process': {
           title: 'Proses Transparan',
-          desc: 'Lacak kemajuan harian di papan virtual dan lihat pembaruan staging secara langsung. Kami berbicara dengan jelas, melaporkan lebih awal, dan menjalankan tinjauan sprint agile teratur.',
+          desc: 'Pantau perkembangan proyek Anda dengan mudah. Kami selalu memberikan kabar terbaru secara rutin dan transparan.',
         },
         'on-time-delivery': {
           title: 'Pengiriman Tepat Waktu',
-          desc: 'Tidak ada janji palsu atau peluncuran tanpa akhir. Mesin estimasi modern dan kontrol ruang lingkup kami membuat perangkat lunak Anda dikirim dengan benar.',
+          desc: 'Kami memberikan hasil yang tepat waktu sesuai dengan janji kami. Tanpa penundaan, hanya hasil terbaik.',
         }
       },
       guarantee: 'Standar Terjamin',
-      cta_badge: 'Kesiapan Perusahaan',
-      cta_title: 'Siap membangun sistem perangkat lunak yang tangguh dan disesuaikan dengan alur kerja Anda?',
-      cta_desc: 'Kami merancang dan memelihara arsitektur mesh cloud pribadi, aplikasi web berkinerja tinggi, dan lingkungan kepatuhan yang aman. Mari rancang peta jalan Anda bersama.',
+      cta_badge: 'Siap untuk Bisnis Anda',
+      cta_title: 'Siap memiliki sistem dan website canggih untuk bisnis Anda?',
+      cta_desc: 'Kami menciptakan solusi digital yang aman, cepat, dan bisa diandalkan untuk semua jenis bisnis. Mari bicarakan kebutuhan Anda.',
       cta_btn: 'Mulai Sekarang',
     },
     services: {
       badge: 'Apa Yang Kami Lakukan',
-      title: 'Rekayasa Perusahaan Bertemu Desain Produk Elegan',
-      subtitle: 'Kami beroperasi di antarmuka kedalaman teknis dan kecepatan produk. Pilih salah satu pilar inti kami untuk menjelajahi detail penyampaian kami.',
+      title: 'Layanan Digital Sederhana & Terjangkau',
+      subtitle: 'Kami menyediakan berbagai layanan dari pembuatan website hingga aplikasi. Pilih layanan yang sesuai dengan kebutuhan Anda.',
       items: {
         'custom-software': {
-          title: 'Pengembangan Perangkat Lunak Kustom',
-          desc: 'SaaS perusahaan, arsitektur web throughput tinggi, dan perangkat lunak internal yang aman. Kami menulis TypeScript, Go, dan Python yang bersih dan teruji.',
-          tags: ['Rekayasa SaaS', 'Integrasi API', 'React / NextJS', 'Go Backends'],
+          title: 'Pembuatan Website & Aplikasi',
+          desc: 'Layanan pembuatan website, halaman landing, dan aplikasi sederhana dengan harga terjangkau dan proses yang cepat.',
+          tags: ['Website Kustom', 'Mudah Diupdate', 'Loading Cepat', 'Aman'],
           props: [
-            'Struktur TypeScript modular & tipe data ketat.',
-            'Suite pengujian unit dan integrasi yang komprehensif.',
-            'Kecepatan muat sub-detik dan bundel ringan.'
+            'Dibuat dengan teknologi modern dan andal.',
+            'Diuji secara menyeluruh agar semuanya berjalan sempurna.',
+            'Website Anda akan memuat dengan sangat cepat.'
           ],
-          tech: 'React, Node.js, NestJS, Go, Postgres, Redis, TailwindCSS'
+          tech: 'Teknologi Web Modern'
         },
         'cloud-architecture': {
-          title: 'Arsitektur Cloud & Skalabilitas',
-          desc: 'Infrastruktur yang dirancang untuk ketersediaan 99.99%. Mesh cloud aman, replika database, komputasi serverless, dan penyiapan multi-wilayah pribadi.',
-          tags: ['Google Cloud / AWS', 'Database Dikelola', 'Keamanan Siber', 'Pemulihan Bencana'],
+          title: 'Hosting & Keandalan',
+          desc: 'Kami memastikan website Anda selalu bisa diakses, berjalan cepat, dan data Anda tetap aman.',
+          tags: ['Selalu Online', 'Perlindungan Data', 'Keamanan Tinggi', 'Sistem Backup'],
           props: [
-            'Kapabilitas skala-ke-nol dengan integrasi cloud.',
-            'Failover multi-zona terdistribusi dan replikasi langsung.',
-            'Matriks keamanan least-privilege IAM melindungi tabel pengguna.'
+            'Sistem otomatis menyesuaikan jika pengunjung sedang ramai.',
+            'Data Anda dicadangkan dengan aman di beberapa tempat.',
+            'Keamanan tingkat tinggi untuk melindungi informasi penting Anda.'
           ],
-          tech: 'GCP, AWS, PostgreSQL, MongoDB, Redis, Apache Kafka'
+          tech: 'Server Cloud Handal'
         },
         'devops-automation': {
-          title: 'Otomasi DevOps & Pipeline',
-          desc: 'Ucapkan selamat tinggal pada penerapan manual. Kami mengoptimalkan kecepatan build, mengemas kontainer Docker yang aman, mengelola Kubernetes, dan menulis kode Terraform.',
-          tags: ['Pipeline CI/CD', 'Docker & K8s', 'Terraform IaC', 'Pemantauan & Peringatan'],
+          title: 'Pembaruan & Perawatan Lancar',
+          desc: 'Kami membuat proses update website Anda jadi mudah dan aman, tanpa mengganggu kenyamanan pengguna Anda.',
+          tags: ['Update Otomatis', 'Tanpa Downtime', 'Pantauan Terus Menerus', 'Perbaikan Cepat'],
           props: [
-            'Build pipeline staging otomatis di bawah 5 menit.',
-            'Rolling upgrade tanpa downtime dan rilis canary.',
-            'Infrastructure as Code (IaC) untuk replikasi cepat.'
+            'Pembaruan dapat diterapkan dengan cepat dan lancar.',
+            'Website tetap bisa diakses saat kami menambahkan fitur baru.',
+            'Kami bisa memulihkan sistem Anda dengan cepat jika terjadi masalah.'
           ],
-          tech: 'Github Actions, Terraform, Docker, Kubernetes, Prometheus'
+          tech: 'Sistem Otomatis'
         },
         'ui-ux-strategy': {
-          title: 'Sistem Desain Produk & UI/UX',
-          desc: 'Antarmuka pengguna dengan konversi tinggi. Kami melakukan riset pengguna target, memetakan jalur, dan membangun aset Figma yang sempurna.',
-          tags: ['Strategi UX', 'Pustaka Figma', 'Mockup Interaktif', 'Desain Visual'],
+          title: 'Desain Cantik & Mudah Digunakan',
+          desc: 'Kami merancang website yang tidak hanya terlihat menarik, tapi juga sangat mudah digunakan oleh pelanggan Anda.',
+          tags: ['Riset Pengguna', 'Tampilan Modern', 'Mudah Digunakan', 'Nyaman di HP'],
           props: [
-            'Riset mendalam didukung umpan balik pengguna yang dapat diklik.',
-            'Kepatuhan aksesibilitas W3C WCAG dan kenyamanan target sentuh.',
-            'Handoff Figma yang ramah pengembang dengan token tata letak.'
+            'Didesain berdasarkan apa yang benar-benar dibutuhkan pengguna.',
+            'Mudah diakses dan nyaman digunakan di perangkat apa saja.',
+            'Proses dari desain hingga produk jadi berjalan dengan sangat mulus.'
           ],
-          tech: 'Figma, Tailwind, Adobe CC, Framer, UserTesting'
+          tech: 'Alat Desain Profesional'
         }
       },
-      radar_badge: 'RADAR PENGIRIMAN',
-      tech_caps: 'KAPABILITAS TEKNOLOGI:',
+      radar_badge: 'APA YANG KAMI BERIKAN',
+      tech_caps: 'KEAHLIAN KAMI:',
       included: 'Apa yang Termasuk:',
-      custom_needs_title: 'Punya kebutuhan sistem lama khusus?',
-      custom_needs_desc: 'Kami dengan nyaman memfaktorkan ulang monolit yang kompleks, memigrasi penyebaran server berat, dan menyinkronkan beberapa pipeline API internal dengan bersih.',
-      cta_btn: 'Cari Solusi Anda',
+      custom_needs_title: 'Punya sistem lama yang perlu diperbarui?',
+      custom_needs_desc: 'Kami bisa membantu memperbarui sistem lama Anda, membuatnya lebih cepat, dan menghubungkannya dengan teknologi baru.',
+      cta_btn: 'Lihat Opsi Anda',
       select_prompt: 'Pilih layanan di sebelah kiri untuk memeriksa parameternya.',
     },
     process: {
       badge: 'Sistem Eksekusi Kami',
       title: 'Bagaimana Kami Bermitra: Kinetic Pipeline',
-      subtitle: 'Kami menolak loop umpan balik klien-agensi lama yang lambat. Proses 4 tahap kami menjamin kecepatan pengiriman tertinggi dengan konsistensi kualitas mutlak.',
+      subtitle: 'Kami percaya pada kerja cepat dengan komunikasi yang baik. Proses 4 langkah kami memastikan kualitas terbaik tanpa perlu menunggu lama.',
       items: [
         {
           title: 'Penemuan & Strategi',
-          desc: 'Kami mengadakan sesi penyelarasan interaktif, menyusun diagram alur teknis yang komprehensif, menyempurnakan cerita pengguna kustom, dan menguraikan batas cakupan proyek yang tepat. Tidak ada tebak-tebakan.',
+          desc: 'Kami mulai dengan memahami tujuan Anda, mendiskusikan ide Anda, dan memastikan apa saja yang akan kita bangun bersama. Semuanya jelas dari awal.',
           duration: 'Minggu 1',
         },
         {
           title: 'Desain & Arsitektur',
-          desc: 'Tim kami membuat prototipe viewport interaktif fidelitas tinggi di Figma. Secara bersamaan, teknisi cloud kami menyusun skema sistem, topologi cluster, dan diagram hubungan entitas.',
+          desc: 'Desainer kami membuat tampilan yang cantik untuk website atau aplikasi Anda, sementara tim teknis kami merencanakan cara terbaik untuk membangunnya dengan aman.',
           duration: 'Minggu 2-3',
         },
         {
           title: 'Pengembangan Perangkat Lunak Agile',
-          desc: 'Kami mengkode dalam sprint dua mingguan, terus-menerus mengirimkan fitur modular ke server staging pribadi yang aman. Anda menerima rekaman tinjauan sprint yang transparan dan tautan demo.',
+          desc: 'Kami mengerjakan proyek Anda tahap demi tahap dan menunjukkan hasilnya secara berkala. Anda bisa langsung mencoba fitur yang sudah selesai.',
           duration: 'Minggu 4-8',
         },
         {
           title: 'QA Murni & Penerapan',
-          desc: 'Kami memicu model pengujian otomatis, melakukan sapuan uji penetrasi, mengaudit viewport responsif, menyiapkan dasbor pemantauan cloud yang bersih, dan melakukan peluncuran yang mulus.',
+          desc: 'Kami mengecek semuanya secara menyeluruh untuk memastikan tidak ada error. Setelah semuanya sempurna, proyek Anda siap diluncurkan.',
           duration: 'Minggu 9+',
         }
       ],
-      warning: 'Butuh pengiriman kilat? Kami menawarkan jalur sprint yang dipercepat untuk jadwal pendanaan/peluncuran penting. Hubungi langsung untuk membahas slot SLA staging prioritas kami.',
+      warning: 'Butuh selesai lebih cepat? Kami bisa mempercepat proses pengerjaan untuk jadwal peluncuran yang mendesak. Hubungi kami untuk info lebih lanjut.',
       warning_bold: 'Butuh pengiriman kilat?',
     },
     portfolio: {
       badge: 'Pekerjaan Kami',
       title: 'Mempelopori Produk Berkualitas',
-      subtitle: 'Setiap rilis mewakili kelas master dalam kelancaran frontend, ketahanan database yang dalam, dan kecepatan struktural. Klik lencana apa saja untuk melihat studi kasus tiruan.',
+      subtitle: 'Kami bangga membuat produk digital yang cepat, indah, dan bisa diandalkan. Lihat beberapa hasil karya terbaik kami.',
       categories: {
         all: 'Semua',
-        saas: 'Sistem SaaS',
-        cloud: 'Cloud & DevOps',
+        saas: 'Software Kustom',
+        cloud: 'Solusi Hosting',
         mobile: 'Aplikasi Seluler'
       },
       items: {
         'banking-saas': {
           title: 'Dasbor Global Acme Wealth',
-          desc: 'Sistem perbankan multi-mata uang dengan aliran transaksi seketika, penghitungan saldo real-time, dan laporan kepatuhan kustom.',
+          desc: 'Platform keuangan aman yang bisa menangani berbagai mata uang dan memberikan update data secara instan.',
         },
         'nexus-cloud': {
           title: 'Infra Cloud Nexus DataMesh',
-          desc: 'Penyebaran cloud perusahaan yang mengatur jaringan VPC pelanggan terisolasi, server caching cerdas, dan cluster komputasi cloud yang skalabel.',
+          desc: 'Solusi hosting skala besar yang menjaga data tetap aman dan memastikan sistem berjalan lancar setiap saat.',
         },
         'workspace-mobile': {
           title: 'Kinetic Shift Enterprise Mobile Hub',
-          desc: 'Ruang kerja seluler asli premium yang memfasilitasi obrolan perusahaan yang aman, sinkronisasi tugas, database offline, dan pemberitahuan cepat.',
+          desc: 'Aplikasi bisnis yang membantu tim berkomunikasi dengan aman, mengatur tugas, dan bisa digunakan tanpa internet.',
         }
       },
       preview_summary: 'Pratinjau ringkasan kasus',
-      locked: 'DEPLOYMENT TERKUNCI',
+      locked: 'DILUNCURKAN DENGAN AMAN',
       success: 'TINGKAT KEBERHASILAN 100%',
       case_study: 'Studi Kasus',
     },
@@ -445,40 +445,40 @@ export const translations = {
       items: {
         'pricing': {
           question: 'Bagaimana Kinetic Studio memberi harga pada proyek agensinya?',
-          answer: 'Kami memberikan harga berbasis tonggak pencapaian yang terperinci. Kami sangat menghindari perpanjangan kejutan atau skema retainer yang tidak jelas. Setiap penawaran menampilkan biaya tetap yang terkait dengan keluaran fungsional transparan (mis. hasil Figma, kluster database, MVP siap uji). Jika ruang lingkup produk tetap stabil, harga Anda tetap sama persis.',
+          answer: 'Kami menawarkan harga yang jelas dan tetap sesuai dengan fitur yang Anda butuhkan. Tidak ada biaya tersembunyi. Selama kebutuhan proyek tidak berubah, harganya tetap sama.',
         },
         'timeline': {
           question: 'Berapa rata-rata waktu untuk meluncurkan MVP atau sistem?',
-          answer: 'Dasbor kustom standar, aplikasi produk asli, atau migrasi cloud memakan waktu antara 4 dan 8 minggu dari kick-off hingga pemetaan DNS yang aman. Kami bekerja dalam sprint aktif 2 minggu yang disiplin dan memberi Anda akses ke lingkungan staging penyebaran berkelanjutan langsung sehingga Anda dapat memantau fitur saat kami menyusunnya.',
+          answer: 'Umumnya sebuah proyek memakan waktu 4 hingga 8 minggu dari awal hingga selesai. Kami akan terus melibatkan Anda, sehingga Anda bisa melihat dan mencoba perkembangannya secara rutin sebelum diluncurkan.',
         },
         'tech-stack': {
           question: 'Apa tumpukan teknologi pilihan Anda?',
-          answer: 'Kami menulis sistem modular dan diketik untuk skalabilitas jangka panjang. Di sisi klien, kami berspesialisasi dalam React, Next.js, dan Tailwind CSS. Di sisi backend, kami menjalankan layanan berkecepatan tinggi yang dibangun dalam Go, Node.js, dan Python, didukung oleh PostgreSQL, Redis, dan instans aman yang dihosting di GCP atau AWS.',
+          answer: 'Kami menggunakan alat-alat modern dan terpercaya agar website atau aplikasi Anda cepat dan aman. Kami akan memilihkan teknologi terbaik yang paling cocok dengan kebutuhan Anda.',
         },
         'support': {
           question: 'Apakah Anda menawarkan dukungan pasca peluncuran dan patch keamanan?',
-          answer: 'Tentu saja. Kami menawarkan Service Level Agreement (SLA) khusus mulai dari pelestarian bug standar hingga pemeliharaan infrastruktur ketersediaan tinggi 24/7. Ini termasuk patch keamanan dependensi mingguan, sapuan optimisasi database, dan pembuatan profil kinerja server.',
+          answer: 'Tentu saja! Kami memberikan layanan dukungan setelah rilis untuk memastikan aplikasi Anda tetap berjalan lancar. Ini termasuk perbaikan jika ada masalah, pembaruan keamanan, dan penjagaan kualitas sistem.',
         },
         'nda': {
           question: 'Apakah peta jalan bisnis, ide, dan kekayaan intelektual saya aman?',
-          answer: 'Ya. Sebelum membahas detail proyek atau arsitektur database apa pun, kami menandatangani Non-Disclosure Agreement (NDA) bersama yang resmi. Setelah pembayaran akhir proyek, hak kekayaan intelektual penuh, kepemilikan repositori, kredensial penyebaran, dan aset Figma sepenuhnya ditransfer ke perusahaan Anda.',
+          answer: 'Ya. Ide dan rahasia bisnis Anda aman bersama kami. Kami menandatangani perjanjian untuk menjaga kerahasiaan. Setelah proyek selesai dan dibayar, Anda memiliki hak penuh atas semua yang telah kami buat untuk Anda.',
         }
       },
-      support_prompt: 'Punya pertanyaan teknis berbeda mengenai integrasi sistem kompleks, migrasi sistem lama, atau batasan hosting perusahaan yang ketat?',
-      support_btn: 'Bicara dengan Arsitek kami',
+      support_prompt: 'Punya pertanyaan spesifik tentang kebutuhan bisnis Anda atau bagaimana kami bisa membantu memperbarui sistem Anda?',
+      support_btn: 'Bicara dengan Tim Kami',
     },
     contact: {
       badge: 'Dapatkan Proposal',
       title: 'Mari Rancang Arsitektur Sistem Anda',
-      subtitle: 'Siap untuk menerapkan? Isi draf sistem kami. Chief Technical Officer kami akan meninjau parameter Anda dan merespons dengan tata letak anggaran khusus dalam waktu 24 jam.',
-      status: 'STATUS INTI ONLINE',
+      subtitle: 'Siap untuk memulai? Isi formulir singkat di bawah ini. Tim kami akan meninjau kebutuhan Anda dan memberikan rencana serta perkiraan harga dalam waktu 24 jam.',
+      status: 'KAMI SEDANG ONLINE',
       hq_title: 'Pusat Kinetic Studio',
-      hq_desc: 'Insinyur inti kami beroperasi di Jakarta, Indonesia & Singapura, membantu klien global di seluruh zona teknologi Asia, Eropa, dan Pasifik.',
+      hq_desc: 'Tim kami berbasis di Jakarta, Indonesia & Singapura, dan siap membantu klien dari berbagai penjuru dunia.',
       office_label: 'KANTOR PUSAT',
       email_label: 'PENAWARAN PROYEK',
       phone_label: 'SALURAN PANGGILAN / WHATSAPP',
-      nda_title: 'NDA & Kedaulatan Cloud Dijamin',
-      nda_desc: 'Semua catatan pelanggan, input database, dan diagram visual yang dikirim melalui formulir ini dijaga oleh audit lapisan enkripsi TLS yang ketat. IP properti komersial ditransfer dengan mulus saat penandatanganan kontrak.',
+      nda_title: 'Kerahasiaan & Keamanan Dijamin',
+      nda_desc: 'Semua informasi yang Anda bagikan kepada kami dijaga kerahasiaannya dengan sistem keamanan yang ketat. Privasi Anda adalah prioritas utama kami.',
       form: {
         name_label: 'Nama Lengkap',
         name_placeholder: 'Misal, Michael Chen',
@@ -486,22 +486,22 @@ export const translations = {
         email_placeholder: 'Misal, michael@acme.com',
         company_label: 'Nama Perusahaan',
         company_placeholder: 'Misal, Acme Wealth Corp',
-        budget_label: 'Perkiraan Anggaran Proyek',
-        message_label: 'Detail Proyek & Tujuan Teknis',
-        message_placeholder: 'Beri tahu kami tentang fitur perangkat lunak yang ingin Anda bangun, jumlah pengguna, tumpukan teknologi yang ada, dan parameter jadwal yang diharapkan...',
-        submit_btn: 'Terapkan untuk Blueprint Arsitektur',
-        loading: 'Mengenkripsi parameter...',
-        nda_notice: 'Mengeklik kirim akan memulai Non-Disclosure Agreement bersama kami yang ketat. Parameter Anda tetap rahasia.',
+        budget_label: 'Perkiraan Dana Proyek',
+        message_label: 'Detail Proyek & Tujuan',
+        message_placeholder: 'Ceritakan tentang proyek Anda, fitur apa saja yang dibutuhkan, dan kapan Anda berharap proyek ini selesai...',
+        submit_btn: 'Dapatkan Penawaran Kustom Anda',
+        loading: 'Sedang mengirim dengan aman...',
+        nda_notice: 'Dengan menekan tombol kirim, Anda setuju untuk menjaga kerahasiaan komunikasi kita. Kami juga akan merahasiakan data Anda.',
       },
       success: {
-        title: 'Draf Dikirim Secara Aman!',
-        desc: 'Terima kasih telah menghubungi Kinetic Studio. Chief Technical Officer kami telah menerima spesifikasi blueprint Anda di bawah NDA bersama. Kami akan menghubungi Anda melalui alamat email bisnis Anda dalam waktu 24 jam.',
-        next_steps: '**Apa selanjutnya?** Kami menyusun draf sistem tingkat tinggi awal dengan perkiraan ruang lingkup harga. Periksa kotak masuk Anda untuk undangan kami.',
-        reset_btn: 'Kirim Draf Blueprint Lain',
+        title: 'Pesan Berhasil Terkirim!',
+        desc: 'Terima kasih telah menghubungi Kinetic Studio! Kami telah menerima pesan Anda dan akan membalas melalui email dalam waktu 24 jam.',
+        next_steps: '**Apa selanjutnya?** Kami sedang membaca detail dari Anda dan menyiapkan rencana beserta perkiraan biaya. Silakan cek kotak masuk email Anda nanti.',
+        reset_btn: 'Kirim Permintaan Lain',
       }
     },
     footer: {
-      desc: 'Kami merancang dan merekayasa sistem perangkat lunak tingkat atas, database layanan mikro modular, penerapan otomatis CI/CD, dan aset visual Figma khusus untuk mitra pertumbuhan tinggi global.',
+      desc: 'Kami membuat website yang cantik dan perangkat lunak yang andal untuk membantu bisnis Anda tumbuh dan sukses di dunia digital.',
       links: {
         deliverables: 'Layanan',
         saas: 'Aplikasi SaaS Khusus',
@@ -516,8 +516,8 @@ export const translations = {
       },
       hiring: 'KAMI MEREKRUT',
       newsletter: {
-        title: 'Buletin Kinetic Insights',
-        desc: 'Berlangganan untuk tetap mendapat info terbaru tentang daftar periksa keamanan cloud, rincian arsitektur kecepatan, dan laporan strategi teknologi.',
+        title: 'Berita & Info Terbaru',
+        desc: 'Berlangganan untuk mendapatkan informasi terbaru tentang teknologi, tips bisnis digital, dan berita seputar layanan kami.',
         placeholder: 'Email bisnis...',
         submit: 'Berlangganan',
       },
