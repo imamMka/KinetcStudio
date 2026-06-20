@@ -113,7 +113,7 @@ export default function Hero({ onCtaClick, onExploreClick }: HeroProps) {
               className=""
             >
               <img
-                src="/src/assets/images/hero.svg"
+                src="/images/hero.svg"
                 alt="Kinetic Studio Abstract 3D Artwork"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center select-none pointer-events-none"

@@ -55,7 +55,7 @@ export default function Navbar({ onCtaClick }: NavbarProps) {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <img src="/src/assets/images/logosvg.svg" alt="" className="w-10" />
+            <img src="/images/logosvg.svg" alt="" className="w-10" />
             <span className="font-serif text-xl tracking-tight text-[#023E8A] font-bold">
               Kinetic <span className="text-slate-800 font-sans font-light text-lg">Studio</span>
               <p className="text-slate-800 font-sans font-light text-xs">Dynamic Designs. Kinetic Results.</p>

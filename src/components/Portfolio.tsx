@@ -10,7 +10,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: 'Acme Wealth Global Dashboard',
     category: 'SaaS Systems',
     description: 'A multi-currency banking system with instantaneous transaction streams, real-time balance calculations, and custom compliance reports.',
-    image: '/src/assets/images/portfolio_saas_1781799718522.jpg',
+    image: '/images/portfolio_saas_1781799718522.jpg',
     stars: 5,
     link: '#banking-saas'
   },
@@ -19,7 +19,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: 'Nexus DataMesh Cloud Infra',
     category: 'Cloud & DevOps',
     description: 'An enterprise cloud deployment orchestrating isolated customer VPC networks, smart caching servers, and scalable cloud compute clusters.',
-    image: '/src/assets/images/portfolio_cloud_1781799732798.jpg',
+    image: '/images/portfolio_cloud_1781799732798.jpg',
     stars: 5,
     link: '#nexus-cloud'
   },
@@ -28,7 +28,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: 'Kinetic Shift Enterprise Mobile Hub',
     category: 'Mobile Apps',
     description: 'A premium native mobile workspace facilitating secure corporate chats, tasks syncing, offline databases, and swift notifications.',
-    image: '/src/assets/images/portfolio_mobile_1781799748021.jpg',
+    image: '/images/portfolio_mobile_1781799748021.jpg',
     stars: 5,
     link: '#workspace-mobile'
   }
