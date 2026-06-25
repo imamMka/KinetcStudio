@@ -210,7 +210,7 @@ export const translations = {
       subtitle: 'Ready to start? Fill out our short form below. Our team will review your needs and get back to you with a clear plan and pricing within 24 hours.',
       status: 'ONLINE CORE STATUS',
       hq_title: 'Kinetic Studio HQ',
-      hq_desc: 'Our core engineers operate in Jakarta, Indonesia & Singapore, assisting global clients across Asian, European, and Pacific tech zones.',
+      hq_desc: 'Our core engineers operate in Bekasi, Indonesia, assisting global clients across Asian, European, and Pacific tech zones.',
       office_label: 'HEAD OFFICE',
       email_label: 'PROJECT OFFERS',
       phone_label: 'CALL / WHATSAPP CHANNEL',
@@ -242,9 +242,9 @@ export const translations = {
       links: {
         deliverables: 'Deliverables',
         saas: 'Custom SaaS Apps',
-        cloud: 'Cloud Migrations',
-        devops: 'Kubernetes / DevOps',
-        design: 'Figma Design Systems',
+        cloud: 'Website Simple',
+        devops: 'Website Invite Party/Wedding',
+        design: 'Custom Websites',
         corporate: 'Corporate',
         why: 'Why Choose Us',
         portfolio: 'Our Portfolio',
@@ -276,7 +276,7 @@ export const translations = {
     },
     hero: {
       badge: 'Solusi Digital Terbaik untuk Anda',
-      title1: 'Akselerasi Pertumbuhan Anda dengan Kecepatan',
+      title1: 'Kembangkan bisnis anda menjadi lebih profesional bersama',
       title2: '',
       subtitle: 'Kami membuat website dan aplikasi berkualitas tinggi yang mudah digunakan. Kinetic Studio siap membantu mewujudkan ide digital Anda dengan cepat dan tanpa ribet.',
       cta1: 'Mulai Proyek Anda',
@@ -297,7 +297,7 @@ export const translations = {
     why: {
       badge: 'Kekuatan Kami',
       title: 'Memberikan Keuntungan Digital Berdampak Tinggi',
-      subtitle: 'Kami menggabungkan skalabilitas perangkat lunak ekstrim dengan desain digital premium. Kami tidak berkompromi pada keamanan, arsitektur, atau kecepatan.',
+      subtitle: 'Kami menggabungkan skalabilitas perangkat lunak modern dengan desain digital premium. Kami tidak mengabaikan aspek keamanan, arsitektur, maupun kecepatan.',
       items: {
         'scalable-solutions': {
           title: 'Aplikasi Cepat & Tangguh',
@@ -473,7 +473,7 @@ export const translations = {
       subtitle: 'Siap untuk memulai? Isi formulir singkat di bawah ini. Tim kami akan meninjau kebutuhan Anda dan memberikan rencana serta perkiraan harga dalam waktu 24 jam.',
       status: 'KAMI SEDANG ONLINE',
       hq_title: 'Pusat Kinetic Studio',
-      hq_desc: 'Tim kami berbasis di Jakarta, Indonesia & Singapura, dan siap membantu klien dari berbagai penjuru dunia.',
+      hq_desc: 'Tim kami berbasis di Bekasi, Indonesia, dan siap membantu klien dari berbagai penjuru dunia.',
       office_label: 'KANTOR PUSAT',
       email_label: 'PENAWARAN PROYEK',
       phone_label: 'SALURAN PANGGILAN / WHATSAPP',
@@ -505,9 +505,9 @@ export const translations = {
       links: {
         deliverables: 'Layanan',
         saas: 'Aplikasi SaaS Khusus',
-        cloud: 'Migrasi Cloud',
-        devops: 'Kubernetes / DevOps',
-        design: 'Sistem Desain Figma',
+        cloud: 'Website Simple',
+        devops: 'Website Invite Party/Wedding',
+        design: 'Custom Websites',
         corporate: 'Perusahaan',
         why: 'Mengapa Memilih Kami',
         portfolio: 'Portofolio Kami',
@@ -538,7 +538,7 @@ type Join<T extends string[], D extends string> =
   T extends [] ? never :
   T extends [infer F] ? F :
   T extends [infer F, ...infer R] ?
-  F extends string ? 
+  F extends string ?
   `${F}${D}${Join<Extract<R, string[]>, D>}` : never : string;
 
 export type TranslationKey = Join<PathsToStringProps<typeof translations['en']>, '.'>;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Github, Linkedin, Twitter, ArrowUp, Send } from 'lucide-react';
+import { Zap, Github, Linkedin, Twitter, ArrowUp, Send, Instagram, Youtube } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
@@ -20,19 +20,17 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900 text-slate-400 font-light text-sm relative border-t border-slate-800">
-      
+
       {/* Decorative highlight */}
       <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#023E8A] via-sky-400 to-[#023E8A]" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-12 items-start mb-12">
-          
+
           {/* Main Brand Section */}
           <div className="col-span-2 md:col-span-4 space-y-4 text-left">
             <div className="flex items-center gap-2 cursor-pointer" onClick={scrollToTop}>
-              <div className="w-9 h-9 rounded-lg bg-[#023E8A] flex items-center justify-center text-white shadow-md">
-                <Zap className="w-4 h-4 fill-current text-[#E5FAFF]" />
-              </div>
+              <img src="/images/logosvg.svg" alt="" className='w-10' />
               <span className="font-serif text-xl tracking-tight text-white font-bold">
                 Kinetic <span className="text-slate-300 font-sans font-light text-lg">Studio</span>
               </span>
@@ -40,17 +38,14 @@ export default function Footer() {
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               {t('footer.desc')}
             </p>
-            
+
             {/* Social icons */}
             <div className="flex gap-4 pt-2">
-              <a href="#github" className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-[#023E8A] transition-all flex items-center justify-center">
-                <Github className="w-4 h-4" />
+              <a href="https://www.youtube.com/@KineticStudioID" className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-[#023E8A] transition-all flex items-center justify-center">
+                <Youtube className="w-4 h-4" />
               </a>
-              <a href="#linkedin" className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-[#023E8A] transition-all flex items-center justify-center">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#twitter" className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-[#023E8A] transition-all flex items-center justify-center">
-                <Twitter className="w-4 h-4" />
+              <a href="https://www.instagram.com/kineticstudio._/" className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-[#023E8A] transition-all flex items-center justify-center">
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>

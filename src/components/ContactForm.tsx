@@ -9,7 +9,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     company: '',
-    budget: '$10k - $30k',
+    budget: 'Rp.300k - Rp.800k',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,10 +17,10 @@ export default function ContactForm() {
   const [formError, setFormError] = useState('');
 
   const BUDGETS = [
-    '< $10,000 (Short MVP)',
-    '$10,000 - $30,000 (Standard Product)',
-    '$30,000 - $100,000 (Enterprise Suite)',
-    '> $100,000 (Dedicated Team / Multi-Cloud)'
+    '< Rp.500.000 (Short MVP)',
+    'Rp.500.000 - Rp.1.000.000 (Standard Product)',
+    'Rp.1.000.000 - Rp.3.000.000 (Enterprise Suite)',
+    '> Rp.3.000.000 (Dedicated Team / Multi-Cloud)'
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -40,7 +40,7 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
-    
+
     // Simulate high-end backend delivery API
     setTimeout(() => {
       setIsSubmitting(false);
@@ -49,7 +49,7 @@ export default function ContactForm() {
         name: '',
         email: '',
         company: '',
-        budget: '$10k - $30k',
+        budget: '< Rp.500.000',
         message: ''
       });
     }, 1200);
@@ -58,9 +58,9 @@ export default function ContactForm() {
   return (
     <section id="contact-us" className="py-24 bg-gradient-to-b from-white to-[#E5FAFF]/40 relative scroll-mt-20">
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#E1F7FC]/50 rounded-full blur-3xl -z-10 translate-x-1/3 translate-y-1/3" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-sm font-semibold uppercase tracking-wider text-[#023E8A]">{t('contact.badge')}</span>
@@ -75,7 +75,7 @@ export default function ContactForm() {
 
         {/* Dual Panel Grid */}
         <div className="grid lg:grid-cols-12 gap-12 items-stretch mt-8">
-          
+
           {/* Agency coordinates Column */}
           <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
             <div className="space-y-6">
@@ -97,7 +97,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">{t('contact.office_label')}</span>
-                    <span className="text-sm font-medium text-slate-800">The Kinetic Tower, Floor 42, SCBD, Jakarta, Indonesia</span>
+                    <span className="text-sm font-medium text-slate-800">Harvest City, Jl. Orchid Raya A, Ragemanunggal, Setu, Bekasi Regency, West Java 17320</span>
                   </div>
                 </div>
 
@@ -107,8 +107,8 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">{t('contact.email_label')}</span>
-                    <a href="mailto:hello@kineticstudio.co" className="text-sm font-semibold text-[#023E8A] hover:underline">
-                      hello@kineticstudio.co
+                    <a href="mailto:imammka23@gmail.com" className="text-sm font-semibold text-[#023E8A] hover:underline">
+                      imammka23@gmail.com
                     </a>
                   </div>
                 </div>
@@ -119,8 +119,8 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">{t('contact.phone_label')}</span>
-                    <a href="tel:+628113000880" className="text-sm font-semibold text-slate-800 hover:text-[#023E8A] transition-colors">
-                      +62 (21) 500-1288 / +62 811-3000-880
+                    <a href="wa.me/6281219118993" className="text-sm font-semibold text-slate-800 hover:text-[#023E8A] transition-colors">
+                      +62 812-1911-8993
                     </a>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export default function ContactForm() {
               <p className="text-xs text-slate-600 font-light leading-relaxed">
                 {t('contact.nda_desc')}
               </p>
-              
+
               <div className="pt-2 border-t border-slate-200/50 flex flex-wrap gap-4 text-[10px] font-semibold text-slate-400">
                 <span className="flex items-center gap-1">🛡️ ISO 27001 SECURE</span>
                 <span className="flex items-center gap-1">🏢 SOC2 TYPE II COMPLIANT</span>
@@ -283,7 +283,7 @@ export default function ContactForm() {
                     <div className="w-16 h-16 rounded-full bg-[#E5FAFF] text-[#023E8A] flex items-center justify-center shadow-lg">
                       <CheckCircle2 className="w-10 h-10 stroke-[2.5]" />
                     </div>
-                    
+
                     <div className="space-y-3">
                       <h4 className="font-serif text-3xl font-bold text-[#023E8A]">
                         {t('contact.success.title')}
