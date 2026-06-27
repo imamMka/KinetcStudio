@@ -236,9 +236,48 @@ a {
   padding: 4px;
 }
 
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 2px;
+  border: 1px solid var(--chrome-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px;
+}
+
+.language-toggle button {
+  display: inline-grid;
+  min-width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  transition:
+    background 0.25s var(--ease-out),
+    color 0.25s var(--ease-out),
+    transform 0.3s var(--ease-expo);
+}
+
+.language-toggle button:hover {
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.language-toggle button.active {
+  background: var(--lime);
+  color: var(--ink);
+}
+
 .nav-link {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   height: auto;
   overflow: hidden;
   border: 0;
@@ -256,29 +295,45 @@ a {
     transform 0.35s var(--ease-expo);
 }
 
+.nav-link::after {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 1px;
+  content: "";
+  background: var(--lime);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 0.25s var(--ease-out), transform 0.35s var(--ease-expo);
+}
+
 .nav-link span {
   display: inline-block;
-  transition: transform 0.35s var(--ease-out);
+  position: relative;
+  z-index: 1;
 }
 
 .nav-link span::before {
-  position: absolute;
-  top: 100%;
-  left: 14px;
-  display: block;
-  content: attr(data-text);
-  color: var(--lime);
+  display: none;
 }
 
 .nav-link:hover span {
-  transform: translateY(-100%);
+  transform: none;
 }
 
 .nav-link:hover,
 .nav-link.is-active {
-  background: rgba(215, 255, 63, 0.1);
+  background: rgba(215, 255, 63, 0.11);
   color: var(--white);
   transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .nav-cta,
@@ -1537,13 +1592,26 @@ h2:hover {
     padding: 3px;
   }
 
+  .language-toggle {
+    display: inline-flex;
+    gap: 1px;
+    margin-left: 0;
+    padding: 2px;
+  }
+
+  .language-toggle button {
+    min-width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
   .nav-link {
     display: none;
     padding: 10px 13px;
   }
 
   .nav-link.nav-link-primary {
-    display: inline-block;
+    display: none;
   }
 
   .nav-link span::before {

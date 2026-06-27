@@ -1,97 +1,210 @@
 ---
 import "../index.css";
 
-const navItems = ["About", "Services", "Work", "Process", "Contact"];
+type LocaleCopy = {
+  id: string;
+  en: string;
+};
+
+const i18n: Record<string, LocaleCopy> = {
+  "meta.description": {
+    id: "Solivate Studio membantu bisnis membangun website, dashboard, dan MVP SaaS modern yang siap diluncurkan.",
+    en: "Solivate Studio designs and develops modern websites, dashboards, and SaaS MVPs for growing businesses."
+  },
+  "nav.about": { id: "Tentang", en: "About" },
+  "nav.services": { id: "Layanan", en: "Services" },
+  "nav.work": { id: "Karya", en: "Work" },
+  "nav.process": { id: "Proses", en: "Process" },
+  "nav.contact": { id: "Kontak", en: "Contact" },
+  "nav.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "hero.trust": { id: "Partner digital terpercaya untuk UMKM dan founder", en: "Trusted digital partner for SMEs and founders" },
+  "hero.title": { id: "Bangun produk digital yang scalable, bukan sekadar website.", en: "Build scalable digital products, not just websites." },
+  "hero.text": {
+    id: "Solivate Studio membantu brand merancang dan membangun website, dashboard, dan MVP dengan UI rapi, kode andal, dan alur kerja siap rilis.",
+    en: "Solivate Studio helps brands design and develop websites, dashboards, and MVPs with clean UI, reliable code, and a launch-ready workflow."
+  },
+  "hero.primary": { id: "Mulai Proyek", en: "Start Project" },
+  "hero.secondary": { id: "Lihat Portofolio", en: "View Portfolio" },
+  "preview.url": { id: "solivate.studio/dashboard", en: "solivate.studio/dashboard" },
+  "preview.velocity": { id: "Kecepatan proyek", en: "Project velocity" },
+  "preview.readiness": { id: "Kesiapan rilis", en: "Launch readiness" },
+  "preview.map": { id: "Peta pengalaman", en: "Experience map" },
+  "preview.badge": { id: "Stack deploy cepat", en: "Fast deploy stack" },
+  "marquee.ui": { id: "Desain UI/UX", en: "UI/UX Design" },
+  "marquee.web": { id: "Pengembangan Web", en: "Web Development" },
+  "marquee.saas": { id: "MVP SaaS", en: "SaaS MVP" },
+  "marquee.brand": { id: "Sistem Brand", en: "Brand System" },
+  "marquee.care": { id: "Cloud Care", en: "Cloud Care" },
+  "marquee.auto": { id: "Otomasi", en: "Automation" },
+  "about.eyebrow": { id: "Tentang Solivate Studio", en: "About Solivate Studio" },
+  "about.title": { id: "Studio produk digital untuk brand yang ingin eksekusi lebih rapi.", en: "Digital product studio for brands that want cleaner execution." },
+  "about.lead": {
+    id: "Kami menggabungkan strategi produk, desain visual, dan engineering web agar kehadiran digital bisnis terasa premium, jelas digunakan, dan siap bertumbuh setelah rilis.",
+    en: "We combine product thinking, visual design, and web engineering so your digital presence feels premium, functions clearly, and can grow after launch."
+  },
+  "feature.1.title": { id: "Strategi sebelum visual", en: "Strategy before visuals" },
+  "feature.1.desc": { id: "Kami merapikan positioning, target audiens, struktur halaman, alur pengguna, dan scope teknis sejak awal.", en: "We clarify positioning, audience, pages, user flows, and technical scope." },
+  "feature.2.title": { id: "Interface modern dan bersih", en: "Clean modern interface" },
+  "feature.2.desc": { id: "Setiap section mengikuti sistem visual yang konsisten: typography, spacing, warna, dan responsif.", en: "Every section follows a visual system: typography, spacing, color, and responsive behavior." },
+  "feature.3.title": { id: "Dibangun sampai jalan", en: "Build and maintain" },
+  "feature.3.desc": { id: "Kami tidak berhenti di mockup. Website atau app dikembangkan, dirilis, lalu bisa didukung setelah launch.", en: "We do not stop at mockups. We ship the site or app, then support it post-launch." },
+  "services.eyebrow": { id: "Layanan", en: "Services" },
+  "services.title": { id: "Solusi digital end-to-end yang terukur dan praktis.", en: "End-to-end digital solutions, measured and practical." },
+  "service.1.title": { id: "Desain UI/UX & Website", en: "UI/UX & Website Design" },
+  "service.1.desc": {
+    id: "Website marketing, landing page, company profile, undangan digital, dan interface produk dengan sistem visual yang kuat.",
+    en: "Clean marketing sites, landing pages, company profiles, invitations, and product interfaces with a strong visual system."
+  },
+  "service.2.title": { id: "Pengembangan Web App", en: "Web App Development" },
+  "service.2.desc": {
+    id: "Dashboard React, admin panel, sistem CRUD, integrasi API, dan workflow custom yang dibangun untuk pengguna nyata.",
+    en: "React dashboards, admin panels, CRUD systems, API integrations, and custom workflows built for real users."
+  },
+  "service.3.title": { id: "MVP SaaS & Sistem", en: "SaaS MVP & Systems" },
+  "service.3.desc": {
+    id: "Build MVP dengan autentikasi, desain database, deployment, dan ruang untuk pengembangan produk berikutnya.",
+    en: "Scoped MVP builds with authentication, database design, deployment, and room for future product growth."
+  },
+  "service.4.title": { id: "Maintenance & Optimasi", en: "Care & Optimization" },
+  "service.4.desc": {
+    id: "Optimasi performa, maintenance teknis, monitoring, backup, dan dukungan rilis setelah website atau app berjalan.",
+    en: "Performance tuning, technical maintenance, monitoring, backups, and release support after launch."
+  },
+  "service.link": { id: "Diskusikan layanan", en: "Discuss service" },
+  "work.eyebrow": { id: "Karya Pilihan", en: "Selected Work" },
+  "work.title": { id: "Interface yang dibangun untuk kejelasan, trust, dan konversi.", en: "Interfaces built for clarity, trust, and conversion." },
+  "work.lead": {
+    id: "Contoh arah visual untuk dashboard, produk cloud, mobile hub, dan sistem bisnis yang bisa Solivate rancang dan kembangkan.",
+    en: "A sample direction for the kind of dashboards, cloud products, mobile hubs, and business systems Solivate can design and ship."
+  },
+  "work.1.type": { id: "Dashboard commerce", en: "Commerce dashboard" },
+  "work.2.type": { id: "Monitoring cloud", en: "Cloud monitoring" },
+  "work.3.type": { id: "Workspace mobile", en: "Mobile workspace" },
+  "process.eyebrow": { id: "Proses", en: "Process" },
+  "process.title": { id: "Terstruktur dari call pertama sampai hari launch.", en: "Structured from the first call to launch day." },
+  "process.lead": { id: "Milestone sederhana, progress terlihat, dan struktur yang cukup untuk menjaga proyek tetap tenang.", en: "Simple milestones, visible progress, and enough structure to keep the project calm." },
+  "process.1.title": { id: "Discovery", en: "Discover" },
+  "process.1.desc": { id: "Kami menyamakan tujuan, audiens, konten, budget, dan batasan launch sebelum menyentuh interface.", en: "We align goals, audience, content, budget, and launch constraints before touching the interface." },
+  "process.2.title": { id: "Desain", en: "Design" },
+  "process.2.desc": { id: "Kami membuat layout, user flow, interaction state, dan arah visual yang konsisten.", en: "We create clean layouts, user flows, interaction states, and a consistent design direction." },
+  "process.3.title": { id: "Development", en: "Develop" },
+  "process.3.desc": { id: "Kami membangun UI responsif, menghubungkan data, mengetes flow penting, dan menjaga progress tetap terlihat.", en: "We build responsive UI, connect data, test key flows, and keep progress visible." },
+  "process.4.title": { id: "Launch", en: "Launch" },
+  "process.4.desc": { id: "Kami deploy, monitor, dokumentasikan, dan mendukung produk setelah rilis.", en: "We deploy, monitor, document, and support the product after it goes live." },
+  "contact.eyebrow": { id: "Mulai Proyek", en: "Start a Project" },
+  "contact.title": { id: "Punya website atau ide produk yang ingin dibangun?", en: "Have a website or product idea to build?" },
+  "contact.lead": {
+    id: "Kirim brief singkat. Kami akan balas dengan arah, scope, dan langkah berikutnya yang realistis untuk proyek kamu.",
+    en: "Send a short brief. We will reply with a realistic direction, scope, and next step for your project."
+  },
+  "faq.1.q": { id: "Bisa redesign website yang sudah ada?", en: "Can Solivate Studio redesign my current website?" },
+  "faq.1.a": { id: "Bisa. Kami bisa mempertahankan konten yang masih berguna lalu membangun ulang layout, visual system, UX, dan performanya.", en: "Yes. We can keep useful content and rebuild the layout, visual system, UX, and performance from the ground up." },
+  "faq.2.q": { id: "Apakah Solivate hanya membuat website?", en: "Do you build apps, not only websites?" },
+  "faq.2.a": { id: "Tidak. Kami juga membuat dashboard, admin system, MVP, dan aplikasi web custom.", en: "Yes. We build websites, dashboards, admin systems, MVPs, and custom web applications." },
+  "faq.3.q": { id: "Mulainya dari mana?", en: "How do we start?" },
+  "faq.3.a": { id: "Kirim brief singkat berisi tujuan, referensi, timeline, dan range budget. Kami akan susun scope yang praktis.", en: "Send a short brief with your goal, references, timeline, and budget range. We will propose a practical scope." },
+  "form.name": { id: "Nama", en: "Name" },
+  "form.name.placeholder": { id: "Nama kamu", en: "Your name" },
+  "form.contact": { id: "Email / WhatsApp", en: "Email / WhatsApp" },
+  "form.contact.placeholder": { id: "email@company.com / +62...", en: "you@company.com / +62..." },
+  "form.type": { id: "Jenis proyek", en: "Project type" },
+  "form.type.1": { id: "Redesign website", en: "Website redesign" },
+  "form.type.2": { id: "Website baru", en: "New website" },
+  "form.type.3": { id: "Web app custom", en: "Custom web app" },
+  "form.type.4": { id: "MVP SaaS", en: "SaaS MVP" },
+  "form.brief": { id: "Brief proyek", en: "Project brief" },
+  "form.brief.placeholder": { id: "Ceritakan tujuan, timeline, range budget, dan referensi yang kamu suka.", en: "Tell us about the goal, timeline, budget range, and references." },
+  "form.submit": { id: "Kirim Brief", en: "Send Brief" },
+  "success.title": { id: "Brief diterima.", en: "Brief received." },
+  "success.text": { id: "Terima kasih. Solivate Studio akan review catatan kamu dan membalas dengan langkah berikutnya.", en: "Thanks. Solivate Studio will review your notes and reply with a practical next step." },
+  "success.reset": { id: "Kirim lagi", en: "Send another" },
+  "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
+  "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "footer.desc": {
+    id: "Studio desain dan pengembangan produk digital modern untuk brand yang ingin tampil premium dan siap bertumbuh.",
+    en: "Modern digital product and web design studio crafting premium interfaces for growing brands."
+  },
+  "footer.nav": { id: "Navigasi", en: "Navigation" },
+  "footer.connect": { id: "Kontak", en: "Connect" },
+  "footer.copy": { id: `Copyright ${new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.`, en: `Copyright ${new Date().getFullYear()} Solivate Studio. All rights reserved.` },
+  "footer.top": { id: "Kembali ke atas", en: "Back to top" }
+};
+
+const navItems = [
+  { key: "nav.about", target: "about" },
+  { key: "nav.services", target: "services" },
+  { key: "nav.work", target: "work" },
+  { key: "nav.process", target: "process" },
+  { key: "nav.contact", target: "contact" }
+];
 
 const services = [
-  {
-    icon: "UI",
-    title: "UI/UX & Website Design",
-    desc: "Clean marketing sites, landing pages, company profiles, invitations, and product interfaces with a strong visual system."
-  },
-  {
-    icon: "</>",
-    title: "Web App Development",
-    desc: "React dashboards, admin panels, CRUD systems, API integrations, and custom workflows built for real users."
-  },
-  {
-    icon: "DB",
-    title: "SaaS MVP & Systems",
-    desc: "Scoped MVP builds with authentication, database design, deployment, and room for future product growth."
-  },
-  {
-    icon: "24",
-    title: "Care & Optimization",
-    desc: "Performance tuning, technical maintenance, monitoring, backups, and release support after launch."
-  }
+  { icon: "UI", titleKey: "service.1.title", descKey: "service.1.desc" },
+  { icon: "</>", titleKey: "service.2.title", descKey: "service.2.desc" },
+  { icon: "DB", titleKey: "service.3.title", descKey: "service.3.desc" },
+  { icon: "24", titleKey: "service.4.title", descKey: "service.4.desc" }
 ];
 
 const works = [
-  {
-    title: "Navas Retail OS",
-    type: "Commerce dashboard",
-    img: "/images/portfolio_saas_1781799718522.jpg"
-  },
-  {
-    title: "Aster CloudOps",
-    type: "Cloud monitoring",
-    img: "/images/portfolio_cloud_1781799732798.jpg"
-  },
-  {
-    title: "Luma Mobile Hub",
-    type: "Mobile workspace",
-    img: "/images/portfolio_mobile_1781799748021.jpg"
-  }
+  { title: "Navas Retail OS", typeKey: "work.1.type", img: "/images/portfolio_saas_1781799718522.webp" },
+  { title: "Aster CloudOps", typeKey: "work.2.type", img: "/images/portfolio_cloud_1781799732798.webp" },
+  { title: "Luma Mobile Hub", typeKey: "work.3.type", img: "/images/portfolio_mobile_1781799748021.webp" }
 ];
 
 const process = [
-  ["01", "Discover", "We align goals, audience, content, budget, and launch constraints before touching the interface."],
-  ["02", "Design", "We create clean layouts, user flows, interaction states, and a consistent design direction."],
-  ["03", "Develop", "We build responsive UI, connect data, test key flows, and keep progress visible."],
-  ["04", "Launch", "We deploy, monitor, document, and support the product after it goes live."]
+  ["01", "process.1.title", "process.1.desc"],
+  ["02", "process.2.title", "process.2.desc"],
+  ["03", "process.3.title", "process.3.desc"],
+  ["04", "process.4.title", "process.4.desc"]
 ];
 
 const faqs = [
-  ["Can Solivate Studio redesign my current website?", "Yes. We can keep useful content and rebuild the layout, visual system, UX, and performance from the ground up."],
-  ["Do you build apps, not only websites?", "Yes. We build websites, dashboards, admin systems, MVPs, and custom web applications."],
-  ["How do we start?", "Send a short brief with your goal, references, timeline, and budget range. We will propose a practical scope."]
+  ["faq.1.q", "faq.1.a"],
+  ["faq.2.q", "faq.2.a"],
+  ["faq.3.q", "faq.3.a"]
 ];
 
-const marqueeItems = ["UI/UX Design", "Web Development", "SaaS MVP", "Brand System", "Cloud Care", "Automation"];
-const year = new Date().getFullYear();
+const marqueeItems = ["marquee.ui", "marquee.web", "marquee.saas", "marquee.brand", "marquee.care", "marquee.auto"];
+const tx = (key: string) => i18n[key]?.id ?? key;
+const i18nJson = JSON.stringify(i18n);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Solivate Studio designs and develops modern websites, dashboards, and SaaS MVPs for growing businesses." />
-    <title>Solivate Studio | Web Development Agency</title>
+    <meta name="description" content={tx("meta.description")} />
+    <title>Solivate Studio | Studio Website & Produk Digital</title>
   </head>
   <body>
     <header class="header" data-header>
       <div class="wrap header-inner">
-        <button class="brand header-brand" type="button" data-top aria-label="Back to top">
+        <button class="brand header-brand" type="button" data-top aria-label="Kembali ke atas">
           Solivate<span>Studio</span><em>.</em>
         </button>
 
-        <nav class="nav" aria-label="Primary navigation">
+        <nav class="nav" aria-label="Navigasi utama">
           {navItems.map((item) => (
             <button
-              class={`nav-link ${item === "About" ? "nav-link-primary" : ""}`}
+              class={`nav-link ${item.target === "about" ? "nav-link-primary" : ""}`}
               type="button"
-              data-scroll={item.toLowerCase()}
+              data-scroll={item.target}
             >
-              <span data-text={item}>{item}</span>
+              <span data-i18n={item.key}>{tx(item.key)}</span>
             </button>
           ))}
 
           <button class="nav-cta" type="button" data-scroll="contact">
             <span class="nav-dot"></span>
-            <span>Start Project</span>
+            <span data-i18n="nav.cta">{tx("nav.cta")}</span>
             <span class="arrow" aria-hidden="true"></span>
           </button>
+
+          <div class="language-toggle" aria-label="Pilih bahasa">
+            <button class="active" type="button" data-lang-switch="id" aria-pressed="true">ID</button>
+            <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -110,20 +223,17 @@ const year = new Date().getFullYear();
               <span class="stars" aria-hidden="true">
                 {Array.from({ length: 5 }).map(() => <i></i>)}
               </span>
-              <p>Trusted digital partner for SMEs and founders</p>
+              <p data-i18n="hero.trust">{tx("hero.trust")}</p>
             </div>
-            <h1>Build scalable digital products, not just websites.</h1>
-            <p class="hero-text">
-              Solivate Studio helps brands design and develop websites, dashboards, and MVPs with clean UI, reliable code,
-              and a launch-ready workflow.
-            </p>
+            <h1 data-i18n="hero.title">{tx("hero.title")}</h1>
+            <p class="hero-text" data-i18n="hero.text">{tx("hero.text")}</p>
             <div class="hero-actions">
               <button class="btn-primary" type="button" data-scroll="contact">
-                Mulai Proyek
+                <span data-i18n="hero.primary">{tx("hero.primary")}</span>
                 <span class="arrow" aria-hidden="true"></span>
               </button>
-              <button class="btn-secondary" type="button" data-scroll="work">
-                Lihat Portfolio
+              <button class="btn-secondary" type="button" data-scroll="work" data-i18n="hero.secondary">
+                {tx("hero.secondary")}
               </button>
             </div>
           </div>
@@ -133,7 +243,7 @@ const year = new Date().getFullYear();
               <span></span>
               <span></span>
               <span></span>
-              <p>solivate.studio/dashboard</p>
+              <p data-i18n="preview.url">{tx("preview.url")}</p>
             </div>
             <div class="preview-body">
               <div class="preview-sidebar">
@@ -144,22 +254,22 @@ const year = new Date().getFullYear();
               </div>
               <div class="preview-content">
                 <div class="metric-card primary">
-                  <small>Project velocity</small>
+                  <small data-i18n="preview.velocity">{tx("preview.velocity")}</small>
                   <strong>2.4x</strong>
                   <div class="bar"><i></i></div>
                 </div>
                 <div class="metric-card">
-                  <small>Launch readiness</small>
+                  <small data-i18n="preview.readiness">{tx("preview.readiness")}</small>
                   <strong>86%</strong>
                   <div class="mini-bars"><span></span><span></span><span></span></div>
                 </div>
                 <div class="timeline-card">
-                  <small>Experience map</small>
+                  <small data-i18n="preview.map">{tx("preview.map")}</small>
                   <div><i></i><i></i><i></i><i></i></div>
                 </div>
                 <div class="image-card">
-                  <img src="/images/portfolio_cloud_1781799732798.jpg" alt="" loading="eager" />
-                  <span>Fast deploy stack</span>
+                  <img src="/images/portfolio_cloud_1781799732798.webp" alt="" loading="eager" />
+                  <span data-i18n="preview.badge">{tx("preview.badge")}</span>
                 </div>
               </div>
             </div>
@@ -170,9 +280,9 @@ const year = new Date().getFullYear();
           <div class="marquee-track">
             {Array.from({ length: 2 }).map((_, groupIndex) => (
               <div class="marquee-group">
-                {marqueeItems.map((item, index) => (
+                {marqueeItems.map((key, index) => (
                   <span>
-                    <span class={(index + groupIndex) % 2 ? "muted" : ""}>{item}</span>
+                    <span class={(index + groupIndex) % 2 ? "muted" : ""} data-i18n={key}>{tx(key)}</span>
                     <i class="marquee-dot"></i>
                   </span>
                 ))}
@@ -185,24 +295,17 @@ const year = new Date().getFullYear();
       <section id="about" class="section light">
         <div class="container about-grid">
           <div>
-            <p class="eyebrow">About Solivate Studio</p>
-            <h2>Digital product studio for brands that want cleaner execution.</h2>
+            <p class="eyebrow" data-i18n="about.eyebrow">{tx("about.eyebrow")}</p>
+            <h2 data-i18n="about.title">{tx("about.title")}</h2>
           </div>
-          <p class="lead">
-            We combine product thinking, visual design, and web engineering so your digital presence feels premium,
-            functions clearly, and can grow after launch.
-          </p>
+          <p class="lead" data-i18n="about.lead">{tx("about.lead")}</p>
         </div>
         <div class="container feature-grid">
-          {[
-            ["01", "Strategy before visuals", "We clarify positioning, audience, pages, user flows, and technical scope."],
-            ["02", "Clean modern interface", "Every section follows a visual system: typography, spacing, color, and responsive behavior."],
-            ["03", "Build and maintain", "We do not stop at mockups. We ship the site or app, then support it post-launch."]
-          ].map(([num, title, desc]) => (
+          {[1, 2, 3].map((num) => (
             <article class="feature-card">
-              <span>{num}</span>
-              <h3>{title}</h3>
-              <p>{desc}</p>
+              <span>{String(num).padStart(2, "0")}</span>
+              <h3 data-i18n={`feature.${num}.title`}>{tx(`feature.${num}.title`)}</h3>
+              <p data-i18n={`feature.${num}.desc`}>{tx(`feature.${num}.desc`)}</p>
             </article>
           ))}
         </div>
@@ -210,16 +313,16 @@ const year = new Date().getFullYear();
 
       <section id="services" class="section services">
         <div class="container section-head">
-          <p class="eyebrow">Services</p>
-          <h2>End-to-end digital solutions, measured and practical.</h2>
+          <p class="eyebrow" data-i18n="services.eyebrow">{tx("services.eyebrow")}</p>
+          <h2 data-i18n="services.title">{tx("services.title")}</h2>
         </div>
         <div class="container service-grid">
           {services.map((service) => (
             <article class="service-card">
               <div class="icon-box">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
-              <a href="#contact">Discuss service <span class="arrow" aria-hidden="true"></span></a>
+              <h3 data-i18n={service.titleKey}>{tx(service.titleKey)}</h3>
+              <p data-i18n={service.descKey}>{tx(service.descKey)}</p>
+              <a href="#contact"><span data-i18n="service.link">{tx("service.link")}</span> <span class="arrow" aria-hidden="true"></span></a>
             </article>
           ))}
         </div>
@@ -228,20 +331,17 @@ const year = new Date().getFullYear();
       <section id="work" class="section dark">
         <div class="container section-head split">
           <div>
-            <p class="eyebrow">Selected Work</p>
-            <h2>Interfaces built for clarity, trust, and conversion.</h2>
+            <p class="eyebrow" data-i18n="work.eyebrow">{tx("work.eyebrow")}</p>
+            <h2 data-i18n="work.title">{tx("work.title")}</h2>
           </div>
-          <p class="lead">
-            A sample direction for the kind of dashboards, cloud products, mobile hubs, and business systems Solivate can
-            design and ship.
-          </p>
+          <p class="lead" data-i18n="work.lead">{tx("work.lead")}</p>
         </div>
         <div class="container work-grid">
           {works.map((item) => (
             <article class="work-card">
               <img src={item.img} alt={item.title} loading="eager" />
               <div>
-                <span>{item.type}</span>
+                <span data-i18n={item.typeKey}>{tx(item.typeKey)}</span>
                 <h3>{item.title}</h3>
               </div>
             </article>
@@ -252,17 +352,17 @@ const year = new Date().getFullYear();
       <section id="process" class="section light">
         <div class="container section-head split">
           <div>
-            <p class="eyebrow">Process</p>
-            <h2>Structured from the first call to launch day.</h2>
+            <p class="eyebrow" data-i18n="process.eyebrow">{tx("process.eyebrow")}</p>
+            <h2 data-i18n="process.title">{tx("process.title")}</h2>
           </div>
-          <p class="lead">Simple milestones, visible progress, and enough structure to keep the project calm.</p>
+          <p class="lead" data-i18n="process.lead">{tx("process.lead")}</p>
         </div>
         <div class="container process-grid">
-          {process.map(([num, title, desc]) => (
+          {process.map(([num, titleKey, descKey]) => (
             <article>
               <span>{num}</span>
-              <h3>{title}</h3>
-              <p>{desc}</p>
+              <h3 data-i18n={titleKey}>{tx(titleKey)}</h3>
+              <p data-i18n={descKey}>{tx(descKey)}</p>
             </article>
           ))}
         </div>
@@ -271,19 +371,17 @@ const year = new Date().getFullYear();
       <section id="contact" class="section contact">
         <div class="container contact-grid">
           <div>
-            <p class="eyebrow">Start a Project</p>
-            <h2>Have a website or product idea to build?</h2>
-            <p class="lead">
-              Send a short brief. We will reply with a realistic direction, scope, and next step for your project.
-            </p>
+            <p class="eyebrow" data-i18n="contact.eyebrow">{tx("contact.eyebrow")}</p>
+            <h2 data-i18n="contact.title">{tx("contact.title")}</h2>
+            <p class="lead" data-i18n="contact.lead">{tx("contact.lead")}</p>
             <div class="faq-list">
               {faqs.map(([q, a], index) => (
                 <article class="faq-item" data-faq>
                   <button type="button" data-faq-trigger aria-expanded={index === 0 ? "true" : "false"}>
-                    {q}
+                    <span data-i18n={q}>{tx(q)}</span>
                     <span class="chevron" aria-hidden="true"></span>
                   </button>
-                  <p data-faq-panel hidden={index !== 0}>{a}</p>
+                  <p data-faq-panel hidden={index !== 0} data-i18n={a}>{tx(a)}</p>
                 </article>
               ))}
             </div>
@@ -292,36 +390,36 @@ const year = new Date().getFullYear();
           <div class="contact-card">
             <form data-contact-form>
               <label>
-                Name
-                <input required placeholder="Your name" />
+                <span data-i18n="form.name">{tx("form.name")}</span>
+                <input required placeholder={tx("form.name.placeholder")} data-i18n-placeholder="form.name.placeholder" />
               </label>
               <label>
-                Email / WhatsApp
-                <input required placeholder="you@company.com / +62..." />
+                <span data-i18n="form.contact">{tx("form.contact")}</span>
+                <input required placeholder={tx("form.contact.placeholder")} data-i18n-placeholder="form.contact.placeholder" />
               </label>
               <label>
-                Project type
+                <span data-i18n="form.type">{tx("form.type")}</span>
                 <select>
-                  <option>Website redesign</option>
-                  <option>New website</option>
-                  <option>Custom web app</option>
-                  <option>SaaS MVP</option>
+                  <option data-i18n="form.type.1">{tx("form.type.1")}</option>
+                  <option data-i18n="form.type.2">{tx("form.type.2")}</option>
+                  <option data-i18n="form.type.3">{tx("form.type.3")}</option>
+                  <option data-i18n="form.type.4">{tx("form.type.4")}</option>
                 </select>
               </label>
               <label>
-                Project brief
-                <textarea required placeholder="Tell us about the goal, timeline, budget range, and references."></textarea>
+                <span data-i18n="form.brief">{tx("form.brief")}</span>
+                <textarea required placeholder={tx("form.brief.placeholder")} data-i18n-placeholder="form.brief.placeholder"></textarea>
               </label>
               <button class="btn-primary" type="submit">
-                Send Brief
+                <span data-i18n="form.submit">{tx("form.submit")}</span>
                 <span class="arrow" aria-hidden="true"></span>
               </button>
             </form>
             <div class="success-state" data-success hidden>
               <div class="success-icon">OK</div>
-              <h3>Brief received.</h3>
-              <p>Thanks. Solivate Studio will review your notes and reply with a practical next step.</p>
-              <button class="btn-secondary" type="button" data-reset-form>Send another</button>
+              <h3 data-i18n="success.title">{tx("success.title")}</h3>
+              <p data-i18n="success.text">{tx("success.text")}</p>
+              <button class="btn-secondary" type="button" data-reset-form data-i18n="success.reset">{tx("success.reset")}</button>
             </div>
           </div>
         </div>
@@ -331,9 +429,9 @@ const year = new Date().getFullYear();
     <footer class="footer">
       <div class="container">
         <div class="footer-top">
-          <h2>Let&apos;s build<br/>something people<br/>remember.</h2>
+          <h2 data-i18n="footer.title">{tx("footer.title")}</h2>
           <button class="btn-primary" type="button" data-scroll="contact">
-            Start Project
+            <span data-i18n="footer.cta">{tx("footer.cta")}</span>
             <span class="arrow" aria-hidden="true"></span>
           </button>
         </div>
@@ -347,42 +445,67 @@ const year = new Date().getFullYear();
                 <small>Studio</small>
               </span>
             </span>
-            <p>Modern digital product and web design studio crafting premium interfaces for growing brands.</p>
+            <p data-i18n="footer.desc">{tx("footer.desc")}</p>
             <p class="footer-location">Bekasi, Indonesia</p>
           </div>
           <div class="footer-col">
-            <h4>Navigation</h4>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
+            <h4 data-i18n="footer.nav">{tx("footer.nav")}</h4>
+            <a href="#about" data-i18n="nav.about">{tx("nav.about")}</a>
+            <a href="#services" data-i18n="nav.services">{tx("nav.services")}</a>
+            <a href="#work" data-i18n="nav.work">{tx("nav.work")}</a>
+            <a href="#process" data-i18n="nav.process">{tx("nav.process")}</a>
           </div>
           <div class="footer-col">
-            <h4>Connect</h4>
-            <a href="mailto:imammka23@gmail.com">imammka23@gmail.com</a>
+            <h4 data-i18n="footer.connect">{tx("footer.connect")}</h4>
+            <a href="mailto:solivatestudio@gmail.com">solivatestudio@gmail.com</a>
             <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://www.youtube.com/@SolivateStudio" target="_blank" rel="noreferrer">YouTube</a>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <span>Copyright {year} Solivate Studio. All rights reserved.</span>
+          <span data-i18n="footer.copy">{tx("footer.copy")}</span>
           <button class="footer-top-btn" type="button" data-top>
-            Back to top
+            <span data-i18n="footer.top">{tx("footer.top")}</span>
             <span class="arrow" aria-hidden="true"></span>
           </button>
         </div>
       </div>
     </footer>
 
+    <script is:inline type="application/json" id="i18n-data" set:html={i18nJson}></script>
     <script is:inline>
+      const translations = JSON.parse(document.getElementById("i18n-data")?.textContent || "{}");
       const header = document.querySelector("[data-header]");
 
       const updateHeader = () => {
         const y = Math.max(0, window.scrollY);
         header?.classList.toggle("is-scrolled", y > 24);
         header?.classList.toggle("is-compact", y > 64);
+      };
+
+      const setLanguage = (lang) => {
+        const activeLang = lang === "en" ? "en" : "id";
+        document.documentElement.lang = activeLang;
+        window.localStorage.setItem("solivate-language", activeLang);
+
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          const next = translations[key]?.[activeLang];
+          if (next) node.textContent = next;
+        });
+
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+          const key = node.getAttribute("data-i18n-placeholder");
+          const next = translations[key]?.[activeLang];
+          if (next) node.setAttribute("placeholder", next);
+        });
+
+        document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+          const active = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
       };
 
       let ticking = false;
@@ -399,6 +522,11 @@ const year = new Date().getFullYear();
       window.addEventListener("load", updateHeader);
       window.addEventListener("hashchange", updateHeader);
       window.setTimeout(updateHeader, 120);
+
+      document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang-switch")));
+      });
+      setLanguage(window.localStorage.getItem("solivate-language") || "id");
 
       document.querySelectorAll("[data-scroll]").forEach((trigger) => {
         trigger.addEventListener("click", () => {
