@@ -1383,17 +1383,59 @@ h2:hover {
 .comparison-table thead th {
   position: sticky;
   top: 0;
-  background: var(--ink);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  background: #061427;
   color: var(--white);
-  font-size: 12px;
+  padding-block: 22px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
+.comparison-table thead th:last-child {
+  border-right: 0;
+}
+
 .comparison-table thead th:nth-child(3) {
-  background: linear-gradient(135deg, var(--navy), #045AC6);
+  background: linear-gradient(135deg, #023E8A, #045AC6);
   color: var(--lime);
+}
+
+.comparison-table thead th:not(:first-child) {
+  text-align: center;
+}
+
+.comparison-plan-title,
+.comparison-plan-badge {
+  display: block;
+}
+
+.comparison-plan-title {
+  color: var(--white);
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.comparison-table thead th:nth-child(3) .comparison-plan-title {
+  color: var(--lime);
+}
+
+.comparison-plan-badge {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 5px 8px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.comparison-table thead th:nth-child(3) .comparison-plan-badge {
+  background: var(--lime);
+  color: var(--ink);
 }
 
 .comparison-table tbody th {
