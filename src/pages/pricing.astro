@@ -71,17 +71,22 @@ const businessPlans = [
   }
 ];
 
+const included = (label = "Termasuk") => ({ type: "check", label });
+const notIncluded = () => ({ type: "none", label: "Tidak termasuk" });
+const detail = (label: string) => ({ type: "detail", label });
+const price = (label: string) => ({ type: "price", label });
+
 const comparisonRows = [
-  ["Jumlah Halaman", "1 Landing Page", "Maks. 5 Halaman", "Maks. 10 Halaman"],
-  ["Integrasi WhatsApp", "Tombol Dasar", "Template Otomatis", "Template Otomatis"],
-  ["Desain Responsive", "Ya", "Ya", "Ya"],
-  ["SEO", "Dasar Meta Tag", "Search Console & Maps", "Analytics Lanjutan"],
-  ["Speed Optimization", "Standar", "High Performance", "Ultra High Performance"],
-  ["Custom Domain & Hosting", "-", "-", "FREE 1 Tahun"],
-  ["Fitur Tambahan", "-", "-", "Google Form, Animasi, Copywriting"],
-  ["Revisi", "Maks. 2x", "Maks. 5x", "Maks. 7x"],
-  ["Garansi", "1 Bulan", "5 Bulan", "1 Tahun Penuh"],
-  ["Harga", "Rp 249.000", "Rp 299.000", "Rp 499.000"]
+  { feature: "Jumlah Halaman", basic: detail("1 Landing Page"), standard: detail("Maks. 5 Halaman"), premium: detail("Maks. 10 Halaman") },
+  { feature: "Integrasi WhatsApp", basic: included("Tombol dasar"), standard: included("Template otomatis"), premium: included("Template otomatis") },
+  { feature: "Desain Responsive", basic: included(), standard: included(), premium: included() },
+  { feature: "SEO", basic: included("Meta tag dasar"), standard: included("Search Console & Maps"), premium: included("Analytics lanjutan") },
+  { feature: "Speed Optimization", basic: included("Standar"), standard: included("High performance"), premium: included("Ultra high performance") },
+  { feature: "Custom Domain & Hosting", basic: notIncluded(), standard: notIncluded(), premium: included("Free 1 tahun") },
+  { feature: "Fitur Tambahan", basic: notIncluded(), standard: notIncluded(), premium: included("Google Form, animasi, copywriting") },
+  { feature: "Revisi", basic: detail("Maks. 2x"), standard: detail("Maks. 5x"), premium: detail("Maks. 7x") },
+  { feature: "Garansi", basic: detail("1 bulan"), standard: detail("5 bulan"), premium: detail("1 tahun penuh") },
+  { feature: "Harga", basic: price("Rp 249.000"), standard: price("Rp 299.000"), premium: price("Rp 499.000") }
 ];
 
 const customFeatures = [
@@ -213,12 +218,17 @@ const customFeatures = [
               </tr>
             </thead>
             <tbody>
-              {comparisonRows.map(([feature, basic, standard, premium]) => (
+              {comparisonRows.map((row) => (
                 <tr>
-                  <th>{feature}</th>
-                  <td>{basic}</td>
-                  <td>{standard}</td>
-                  <td>{premium}</td>
+                  <th>{row.feature}</th>
+                  {(["basic", "standard", "premium"] as const).map((plan) => (
+                    <td>
+                      <span class={`comparison-cell ${row[plan].type}`}>
+                        <span class="comparison-icon" aria-hidden="true"></span>
+                        <span>{row[plan].label}</span>
+                      </span>
+                    </td>
+                  ))}
                 </tr>
               ))}
             </tbody>

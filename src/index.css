@@ -1391,6 +1391,11 @@ h2:hover {
   text-transform: uppercase;
 }
 
+.comparison-table thead th:nth-child(3) {
+  background: linear-gradient(135deg, var(--navy), #045AC6);
+  color: var(--lime);
+}
+
 .comparison-table tbody th {
   color: var(--navy);
   font-weight: 800;
@@ -1399,6 +1404,86 @@ h2:hover {
 .comparison-table td {
   color: var(--muted);
   font-weight: 700;
+}
+
+.comparison-table tbody td:nth-child(3) {
+  background: rgba(215, 255, 63, 0.08);
+}
+
+.comparison-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 30px;
+  color: var(--ink-soft);
+}
+
+.comparison-icon {
+  position: relative;
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(2, 62, 138, 0.08);
+}
+
+.comparison-cell.check .comparison-icon {
+  background: var(--lime);
+  box-shadow: 0 8px 22px -14px rgba(215, 255, 63, 0.9);
+}
+
+.comparison-cell.check .comparison-icon::before {
+  width: 9px;
+  height: 5px;
+  content: "";
+  border-bottom: 2px solid var(--ink);
+  border-left: 2px solid var(--ink);
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.comparison-cell.none {
+  color: rgba(102, 112, 133, 0.64);
+}
+
+.comparison-cell.none .comparison-icon {
+  background: rgba(102, 112, 133, 0.1);
+}
+
+.comparison-cell.none .comparison-icon::before {
+  width: 9px;
+  height: 2px;
+  content: "";
+  border-radius: 999px;
+  background: rgba(102, 112, 133, 0.72);
+}
+
+.comparison-cell.detail .comparison-icon::before {
+  width: 7px;
+  height: 7px;
+  content: "";
+  border-radius: 999px;
+  background: var(--cyan);
+}
+
+.comparison-cell.price {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.comparison-cell.price .comparison-icon {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.comparison-cell.price .comparison-icon::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--lime);
 }
 
 .comparison-table tr:last-child th,
@@ -2176,7 +2261,8 @@ h2:hover {
   .comparison-table th,
   .comparison-table td {
     display: grid;
-    grid-template-columns: 86px 1fr;
+    grid-template-columns: 82px 1fr;
+    align-items: center;
     gap: 12px;
     padding: 14px 16px;
     font-size: 13px;
@@ -2194,6 +2280,24 @@ h2:hover {
     font-weight: 800;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+  }
+
+  .comparison-table tbody td:nth-child(3) {
+    background: rgba(215, 255, 63, 0.08);
+  }
+
+  .comparison-cell {
+    min-height: 28px;
+    gap: 8px;
+  }
+
+  .comparison-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .comparison-cell.price {
+    font-size: 14px;
   }
 
   .comparison-table td:nth-of-type(1)::before {
