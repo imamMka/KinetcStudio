@@ -246,6 +246,7 @@ const pricingI18n: Record<string, LocaleCopy> = {
   "custom.feature.5": { id: "Dashboard manajemen lengkap untuk laporan, user, dan log aktivitas", en: "Complete management dashboard for reports, users, and activity logs" },
   "custom.feature.6": { id: "Dukungan maintenance prioritas", en: "Priority maintenance support" },
   "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
+  "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
   "footer.desc": { id: "Studio desain dan pengembangan produk digital modern untuk brand yang ingin tampil premium dan siap bertumbuh.", en: "Modern digital product and web design studio for brands that want to look premium and grow." },
   "footer.nav": { id: "Navigasi", en: "Navigation" },
   "footer.connect": { id: "Kontak", en: "Connect" },
@@ -436,10 +437,10 @@ const pricingI18nJson = JSON.stringify(pricingI18n);
       <div class="container">
         <div class="footer-top">
           <h2 data-i18n="footer.title">{tx("footer.title")}</h2>
-          <a class="btn-primary" href="/#contact">
-            <span data-i18n="nav.cta">{tx("nav.cta")}</span>
+          <button class="btn-primary" type="button" data-home-contact>
+            <span data-i18n="footer.cta">{tx("footer.cta")}</span>
             <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-          </a>
+          </button>
         </div>
 
         <div class="footer-grid">
@@ -519,6 +520,12 @@ const pricingI18nJson = JSON.stringify(pricingI18n);
 
       document.querySelectorAll("[data-top]").forEach((trigger) => {
         trigger.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      });
+
+      document.querySelectorAll("[data-home-contact]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          window.location.href = "/#contact";
+        });
       });
 
       if (!window.matchMedia("(hover: none)").matches) {
