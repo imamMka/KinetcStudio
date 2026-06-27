@@ -1,0 +1,468 @@
+---
+import "../index.css";
+
+const navItems = ["About", "Services", "Work", "Process", "Contact"];
+
+const services = [
+  {
+    icon: "UI",
+    title: "UI/UX & Website Design",
+    desc: "Clean marketing sites, landing pages, company profiles, invitations, and product interfaces with a strong visual system."
+  },
+  {
+    icon: "</>",
+    title: "Web App Development",
+    desc: "React dashboards, admin panels, CRUD systems, API integrations, and custom workflows built for real users."
+  },
+  {
+    icon: "DB",
+    title: "SaaS MVP & Systems",
+    desc: "Scoped MVP builds with authentication, database design, deployment, and room for future product growth."
+  },
+  {
+    icon: "24",
+    title: "Care & Optimization",
+    desc: "Performance tuning, technical maintenance, monitoring, backups, and release support after launch."
+  }
+];
+
+const works = [
+  {
+    title: "Navas Retail OS",
+    type: "Commerce dashboard",
+    img: "/images/portfolio_saas_1781799718522.jpg"
+  },
+  {
+    title: "Aster CloudOps",
+    type: "Cloud monitoring",
+    img: "/images/portfolio_cloud_1781799732798.jpg"
+  },
+  {
+    title: "Luma Mobile Hub",
+    type: "Mobile workspace",
+    img: "/images/portfolio_mobile_1781799748021.jpg"
+  }
+];
+
+const process = [
+  ["01", "Discover", "We align goals, audience, content, budget, and launch constraints before touching the interface."],
+  ["02", "Design", "We create clean layouts, user flows, interaction states, and a consistent design direction."],
+  ["03", "Develop", "We build responsive UI, connect data, test key flows, and keep progress visible."],
+  ["04", "Launch", "We deploy, monitor, document, and support the product after it goes live."]
+];
+
+const faqs = [
+  ["Can Solivate Studio redesign my current website?", "Yes. We can keep useful content and rebuild the layout, visual system, UX, and performance from the ground up."],
+  ["Do you build apps, not only websites?", "Yes. We build websites, dashboards, admin systems, MVPs, and custom web applications."],
+  ["How do we start?", "Send a short brief with your goal, references, timeline, and budget range. We will propose a practical scope."]
+];
+
+const marqueeItems = ["UI/UX Design", "Web Development", "SaaS MVP", "Brand System", "Cloud Care", "Automation"];
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Solivate Studio designs and develops modern websites, dashboards, and SaaS MVPs for growing businesses." />
+    <title>Solivate Studio | Web Development Agency</title>
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="wrap header-inner">
+        <button class="brand header-brand" type="button" data-top aria-label="Back to top">
+          Solivate<span>Studio</span><em>.</em>
+        </button>
+
+        <nav class="nav" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <button
+              class={`nav-link ${item === "About" ? "nav-link-primary" : ""}`}
+              type="button"
+              data-scroll={item.toLowerCase()}
+            >
+              <span data-text={item}>{item}</span>
+            </button>
+          ))}
+
+          <button class="nav-cta" type="button" data-scroll="contact">
+            <span class="nav-dot"></span>
+            <span>Start Project</span>
+            <span class="arrow" aria-hidden="true"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="trust-row">
+              <span class="avatar-stack">
+                <i>SS</i>
+                <i>UX</i>
+                <i>FE</i>
+              </span>
+              <span class="stars" aria-hidden="true">
+                {Array.from({ length: 5 }).map(() => <i></i>)}
+              </span>
+              <p>Trusted digital partner for SMEs and founders</p>
+            </div>
+            <h1>Build scalable digital products, not just websites.</h1>
+            <p class="hero-text">
+              Solivate Studio helps brands design and develop websites, dashboards, and MVPs with clean UI, reliable code,
+              and a launch-ready workflow.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary" type="button" data-scroll="contact">
+                Mulai Proyek
+                <span class="arrow" aria-hidden="true"></span>
+              </button>
+              <button class="btn-secondary" type="button" data-scroll="work">
+                Lihat Portfolio
+              </button>
+            </div>
+          </div>
+
+          <div class="preview">
+            <div class="preview-top">
+              <span></span>
+              <span></span>
+              <span></span>
+              <p>solivate.studio/dashboard</p>
+            </div>
+            <div class="preview-body">
+              <div class="preview-sidebar">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="preview-content">
+                <div class="metric-card primary">
+                  <small>Project velocity</small>
+                  <strong>2.4x</strong>
+                  <div class="bar"><i></i></div>
+                </div>
+                <div class="metric-card">
+                  <small>Launch readiness</small>
+                  <strong>86%</strong>
+                  <div class="mini-bars"><span></span><span></span><span></span></div>
+                </div>
+                <div class="timeline-card">
+                  <small>Experience map</small>
+                  <div><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="image-card">
+                  <img src="/images/portfolio_cloud_1781799732798.jpg" alt="" loading="eager" />
+                  <span>Fast deploy stack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            {Array.from({ length: 2 }).map((_, groupIndex) => (
+              <div class="marquee-group">
+                {marqueeItems.map((item, index) => (
+                  <span>
+                    <span class={(index + groupIndex) % 2 ? "muted" : ""}>{item}</span>
+                    <i class="marquee-dot"></i>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section light">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">About Solivate Studio</p>
+            <h2>Digital product studio for brands that want cleaner execution.</h2>
+          </div>
+          <p class="lead">
+            We combine product thinking, visual design, and web engineering so your digital presence feels premium,
+            functions clearly, and can grow after launch.
+          </p>
+        </div>
+        <div class="container feature-grid">
+          {[
+            ["01", "Strategy before visuals", "We clarify positioning, audience, pages, user flows, and technical scope."],
+            ["02", "Clean modern interface", "Every section follows a visual system: typography, spacing, color, and responsive behavior."],
+            ["03", "Build and maintain", "We do not stop at mockups. We ship the site or app, then support it post-launch."]
+          ].map(([num, title, desc]) => (
+            <article class="feature-card">
+              <span>{num}</span>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" class="section services">
+        <div class="container section-head">
+          <p class="eyebrow">Services</p>
+          <h2>End-to-end digital solutions, measured and practical.</h2>
+        </div>
+        <div class="container service-grid">
+          {services.map((service) => (
+            <article class="service-card">
+              <div class="icon-box">{service.icon}</div>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+              <a href="#contact">Discuss service <span class="arrow" aria-hidden="true"></span></a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="work" class="section dark">
+        <div class="container section-head split">
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2>Interfaces built for clarity, trust, and conversion.</h2>
+          </div>
+          <p class="lead">
+            A sample direction for the kind of dashboards, cloud products, mobile hubs, and business systems Solivate can
+            design and ship.
+          </p>
+        </div>
+        <div class="container work-grid">
+          {works.map((item) => (
+            <article class="work-card">
+              <img src={item.img} alt={item.title} loading="eager" />
+              <div>
+                <span>{item.type}</span>
+                <h3>{item.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="process" class="section light">
+        <div class="container section-head split">
+          <div>
+            <p class="eyebrow">Process</p>
+            <h2>Structured from the first call to launch day.</h2>
+          </div>
+          <p class="lead">Simple milestones, visible progress, and enough structure to keep the project calm.</p>
+        </div>
+        <div class="container process-grid">
+          {process.map(([num, title, desc]) => (
+            <article>
+              <span>{num}</span>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">Start a Project</p>
+            <h2>Have a website or product idea to build?</h2>
+            <p class="lead">
+              Send a short brief. We will reply with a realistic direction, scope, and next step for your project.
+            </p>
+            <div class="faq-list">
+              {faqs.map(([q, a], index) => (
+                <article class="faq-item" data-faq>
+                  <button type="button" data-faq-trigger aria-expanded={index === 0 ? "true" : "false"}>
+                    {q}
+                    <span class="chevron" aria-hidden="true"></span>
+                  </button>
+                  <p data-faq-panel hidden={index !== 0}>{a}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <form data-contact-form>
+              <label>
+                Name
+                <input required placeholder="Your name" />
+              </label>
+              <label>
+                Email / WhatsApp
+                <input required placeholder="you@company.com / +62..." />
+              </label>
+              <label>
+                Project type
+                <select>
+                  <option>Website redesign</option>
+                  <option>New website</option>
+                  <option>Custom web app</option>
+                  <option>SaaS MVP</option>
+                </select>
+              </label>
+              <label>
+                Project brief
+                <textarea required placeholder="Tell us about the goal, timeline, budget range, and references."></textarea>
+              </label>
+              <button class="btn-primary" type="submit">
+                Send Brief
+                <span class="arrow" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="success-state" data-success hidden>
+              <div class="success-icon">OK</div>
+              <h3>Brief received.</h3>
+              <p>Thanks. Solivate Studio will review your notes and reply with a practical next step.</p>
+              <button class="btn-secondary" type="button" data-reset-form>Send another</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <h2>Let&apos;s build<br/>something people<br/>remember.</h2>
+          <button class="btn-primary" type="button" data-scroll="contact">
+            Start Project
+            <span class="arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-col footer-brand-col">
+            <span class="brand">
+              <span class="brand-mark">S</span>
+              <span>
+                <strong>Solivate</strong>
+                <small>Studio</small>
+              </span>
+            </span>
+            <p>Modern digital product and web design studio crafting premium interfaces for growing brands.</p>
+            <p class="footer-location">Bekasi, Indonesia</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="mailto:imammka23@gmail.com">imammka23@gmail.com</a>
+            <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@SolivateStudio" target="_blank" rel="noreferrer">YouTube</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>Copyright {year} Solivate Studio. All rights reserved.</span>
+          <button class="footer-top-btn" type="button" data-top>
+            Back to top
+            <span class="arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const header = document.querySelector("[data-header]");
+
+      const updateHeader = () => {
+        const y = Math.max(0, window.scrollY);
+        header?.classList.toggle("is-scrolled", y > 24);
+        header?.classList.toggle("is-compact", y > 64);
+      };
+
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updateHeader();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateHeader();
+      window.addEventListener("load", updateHeader);
+      window.addEventListener("hashchange", updateHeader);
+      window.setTimeout(updateHeader, 120);
+
+      document.querySelectorAll("[data-scroll]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const target = document.getElementById(trigger.getAttribute("data-scroll"));
+          target?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      document.querySelectorAll("[data-top]").forEach((trigger) => {
+        trigger.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      });
+
+      document.querySelectorAll("[data-faq]").forEach((item) => {
+        const button = item.querySelector("[data-faq-trigger]");
+        const panel = item.querySelector("[data-faq-panel]");
+        button?.addEventListener("click", () => {
+          const open = panel?.hasAttribute("hidden");
+          document.querySelectorAll("[data-faq-panel]").forEach((current) => current.setAttribute("hidden", ""));
+          document.querySelectorAll("[data-faq-trigger]").forEach((current) => current.setAttribute("aria-expanded", "false"));
+          if (open && panel) {
+            panel.removeAttribute("hidden");
+            button.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+      const contactForm = document.querySelector("[data-contact-form]");
+      const success = document.querySelector("[data-success]");
+      contactForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        contactForm.setAttribute("hidden", "");
+        success?.removeAttribute("hidden");
+      });
+      document.querySelector("[data-reset-form]")?.addEventListener("click", () => {
+        success?.setAttribute("hidden", "");
+        contactForm?.removeAttribute("hidden");
+      });
+
+      if (!window.matchMedia("(hover: none)").matches) {
+        document
+          .querySelectorAll(".btn-primary, .btn-secondary, .nav-cta, .service-card, .work-card, .feature-card, .process-grid article, .preview, .contact-card")
+          .forEach((el) => {
+            let frame = 0;
+            const strength = el.matches(".btn-primary, .btn-secondary, .nav-cta") ? 0.12 : 0.035;
+
+            el.addEventListener("mousemove", (event) => {
+              const pointer = event;
+              window.cancelAnimationFrame(frame);
+              frame = window.requestAnimationFrame(() => {
+                const rect = el.getBoundingClientRect();
+                const x = (pointer.clientX - (rect.left + rect.width / 2)) * strength;
+                const y = (pointer.clientY - (rect.top + rect.height / 2)) * strength;
+                el.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
+                el.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
+              });
+            });
+
+            el.addEventListener("mouseleave", () => {
+              window.cancelAnimationFrame(frame);
+              el.style.setProperty("--hover-x", "0px");
+              el.style.setProperty("--hover-y", "0px");
+            });
+          });
+      }
+    </script>
+  </body>
+</html>
