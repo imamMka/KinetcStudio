@@ -1,0 +1,306 @@
+---
+import "../index.css";
+
+const personalPlans = [
+  {
+    name: "Birthday Website (Basic)",
+    price: "Rp 49.000",
+    fit: "Untuk hadiah ulang tahun simpel yang tetap terasa personal.",
+    items: ["Landing page", "Kartu ucapan", "Maksimal 3 foto"]
+  },
+  {
+    name: "Birthday Website (Premium)",
+    price: "Rp 84.900",
+    fit: "Untuk ucapan ulang tahun yang lebih hidup dengan visual dan video.",
+    items: ["Landing page", "Digital bucket flower", "Kartu ucapan", "1 video"]
+  },
+  {
+    name: "Party / Wedding Invitation Website",
+    price: "Rp 99.000",
+    fit: "Untuk undangan digital party atau wedding yang bisa dipersonalisasi.",
+    items: ["Landing page", "Custom name nama tamu", "Maksimal 3 foto & 1 video"]
+  }
+];
+
+const businessPlans = [
+  {
+    name: "Paket 1 - Basic",
+    badge: "Mulai Online",
+    price: "Rp 249.000",
+    note: "Cocok untuk bisnis yang butuh landing page rapi dan cepat live.",
+    items: [
+      "1 landing page utama",
+      "Integrasi media sosial dasar & 1 tombol WhatsApp",
+      "Desain responsive mobile friendly",
+      "Optimasi SEO dasar meta tag standar",
+      "Revisi maksimal 2x",
+      "Garansi 1 bulan setelah go-live"
+    ]
+  },
+  {
+    name: "Paket 2 - Standard",
+    badge: "Paling Populer",
+    price: "Rp 299.000",
+    note: "Best value: beda Rp 50.000 dari Basic, sudah dapat multi-page dan speed optimal.",
+    featured: true,
+    items: [
+      "Multi-page maksimal 5 halaman",
+      "Advanced WhatsApp integration dengan template chat otomatis",
+      "High performance & speed optimization",
+      "SEO menyeluruh termasuk Google Search Console & Maps",
+      "Desain responsive mobile friendly",
+      "Revisi maksimal 5x",
+      "Garansi 5 bulan bebas eror & bug"
+    ]
+  },
+  {
+    name: "Paket 3 - Premium",
+    badge: "All-in-One",
+    price: "Rp 449.000",
+    note: "Terima beres: domain, hosting, fitur premium, SEO, analytics, dan garansi paling panjang.",
+    items: [
+      "Multi-page eksklusif maksimal 10 halaman",
+      "FREE custom domain .com/.id selama 1 tahun",
+      "FREE high-speed hosting selama 1 tahun",
+      "Google Form, animasi interaktif, & copywriting dasar",
+      "Google Analytics untuk pantau pengunjung",
+      "Ultra high performance Google PageSpeed",
+      "Revisi maksimal 7x",
+      "Garansi 1 tahun penuh"
+    ]
+  }
+];
+
+const comparisonRows = [
+  ["Jumlah Halaman", "1 Landing Page", "Maks. 5 Halaman", "Maks. 10 Halaman"],
+  ["Integrasi WhatsApp", "Tombol Dasar", "Template Otomatis", "Template Otomatis"],
+  ["Desain Responsive", "Ya", "Ya", "Ya"],
+  ["SEO", "Dasar Meta Tag", "Search Console & Maps", "Analytics Lanjutan"],
+  ["Speed Optimization", "Standar", "High Performance", "Ultra High Performance"],
+  ["Custom Domain & Hosting", "-", "-", "FREE 1 Tahun"],
+  ["Fitur Tambahan", "-", "-", "Google Form, Animasi, Copywriting"],
+  ["Revisi", "Maks. 2x", "Maks. 5x", "Maks. 7x"],
+  ["Garansi", "1 Bulan", "5 Bulan", "1 Tahun Penuh"],
+  ["Harga", "Rp 249.000", "Rp 299.000", "Rp 449.000"]
+];
+
+const customFeatures = [
+  "Desain UI/UX premium & eksklusif bukan template",
+  "Integrasi pembayaran otomatis Midtrans/Xendit",
+  "Integrasi cek ongkir otomatis RajaOngkir",
+  "Sistem manajemen inventaris/stok barang",
+  "Sistem keamanan tinggi & enkripsi data",
+  "Dashboard manajemen lengkap untuk laporan, user, dan log aktivitas",
+  "Dukungan maintenance prioritas"
+];
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Daftar harga layanan pembuatan website Solivate Studio untuk personal, UMKM, company profile, landing page, dan website custom eksklusif."
+    />
+    <title>Daftar Harga Website | Solivate Studio</title>
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="wrap header-inner">
+        <a class="brand header-brand" href="/" aria-label="Solivate Studio home">
+          Solivate<span>Studio</span><em>.</em>
+        </a>
+
+        <nav class="nav" aria-label="Navigasi pricing">
+          <a class="nav-link" href="/#services"><span>Layanan</span></a>
+          <a class="nav-link" href="/#pricing"><span>Harga</span></a>
+          <a class="nav-link" href="/#work"><span>Karya</span></a>
+          <a class="nav-link" href="/#contact"><span>Kontak</span></a>
+          <a class="nav-cta" href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">
+            <span class="nav-dot"></span>
+            Konsultasi
+            <span class="arrow" aria-hidden="true"></span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pricing-page">
+      <section class="pricing-hero">
+        <div class="hero-bg"></div>
+        <div class="container pricing-hero-grid">
+          <div>
+            <p class="eyebrow">Daftar Harga Layanan</p>
+            <h1>Jasa Pembuatan Website untuk personal, UMKM, hingga korporat.</h1>
+            <p class="hero-text">
+              Pilih paket yang paling dekat dengan kebutuhan. Untuk website custom, harga final ditentukan berdasarkan
+              blueprint dan scope of work yang disepakati.
+            </p>
+          </div>
+          <div class="pricing-quote-card">
+            <span>Mulai dari</span>
+            <strong>Rp 49.000</strong>
+            <p>Website sederhana untuk ucapan, event, landing page bisnis, sampai sistem custom skala perusahaan.</p>
+            <a class="btn-primary" href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">
+              Konsultasi Gratis
+              <span class="arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light">
+        <div class="container section-head split">
+          <div>
+            <p class="eyebrow">01 / Personal & Event</p>
+            <h2>Website sederhana untuk momen personal dan undangan digital.</h2>
+          </div>
+          <p class="lead">Cocok untuk hadiah ulang tahun, kartu ucapan, party, wedding, dan event kecil.</p>
+        </div>
+        <div class="container pricing-detail-grid compact">
+          {personalPlans.map((plan) => (
+            <article class="pricing-detail-card">
+              <span class="pricing-label">Personal</span>
+              <h3>{plan.name}</h3>
+              <strong>{plan.price}</strong>
+              <p>{plan.fit}</p>
+              <ul>
+                {plan.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section pricing-detail-band">
+        <div class="container section-head split">
+          <div>
+            <p class="eyebrow">02 / Landing & Multi-Page</p>
+            <h2>Paket website bisnis yang paling sering dipakai UMKM dan organisasi.</h2>
+          </div>
+          <p class="lead">Untuk school profile, company profile, UMKM, event, konser, komunitas, dan landing page promosi.</p>
+        </div>
+        <div class="container pricing-detail-grid">
+          {businessPlans.map((plan) => (
+            <article class={`pricing-detail-card business ${plan.featured ? "featured" : ""}`}>
+              <span class="pricing-label">{plan.badge}</span>
+              <h3>{plan.name}</h3>
+              <strong>{plan.price}</strong>
+              <p>{plan.note}</p>
+              <ul>
+                {plan.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section light comparison-section">
+        <div class="container section-head">
+          <p class="eyebrow">Perbandingan Paket</p>
+          <h2>Bandingkan fitur utama sebelum memilih paket.</h2>
+        </div>
+        <div class="container comparison-shell">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Fitur</th>
+                <th>Paket 1 Basic</th>
+                <th>Paket 2 Standard</th>
+                <th>Paket 3 Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map(([feature, basic, standard, premium]) => (
+                <tr>
+                  <th>{feature}</th>
+                  <td>{basic}</td>
+                  <td>{standard}</td>
+                  <td>{premium}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section dark custom-pricing">
+        <div class="container custom-pricing-grid">
+          <div>
+            <p class="eyebrow">03 / Custom Eksklusif</p>
+            <h2>Solusi advanced untuk sistem yang butuh fitur khusus.</h2>
+            <p class="lead">
+              Cocok untuk marketplace, payment gateway, event skala besar, toko online kompleks, ERP, CRM, dan sistem
+              informasi manajemen perusahaan.
+            </p>
+          </div>
+          <div class="custom-price-box">
+            <span>Harga mulai dari</span>
+            <strong>Rp 2.999.000</strong>
+            <p>Harga akhir ditentukan berdasarkan blueprint dan scope of work yang disepakati.</p>
+          </div>
+        </div>
+        <div class="container custom-feature-grid">
+          {customFeatures.map((feature) => (
+            <article>
+              <span></span>
+              <p>{feature}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <h2>Pilih paket yang paling masuk akal untuk project kamu.</h2>
+          <a class="btn-primary" href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">
+            Konsultasi Gratis
+            <span class="arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <span>Copyright {new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.</span>
+          <a class="footer-top-btn" href="/">Kembali ke Home <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const header = document.querySelector("[data-header]");
+      const updateHeader = () => {
+        const y = Math.max(0, window.scrollY);
+        header?.classList.toggle("is-scrolled", y > 24);
+        header?.classList.toggle("is-compact", y > 64);
+      };
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      if (!window.matchMedia("(hover: none)").matches) {
+        document.querySelectorAll(".btn-primary, .nav-cta, .pricing-detail-card, .custom-feature-grid article").forEach((el) => {
+          let frame = 0;
+          const strength = el.matches(".btn-primary, .nav-cta") ? 0.12 : 0.035;
+          el.addEventListener("mousemove", (event) => {
+            const pointer = event;
+            window.cancelAnimationFrame(frame);
+            frame = window.requestAnimationFrame(() => {
+              const rect = el.getBoundingClientRect();
+              const x = (pointer.clientX - (rect.left + rect.width / 2)) * strength;
+              const y = (pointer.clientY - (rect.top + rect.height / 2)) * strength;
+              el.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
+              el.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
+            });
+          });
+          el.addEventListener("mouseleave", () => {
+            window.cancelAnimationFrame(frame);
+            el.style.setProperty("--hover-x", "0px");
+            el.style.setProperty("--hover-y", "0px");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
