@@ -119,16 +119,24 @@ const customFeatures = [
           <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" />
         </a>
 
-        <nav class="nav" aria-label="Navigasi pricing">
+        <nav class="nav" aria-label="Navigasi utama">
+          <a class="nav-link nav-link-primary" href="/#about"><span>Tentang</span></a>
           <a class="nav-link" href="/#services"><span>Layanan</span></a>
           <a class="nav-link" href="/#pricing"><span>Harga</span></a>
           <a class="nav-link" href="/#work"><span>Karya</span></a>
+          <a class="nav-link" href="/#process"><span>Proses</span></a>
           <a class="nav-link" href="/#contact"><span>Kontak</span></a>
-          <a class="nav-cta" href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">
+
+          <a class="nav-cta" href="/#contact">
             <span class="nav-dot"></span>
-            Konsultasi
+            <span>Mulai Proyek</span>
             <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
           </a>
+
+          <div class="language-toggle" aria-label="Pilih bahasa">
+            <button class="active" type="button" data-lang-switch="id" aria-pressed="true">ID</button>
+            <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -276,15 +284,43 @@ const customFeatures = [
     <footer class="footer">
       <div class="container">
         <div class="footer-top">
-          <h2>Pilih paket yang paling masuk akal untuk project kamu.</h2>
-          <a class="btn-primary" href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">
-            Konsultasi Gratis
+          <h2>Bangun sesuatu yang orang ingat.</h2>
+          <a class="btn-primary" href="/#contact">
+            Mulai Proyek
             <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
           </a>
         </div>
+
+        <div class="footer-grid">
+          <div class="footer-col footer-brand-col">
+            <span class="brand">
+              <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" loading="lazy" />
+            </span>
+            <p>Studio desain dan pengembangan produk digital modern untuk brand yang ingin tampil premium dan siap bertumbuh.</p>
+            <p class="footer-location">Bekasi, Indonesia</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigasi</h4>
+            <a href="/#about">Tentang</a>
+            <a href="/#services">Layanan</a>
+            <a href="/#pricing">Harga</a>
+            <a href="/#work">Karya</a>
+            <a href="/#process">Proses</a>
+          </div>
+          <div class="footer-col">
+            <h4>Kontak</h4>
+            <a href="mailto:solivatestudio@gmail.com">solivatestudio@gmail.com</a>
+            <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+
         <div class="footer-bottom">
           <span>Copyright {new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.</span>
-          <a class="footer-top-btn" href="/">Kembali ke Home <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a>
+          <button class="footer-top-btn" type="button" data-top>
+            Kembali ke atas
+            <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+          </button>
         </div>
       </div>
     </footer>
@@ -298,6 +334,23 @@ const customFeatures = [
       };
       window.addEventListener("scroll", updateHeader, { passive: true });
       updateHeader();
+
+      document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const activeLang = button.getAttribute("data-lang-switch") === "en" ? "en" : "id";
+          document.documentElement.lang = activeLang;
+          window.localStorage.setItem("solivate-language", activeLang);
+          document.querySelectorAll("[data-lang-switch]").forEach((current) => {
+            const active = current.getAttribute("data-lang-switch") === activeLang;
+            current.classList.toggle("active", active);
+            current.setAttribute("aria-pressed", String(active));
+          });
+        });
+      });
+
+      document.querySelectorAll("[data-top]").forEach((trigger) => {
+        trigger.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      });
 
       if (!window.matchMedia("(hover: none)").matches) {
         document.querySelectorAll(".btn-primary, .nav-cta, .pricing-detail-card, .custom-feature-grid article").forEach((el) => {
