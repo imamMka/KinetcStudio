@@ -2,7 +2,7 @@
 import "../../index.css";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { portfolioPages, servicePages, siteUrl } from "../../data/seo-pages";
+import { portfolioPageEnglish, portfolioPages, servicePageEnglish, servicePages, siteUrl } from "../../data/seo-pages";
 
 export const getStaticPaths = () =>
   portfolioPages.map((page) => ({
@@ -11,9 +11,52 @@ export const getStaticPaths = () =>
   }));
 
 const { page } = Astro.props;
+const pageEn = portfolioPageEnglish[page.slug];
 const canonical = `${siteUrl}/portfolio/${page.slug}`;
 const title = `${page.title} | Studi Kasus Solivate Studio`;
 const relatedServices = servicePages.filter((item) => ["website-masjid-komunitas", "jasa-pembuatan-website"].includes(item.slug));
+const staticI18n = {
+  "nav.about": { id: "Tentang", en: "About" },
+  "nav.services": { id: "Layanan", en: "Services" },
+  "nav.pricing": { id: "Harga", en: "Pricing" },
+  "nav.work": { id: "Karya", en: "Work" },
+  "nav.process": { id: "Proses", en: "Process" },
+  "nav.contact": { id: "Kontak", en: "Contact" },
+  "nav.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "case.eyebrow": { id: "Studi Kasus", en: "Case Study" },
+  "case.live": { id: "Lihat Website Live", en: "View Live Website" },
+  "case.related": { id: "Layanan Terkait", en: "Related Service" },
+  "related.eyebrow": { id: "Layanan Terkait", en: "Related Services" },
+  "related.title": {
+    id: "Halaman ini terhubung dengan keyword jasa website masjid dan digitalisasi komunitas.",
+    en: "This case connects with mosque website and community digitalization keywords."
+  },
+  "related.link": { id: "Lihat layanan", en: "View service" },
+  "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
+  "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "footer.desc": {
+    id: "Digital solution provider untuk UMKM, komunitas sosial, event, celebration, dan sistem custom yang ingin naik kelas secara digital.",
+    en: "Digital solution provider for SMEs, social communities, events, celebrations, and custom systems ready to level up digitally."
+  },
+  "footer.nav": { id: "Navigasi", en: "Navigation" },
+  "footer.connect": { id: "Kontak", en: "Connect" },
+  "footer.copy": { id: `Copyright ${new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.`, en: `Copyright ${new Date().getFullYear()} Solivate Studio. All rights reserved.` },
+  "footer.top": { id: "Kembali ke atas", en: "Back to top" }
+};
+const pageI18n = {
+  "page.title": { id: page.title, en: pageEn.title },
+  "page.description": { id: page.description, en: pageEn.description },
+  ...Object.fromEntries(page.highlights.map((item, index) => [`highlight.${index}`, { id: item, en: pageEn.highlights[index] }])),
+  ...Object.fromEntries(page.sections.flatMap((section, index) => [
+    [`section.${index}.title`, { id: section.title, en: pageEn.sections[index].title }],
+    [`section.${index}.body`, { id: section.body, en: pageEn.sections[index].body }]
+  ])),
+  ...Object.fromEntries(relatedServices.flatMap((service, index) => [
+    [`service.${index}.title`, { id: service.eyebrow, en: servicePageEnglish[service.slug].eyebrow }],
+    [`service.${index}.desc`, { id: service.description, en: servicePageEnglish[service.slug].description }]
+  ]))
+};
+const i18nJson = JSON.stringify({ ...staticI18n, ...pageI18n });
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -52,22 +95,22 @@ const schema = JSON.stringify({
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
-    <Header compact />
+    <Header compact i18n />
 
     <main class="seo-page">
       <section class="seo-hero portfolio-case-hero">
         <div class="hero-bg"></div>
         <div class="container seo-hero-grid">
           <div>
-            <p class="eyebrow">Studi Kasus</p>
-            <h1>{page.title}</h1>
-            <p class="hero-text">{page.description}</p>
+            <p class="eyebrow" data-i18n="case.eyebrow">Studi Kasus</p>
+            <h1 data-i18n="page.title">{page.title}</h1>
+            <p class="hero-text" data-i18n="page.description">{page.description}</p>
             <div class="hero-actions">
               <a class="btn-primary" href={page.url} target="_blank" rel="noreferrer">
-                <span>Lihat Website Live</span>
+                <span data-i18n="case.live">Lihat Website Live</span>
                 <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
               </a>
-              <a class="btn-secondary" href="/layanan/website-masjid-komunitas">Layanan Terkait</a>
+              <a class="btn-secondary" href="/layanan/website-masjid-komunitas" data-i18n="case.related">Layanan Terkait</a>
             </div>
           </div>
           <div class="case-preview-card">
@@ -81,7 +124,7 @@ const schema = JSON.stringify({
           {page.highlights.map((item, index) => (
             <article class="feature-card">
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item}</h3>
+              <h3 data-i18n={`highlight.${index}`}>{item}</h3>
             </article>
           ))}
         </div>
@@ -89,10 +132,10 @@ const schema = JSON.stringify({
 
       <section class="section services">
         <div class="container case-study-grid">
-          {page.sections.map((section) => (
+          {page.sections.map((section, index) => (
             <article>
-              <p class="eyebrow">{section.title}</p>
-              <p>{section.body}</p>
+              <p class="eyebrow" data-i18n={`section.${index}.title`}>{section.title}</p>
+              <p data-i18n={`section.${index}.body`}>{section.body}</p>
             </article>
           ))}
         </div>
@@ -100,25 +143,27 @@ const schema = JSON.stringify({
 
       <section class="section light">
         <div class="container section-head">
-          <p class="eyebrow">Layanan Terkait</p>
-          <h2>Halaman ini terhubung dengan keyword jasa website masjid dan digitalisasi komunitas.</h2>
+          <p class="eyebrow" data-i18n="related.eyebrow">Layanan Terkait</p>
+          <h2 data-i18n="related.title">Halaman ini terhubung dengan keyword jasa website masjid dan digitalisasi komunitas.</h2>
         </div>
         <div class="container service-grid">
-          {relatedServices.map((service) => (
+          {relatedServices.map((service, index) => (
             <article class="service-card">
               <div class="icon-box">SS</div>
-              <h3>{service.eyebrow}</h3>
-              <p>{service.description}</p>
-              <a href={`/layanan/${service.slug}`}><span>Lihat layanan</span> <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a>
+              <h3 data-i18n={`service.${index}.title`}>{service.eyebrow}</h3>
+              <p data-i18n={`service.${index}.desc`}>{service.description}</p>
+              <a href={`/layanan/${service.slug}`}><span data-i18n="related.link">Lihat layanan</span> <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg></a>
             </article>
           ))}
         </div>
       </section>
     </main>
 
-    <Footer />
+    <Footer i18n />
     <script is:inline type="application/ld+json" set:html={schema}></script>
+    <script is:inline type="application/json" id="portfolio-i18n-data" set:html={i18nJson}></script>
     <script is:inline>
+      const translations = JSON.parse(document.getElementById("portfolio-i18n-data")?.textContent || "{}");
       const header = document.querySelector("[data-header]");
       const updateHeader = () => {
         const y = Math.max(0, window.scrollY);
@@ -137,6 +182,35 @@ const schema = JSON.stringify({
           window.location.href = "/#contact";
         });
       });
+
+      const setLanguage = (lang, persist = false) => {
+        const activeLang = lang === "en" ? "en" : "id";
+        document.documentElement.lang = activeLang;
+        if (persist) {
+          window.localStorage.setItem("solivate-language", activeLang);
+          window.localStorage.setItem("solivate-language-manual", "true");
+        }
+
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          const next = translations[key]?.[activeLang];
+          if (next) node.textContent = next;
+        });
+
+        document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+          const active = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      };
+
+      document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang-switch"), true));
+      });
+      const savedLanguage = window.localStorage.getItem("solivate-language-manual") === "true"
+        ? window.localStorage.getItem("solivate-language")
+        : "id";
+      setLanguage(savedLanguage || "id");
     </script>
   </body>
 </html>

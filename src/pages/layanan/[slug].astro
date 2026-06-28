@@ -2,7 +2,7 @@
 import "../../index.css";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { servicePages, siteUrl } from "../../data/seo-pages";
+import { servicePageEnglish, servicePages, siteUrl } from "../../data/seo-pages";
 
 export const getStaticPaths = () =>
   servicePages.map((page) => ({
@@ -11,8 +11,63 @@ export const getStaticPaths = () =>
   }));
 
 const { page } = Astro.props;
+const pageEn = servicePageEnglish[page.slug];
 const canonical = `${siteUrl}/layanan/${page.slug}`;
 const title = `${page.eyebrow} | Solivate Studio`;
+const staticI18n = {
+  "nav.about": { id: "Tentang", en: "About" },
+  "nav.services": { id: "Layanan", en: "Services" },
+  "nav.pricing": { id: "Harga", en: "Pricing" },
+  "nav.work": { id: "Karya", en: "Work" },
+  "nav.process": { id: "Proses", en: "Process" },
+  "nav.contact": { id: "Kontak", en: "Contact" },
+  "nav.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "panel.focus": { id: "Fokus layanan", en: "Service focus" },
+  "section.audience": { id: "Untuk Siapa", en: "Who It Is For" },
+  "section.outcomes": { id: "Hasil yang dituju", en: "Target Outcomes" },
+  "section.features": { id: "Fitur Utama", en: "Key Features" },
+  "section.featuresTitle": {
+    id: "Struktur website disusun sesuai kebutuhan pengguna dan target pencarian.",
+    en: "Website structure is planned around users and target search intent."
+  },
+  "section.featuresLead": {
+    id: "Kami menjaga halaman tetap cepat, responsif, jelas dibaca, dan siap dikembangkan ketika scope bisnis bertambah.",
+    en: "We keep pages fast, responsive, easy to read, and ready to grow when the business scope expands."
+  },
+  "section.faq": { id: "Pertanyaan Umum", en: "Frequently Asked Questions" },
+  "section.faqTitle": {
+    id: "Hal yang sering ditanyakan sebelum mulai project.",
+    en: "Common questions before starting a project."
+  },
+  "cta.title": { id: "Siap digitalisasi bareng Solivate Studio?", en: "Ready to digitalize with Solivate Studio?" },
+  "cta.button": { id: "Mulai Proyek", en: "Start Project" },
+  "pricing.button": { id: "Lihat Harga", en: "View Pricing" },
+  "consult.button": { id: "Konsultasi Gratis", en: "Free Consultation" },
+  "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
+  "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "footer.desc": {
+    id: "Digital solution provider untuk UMKM, komunitas sosial, event, celebration, dan sistem custom yang ingin naik kelas secara digital.",
+    en: "Digital solution provider for SMEs, social communities, events, celebrations, and custom systems ready to level up digitally."
+  },
+  "footer.nav": { id: "Navigasi", en: "Navigation" },
+  "footer.connect": { id: "Kontak", en: "Connect" },
+  "footer.copy": { id: `Copyright ${new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.`, en: `Copyright ${new Date().getFullYear()} Solivate Studio. All rights reserved.` },
+  "footer.top": { id: "Kembali ke atas", en: "Back to top" }
+};
+const pageI18n = {
+  "page.eyebrow": { id: page.eyebrow, en: pageEn.eyebrow },
+  "page.title": { id: page.title, en: pageEn.title },
+  "page.description": { id: page.description, en: pageEn.description },
+  "page.audience": { id: page.audience, en: pageEn.audience },
+  ...Object.fromEntries(page.heroPoints.map((point, index) => [`hero.point.${index}`, { id: point, en: pageEn.heroPoints[index] }])),
+  ...Object.fromEntries(page.outcomes.map((item, index) => [`outcome.${index}`, { id: item, en: pageEn.outcomes[index] }])),
+  ...Object.fromEntries(page.features.map((feature, index) => [`feature.${index}`, { id: feature, en: pageEn.features[index] }])),
+  ...Object.fromEntries(page.faqs.flatMap((faq, index) => [
+    [`faq.${index}.q`, { id: faq.question, en: pageEn.faqs[index].question }],
+    [`faq.${index}.a`, { id: faq.answer, en: pageEn.faqs[index].answer }]
+  ]))
+};
+const i18nJson = JSON.stringify({ ...staticI18n, ...pageI18n });
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -52,28 +107,28 @@ const schema = JSON.stringify({
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
-    <Header compact />
+    <Header compact i18n />
 
     <main class="seo-page">
       <section class="seo-hero">
         <div class="hero-bg"></div>
         <div class="container seo-hero-grid">
           <div>
-            <p class="eyebrow">{page.eyebrow}</p>
-            <h1>{page.title}</h1>
-            <p class="hero-text">{page.description}</p>
+            <p class="eyebrow" data-i18n="page.eyebrow">{page.eyebrow}</p>
+            <h1 data-i18n="page.title">{page.title}</h1>
+            <p class="hero-text" data-i18n="page.description">{page.description}</p>
             <div class="hero-actions">
               <a class="btn-primary" href="/#contact">
-                <span>Konsultasi Gratis</span>
+                <span data-i18n="consult.button">Konsultasi Gratis</span>
                 <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
               </a>
-              <a class="btn-secondary" href="/pricing">Lihat Harga</a>
+              <a class="btn-secondary" href="/pricing" data-i18n="pricing.button">Lihat Harga</a>
             </div>
           </div>
           <div class="seo-hero-panel">
-            <span>Fokus layanan</span>
+            <span data-i18n="panel.focus">Fokus layanan</span>
             <ul>
-              {page.heroPoints.map((point) => <li>{point}</li>)}
+              {page.heroPoints.map((point, index) => <li data-i18n={`hero.point.${index}`}>{point}</li>)}
             </ul>
           </div>
         </div>
@@ -82,13 +137,13 @@ const schema = JSON.stringify({
       <section class="section light">
         <div class="container seo-copy-grid">
           <article>
-            <p class="eyebrow">Untuk Siapa</p>
-            <h2>{page.audience}</h2>
+            <p class="eyebrow" data-i18n="section.audience">Untuk Siapa</p>
+            <h2 data-i18n="page.audience">{page.audience}</h2>
           </article>
           <div class="seo-list-panel">
-            <h3>Hasil yang dituju</h3>
+            <h3 data-i18n="section.outcomes">Hasil yang dituju</h3>
             <ul>
-              {page.outcomes.map((item) => <li>{item}</li>)}
+              {page.outcomes.map((item, index) => <li data-i18n={`outcome.${index}`}>{item}</li>)}
             </ul>
           </div>
         </div>
@@ -97,16 +152,16 @@ const schema = JSON.stringify({
       <section class="section services">
         <div class="container section-head split">
           <div>
-            <p class="eyebrow">Fitur Utama</p>
-            <h2>Struktur website disusun sesuai kebutuhan pengguna dan target pencarian.</h2>
+            <p class="eyebrow" data-i18n="section.features">Fitur Utama</p>
+            <h2 data-i18n="section.featuresTitle">Struktur website disusun sesuai kebutuhan pengguna dan target pencarian.</h2>
           </div>
-          <p class="lead">Kami menjaga halaman tetap cepat, responsif, jelas dibaca, dan siap dikembangkan ketika scope bisnis bertambah.</p>
+          <p class="lead" data-i18n="section.featuresLead">Kami menjaga halaman tetap cepat, responsif, jelas dibaca, dan siap dikembangkan ketika scope bisnis bertambah.</p>
         </div>
         <div class="container seo-feature-grid">
           {page.features.map((feature, index) => (
             <article class="feature-card">
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{feature}</h3>
+              <h3 data-i18n={`feature.${index}`}>{feature}</h3>
             </article>
           ))}
         </div>
@@ -114,14 +169,14 @@ const schema = JSON.stringify({
 
       <section class="section light">
         <div class="container section-head">
-          <p class="eyebrow">Pertanyaan Umum</p>
-          <h2>Hal yang sering ditanyakan sebelum mulai project.</h2>
+          <p class="eyebrow" data-i18n="section.faq">Pertanyaan Umum</p>
+          <h2 data-i18n="section.faqTitle">Hal yang sering ditanyakan sebelum mulai project.</h2>
         </div>
         <div class="container seo-faq-grid">
-          {page.faqs.map((faq) => (
+          {page.faqs.map((faq, index) => (
             <article class="faq-item">
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
+              <h3 data-i18n={`faq.${index}.q`}>{faq.question}</h3>
+              <p data-i18n={`faq.${index}.a`}>{faq.answer}</p>
             </article>
           ))}
         </div>
@@ -129,18 +184,20 @@ const schema = JSON.stringify({
 
       <section class="section dark seo-cta">
         <div class="container footer-top">
-          <h2>Siap digitalisasi bareng Solivate Studio?</h2>
+          <h2 data-i18n="cta.title">Siap digitalisasi bareng Solivate Studio?</h2>
           <a class="btn-primary" href="/#contact">
-            <span>Mulai Proyek</span>
+            <span data-i18n="cta.button">Mulai Proyek</span>
             <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
           </a>
         </div>
       </section>
     </main>
 
-    <Footer />
+    <Footer i18n />
     <script is:inline type="application/ld+json" set:html={schema}></script>
+    <script is:inline type="application/json" id="service-i18n-data" set:html={i18nJson}></script>
     <script is:inline>
+      const translations = JSON.parse(document.getElementById("service-i18n-data")?.textContent || "{}");
       const header = document.querySelector("[data-header]");
       const updateHeader = () => {
         const y = Math.max(0, window.scrollY);
@@ -159,6 +216,35 @@ const schema = JSON.stringify({
           window.location.href = "/#contact";
         });
       });
+
+      const setLanguage = (lang, persist = false) => {
+        const activeLang = lang === "en" ? "en" : "id";
+        document.documentElement.lang = activeLang;
+        if (persist) {
+          window.localStorage.setItem("solivate-language", activeLang);
+          window.localStorage.setItem("solivate-language-manual", "true");
+        }
+
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          const next = translations[key]?.[activeLang];
+          if (next) node.textContent = next;
+        });
+
+        document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+          const active = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      };
+
+      document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang-switch"), true));
+      });
+      const savedLanguage = window.localStorage.getItem("solivate-language-manual") === "true"
+        ? window.localStorage.getItem("solivate-language")
+        : "id";
+      setLanguage(savedLanguage || "id");
     </script>
   </body>
 </html>

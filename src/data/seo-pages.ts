@@ -22,6 +22,9 @@ export type PortfolioPage = {
   sections: Array<{ title: string; body: string }>;
 };
 
+export type ServicePageTranslation = Omit<ServicePage, "slug" | "keywords">;
+export type PortfolioPageTranslation = Omit<PortfolioPage, "slug" | "image" | "url" | "keywords">;
+
 export const siteUrl = "https://solivatestudio.com";
 
 export const servicePages: ServicePage[] = [
@@ -197,6 +200,148 @@ export const portfolioPages: PortfolioPage[] = [
     ]
   }
 ];
+
+export const servicePageEnglish: Record<string, ServicePageTranslation> = {
+  "jasa-pembuatan-website": {
+    eyebrow: "Website Development Service",
+    title: "Modern website development for businesses, communities, and events.",
+    description: "Solivate Studio builds custom websites, landing pages, company profiles, SME websites, community platforms, event pages, and easy-to-use digital systems.",
+    heroPoints: ["Responsive and mobile-friendly websites", "SEO structure planned from the start", "Custom design based on project needs"],
+    audience: "Built for SME owners, community teams, event organizers, personal brands, and companies that want stronger digital credibility.",
+    outcomes: ["A more professional digital presence", "Services are easier to find and understand", "Contact, catalog, or registration flows become cleaner"],
+    features: ["Landing page", "Company profile", "WhatsApp integration", "Contact form", "Performance optimization", "Domain and hosting setup"],
+    faqs: [
+      { question: "How much does a website cost?", answer: "Pricing starts from Rp 49,000 for simple websites, with business packages from Rp 249,000." },
+      { question: "Can it be customized to our needs?", answer: "Yes. Pages, features, visuals, and integrations are adjusted to the project scope." }
+    ]
+  },
+  "website-umkm": {
+    eyebrow: "SME Website",
+    title: "SME website development for small businesses ready to level up.",
+    description: "SME websites for business profiles, online product catalogs, promotional landing pages, and small business digitalization that builds customer trust.",
+    heroPoints: ["Business profile and product catalog", "WhatsApp button ready for conversion", "Basic promotional copywriting"],
+    audience: "For SMEs still relying on manual chats, social media, or marketplaces and ready to own their digital home.",
+    outcomes: ["Your business looks more trustworthy", "Products and services are organized clearly", "Potential customers can contact you faster"],
+    features: ["Home page", "About business", "Product catalog", "Gallery", "WhatsApp contact", "Basic SEO"],
+    faqs: [
+      { question: "Can an SME website be affordable but still look good?", answer: "Yes. We keep the scope practical so the price stays reasonable without sacrificing the main look and mobile experience." },
+      { question: "Is it suitable for a new business?", answer: "Yes, especially for businesses that want to look professional on Google and when sharing links with customers." }
+    ]
+  },
+  "website-company-profile": {
+    eyebrow: "Company Profile Website",
+    title: "Company profile websites for brands that want to look professional.",
+    description: "Company profile websites for companies, schools, perfume brands, organizations, and service businesses that need a clean and SEO-friendly online profile.",
+    heroPoints: ["Company profile structure", "Service and portfolio sections", "Trust and credibility optimization"],
+    audience: "For businesses and organizations that need an official page to send to clients, partners, investors, or customers.",
+    outcomes: ["The brand feels more credible", "Company information is easier to understand", "Business contact points are clearer"],
+    features: ["Company profile", "Services", "Portfolio", "Team", "Contact", "SEO title and meta description"],
+    faqs: [
+      { question: "What is the difference between a landing page and a company profile?", answer: "A landing page usually focuses on one offer, while a company profile explains the brand, services, legal details, portfolio, and contact more completely." },
+      { question: "Can it be multi-page?", answer: "Yes, especially when services, galleries, or portfolios need separate pages." }
+    ]
+  },
+  "website-masjid-komunitas": {
+    eyebrow: "Mosque & Community Website",
+    title: "Mosque and social community websites built for transparency.",
+    description: "Mosque websites, social community sites, and mosque cash transparency platforms for study schedules, activities, donations, and congregation information.",
+    heroPoints: ["Study and activity schedules", "Cash and donation transparency", "Donation and congregation information"],
+    audience: "For mosques, religious communities, social communities, and teams that want information to be easier for members to access.",
+    outcomes: ["Activities are more centralized", "Donation transparency builds trust", "Members can follow updates more easily"],
+    features: ["Activity schedule", "Cash and donations", "QRIS donation", "Activity gallery", "Admin contact", "Announcements"],
+    faqs: [
+      { question: "Can it show donation transparency?", answer: "Yes. Pages can show cash summaries, reports, and donation information based on the management team's needs." },
+      { question: "Can it be used for non-mosque communities?", answer: "Yes. This structure also fits social communities, foundations, and public organizations." }
+    ]
+  },
+  "website-yayasan-panti-asuhan": {
+    eyebrow: "Foundation & Orphanage Website",
+    title: "Foundation and orphanage websites for donations, activities, and transparency.",
+    description: "Foundation and orphanage websites for activity publication, organization profiles, online donation platforms, and social program transparency.",
+    heroPoints: ["Institution profile and programs", "Activity publication", "Online donation information"],
+    audience: "For foundations, orphanages, social institutions, and communities that want to build public trust digitally.",
+    outcomes: ["Donors understand programs faster", "Activities are documented neatly", "Donation information is clearer"],
+    features: ["Foundation profile", "Social programs", "Donation", "Gallery", "Activity news", "Contact"],
+    faqs: [
+      { question: "Can it show activity reports?", answer: "Yes. The website can be structured so activity documentation and program updates are easy for donors to read." },
+      { question: "Can it use a WhatsApp donation button?", answer: "Yes, WhatsApp buttons can be directed to admins with automatic message templates." }
+    ]
+  },
+  "website-event-konser": {
+    eyebrow: "Event & Concert Website",
+    title: "Event and concert websites for information, registration, and promotion.",
+    description: "Online event registration platforms, concert websites, event landing pages, and information hubs that help participants register and understand event details.",
+    heroPoints: ["Event landing page", "Online registration", "Schedule and venue information"],
+    audience: "For event organizers, communities, schools, campuses, brands, and concert or seminar organizers.",
+    outcomes: ["Event information is cleaner", "Participant registration is easier", "Event promotion feels more credible"],
+    features: ["Event hero", "Schedule", "Venue", "Registration form", "Lineup", "FAQ", "Ticket CTA"],
+    faqs: [
+      { question: "Can it be used for concerts?", answer: "Yes. The website can include lineup, schedule, venue, sponsors, and ticket purchase CTAs." },
+      { question: "Can it integrate Google Forms?", answer: "Yes, Google Forms or custom forms can be embedded based on event needs." }
+    ]
+  },
+  "undangan-digital": {
+    eyebrow: "Digital Invitation",
+    title: "Custom wedding invitation and digital invitation websites with a personal touch.",
+    description: "Wedding invitation websites, birthday websites, interactive birthday greetings, RSVP online, and custom invitation websites.",
+    heroPoints: ["Wedding invitation", "Birthday website", "RSVP and custom guest name"],
+    audience: "For couples, families, friends, and personal event organizers who want invitations to feel modern and memorable.",
+    outcomes: ["Invitations are easier to share", "Moments feel more personal", "Guests receive complete information"],
+    features: ["Custom name", "Photo gallery", "Video", "Countdown", "Maps", "RSVP", "Messages"],
+    faqs: [
+      { question: "Can it use custom guest names?", answer: "Yes. Invitations can use guest-name parameters for a more personal experience." },
+      { question: "Can it be used for birthdays?", answer: "Yes. Birthday websites can include greetings, photos, videos, and interactive visuals." }
+    ]
+  },
+  "website-barbershop": {
+    eyebrow: "Barbershop Website",
+    title: "Barbershop website with a practical online booking system.",
+    description: "Barbershop website development, online booking systems, service catalogs, barber schedules, and promotional pages for haircut businesses.",
+    heroPoints: ["Online booking", "Service catalog", "Barber schedule and queue"],
+    audience: "For barbershops that want to reduce manual queues and help customers choose services more easily.",
+    outcomes: ["Booking becomes more organized", "Services look more professional", "Customers can contact faster"],
+    features: ["Service list", "Pricing", "Booking", "Haircut gallery", "Barber profile", "WhatsApp template"],
+    faqs: [
+      { question: "Can it use a queue system?", answer: "Yes, queue or booking systems can be built around the barbershop's operational flow." },
+      { question: "Can we start with a landing page first?", answer: "Yes. Early versions can start with a promotional landing page and WhatsApp booking button." }
+    ]
+  },
+  "website-rental-mobil": {
+    eyebrow: "Car Rental Website",
+    title: "Car rental website for fleet catalogs and vehicle reservations.",
+    description: "Car rental website development, reservation systems, fleet catalogs, pricing details, and vehicle booking flows.",
+    heroPoints: ["Fleet catalog", "Vehicle reservation", "Pricing and facility details"],
+    audience: "For car rental businesses that want fleets to look organized and customers to check information before contacting admins.",
+    outcomes: ["Vehicles are easier to compare", "Reservations become more directed", "The business looks more professional"],
+    features: ["Fleet list", "Car details", "Rental pricing", "Reservation form", "Rental terms", "WhatsApp admin"],
+    faqs: [
+      { question: "Can it show a car catalog?", answer: "Yes. Each fleet item can have photos, specifications, pricing, and reservation CTAs." },
+      { question: "Can it integrate payments?", answer: "Yes for custom scopes, including payment gateway integration when needed." }
+    ]
+  }
+};
+
+export const portfolioPageEnglish: Record<string, PortfolioPageTranslation> = {
+  "masjid-raya-puri-telukjambe": {
+    title: "Masjid Raya Puri Telukjambe Website",
+    description: "Case study for Masjid Raya Puri Telukjambe: mosque information digitalization, study schedules, cash transparency, QRIS donations, and hall booking.",
+    highlights: ["Study and activity schedules", "Cash and donation transparency", "QRIS donation", "Hall booking information"],
+    sections: [
+      {
+        title: "Challenge",
+        body: "The mosque needed a digital information center for activity schedules, donation information, community documentation, and hall facilities without confusing visitors."
+      },
+      {
+        title: "Solution",
+        body: "Solivate Studio designed a clear information structure: informative hero, study schedule, imam and khatib schedule, multipurpose hall, QRIS donation, and activity gallery."
+      },
+      {
+        title: "Impact",
+        body: "The website helps the congregation access mosque information faster, improves transparency, and gives the mosque management team a cleaner digital channel."
+      }
+    ]
+  }
+};
 
 export const allSeoUrls = [
   "",
