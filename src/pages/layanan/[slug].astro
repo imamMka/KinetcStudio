@@ -43,6 +43,28 @@ const staticI18n = {
   "cta.button": { id: "Mulai Proyek", en: "Start Project" },
   "pricing.button": { id: "Lihat Harga", en: "View Pricing" },
   "consult.button": { id: "Konsultasi Gratis", en: "Free Consultation" },
+  "stats.delivery": { id: "Struktur cepat", en: "Fast structure" },
+  "stats.deliveryDesc": { id: "Siap dikembangkan dari landing sampai sistem custom.", en: "Ready to grow from landing pages to custom systems." },
+  "stats.intent": { id: "SEO intent", en: "SEO intent" },
+  "stats.intentDesc": { id: "Konten diarahkan ke kebutuhan pencarian yang spesifik.", en: "Content is mapped to specific search needs." },
+  "stats.support": { id: "Support jelas", en: "Clear support" },
+  "stats.supportDesc": { id: "Scope, revisi, dan garansi dibuat transparan sejak awal.", en: "Scope, revisions, and warranty are transparent from the start." },
+  "console.system": { id: "Solivate Service Map", en: "Solivate Service Map" },
+  "console.signal": { id: "Ready to launch", en: "Ready to launch" },
+  "workflow.eyebrow": { id: "Blueprint Kerja", en: "Workflow Blueprint" },
+  "workflow.title": { id: "Dari brief singkat sampai halaman siap dipakai.", en: "From a short brief to a launch-ready page." },
+  "workflow.lead": {
+    id: "Setiap layanan dipetakan agar alur informasi, visual, CTA, dan kebutuhan teknisnya jelas sebelum masuk development.",
+    en: "Each service is mapped so information flow, visuals, CTAs, and technical needs are clear before development."
+  },
+  "workflow.1.title": { id: "Mapping kebutuhan", en: "Need mapping" },
+  "workflow.1.desc": { id: "Kami pecah tujuan, target audiens, konten, fitur, dan prioritas halaman.", en: "We break down goals, audiences, content, features, and page priorities." },
+  "workflow.2.title": { id: "Struktur UX", en: "UX structure" },
+  "workflow.2.desc": { id: "Section disusun agar pengunjung cepat paham dan mudah ambil tindakan.", en: "Sections are arranged so visitors understand quickly and act easily." },
+  "workflow.3.title": { id: "Visual & development", en: "Visual & development" },
+  "workflow.3.desc": { id: "Interface dibangun responsif, cepat, dan tetap punya rasa brand yang kuat.", en: "The interface is built responsive, fast, and with a strong brand feel." },
+  "workflow.4.title": { id: "Launch & iterasi", en: "Launch & iteration" },
+  "workflow.4.desc": { id: "Setelah live, performa, konten, dan feedback bisa dirapikan bertahap.", en: "After launch, performance, content, and feedback can be improved step by step." },
   "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
   "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
   "footer.desc": {
@@ -68,6 +90,18 @@ const pageI18n = {
   ]))
 };
 const i18nJson = JSON.stringify({ ...staticI18n, ...pageI18n });
+const initialText = (key: string) => staticI18n[key as keyof typeof staticI18n]?.id ?? key;
+const stats = [
+  ["01", "stats.delivery", "stats.deliveryDesc"],
+  ["02", "stats.intent", "stats.intentDesc"],
+  ["03", "stats.support", "stats.supportDesc"]
+];
+const workflow = [
+  ["01", "workflow.1.title", "workflow.1.desc"],
+  ["02", "workflow.2.title", "workflow.2.desc"],
+  ["03", "workflow.3.title", "workflow.3.desc"],
+  ["04", "workflow.4.title", "workflow.4.desc"]
+];
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -109,11 +143,11 @@ const schema = JSON.stringify({
   <body>
     <Header compact i18n />
 
-    <main class="seo-page">
+    <main class="seo-page service-page">
       <section class="seo-hero">
         <div class="hero-bg"></div>
         <div class="container seo-hero-grid">
-          <div>
+          <div class="service-hero-copy">
             <p class="eyebrow" data-i18n="page.eyebrow">{page.eyebrow}</p>
             <h1 data-i18n="page.title">{page.title}</h1>
             <p class="hero-text" data-i18n="page.description">{page.description}</p>
@@ -125,22 +159,43 @@ const schema = JSON.stringify({
               <a class="btn-secondary" href="/pricing" data-i18n="pricing.button">Lihat Harga</a>
             </div>
           </div>
-          <div class="seo-hero-panel">
-            <span data-i18n="panel.focus">Fokus layanan</span>
-            <ul>
-              {page.heroPoints.map((point, index) => <li data-i18n={`hero.point.${index}`}>{point}</li>)}
-            </ul>
+          <div class="seo-hero-panel service-console">
+            <div class="service-console-top">
+              <span data-i18n="console.system">Solivate Service Map</span>
+              <i data-i18n="console.signal">Ready to launch</i>
+            </div>
+            <div class="service-orbit" aria-hidden="true">
+              <span class="orbit-core">SS</span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="service-console-list">
+              <span data-i18n="panel.focus">Fokus layanan</span>
+              <ul>
+                {page.heroPoints.map((point, index) => <li data-i18n={`hero.point.${index}`}>{point}</li>)}
+              </ul>
+            </div>
           </div>
+        </div>
+        <div class="container service-stat-strip">
+          {stats.map(([num, titleKey, descKey]) => (
+            <article>
+              <span>{num}</span>
+              <strong data-i18n={titleKey}>{initialText(titleKey)}</strong>
+              <p data-i18n={descKey}>{initialText(descKey)}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section class="section light">
+      <section class="section light service-overview">
         <div class="container seo-copy-grid">
-          <article>
+          <article class="service-audience-card">
             <p class="eyebrow" data-i18n="section.audience">Untuk Siapa</p>
             <h2 data-i18n="page.audience">{page.audience}</h2>
           </article>
-          <div class="seo-list-panel">
+          <div class="seo-list-panel service-outcome-card">
             <h3 data-i18n="section.outcomes">Hasil yang dituju</h3>
             <ul>
               {page.outcomes.map((item, index) => <li data-i18n={`outcome.${index}`}>{item}</li>)}
@@ -159,9 +214,28 @@ const schema = JSON.stringify({
         </div>
         <div class="container seo-feature-grid">
           {page.features.map((feature, index) => (
-            <article class="feature-card">
+            <article class="feature-card service-feature-card">
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3 data-i18n={`feature.${index}`}>{feature}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section service-workflow">
+        <div class="container section-head split">
+          <div>
+            <p class="eyebrow" data-i18n="workflow.eyebrow">Blueprint Kerja</p>
+            <h2 data-i18n="workflow.title">Dari brief singkat sampai halaman siap dipakai.</h2>
+          </div>
+          <p class="lead" data-i18n="workflow.lead">Setiap layanan dipetakan agar alur informasi, visual, CTA, dan kebutuhan teknisnya jelas sebelum masuk development.</p>
+        </div>
+        <div class="container service-workflow-grid">
+          {workflow.map(([num, titleKey, descKey]) => (
+            <article>
+              <span>{num}</span>
+              <h3 data-i18n={titleKey}>{initialText(titleKey)}</h3>
+              <p data-i18n={descKey}>{initialText(descKey)}</p>
             </article>
           ))}
         </div>
@@ -245,6 +319,30 @@ const schema = JSON.stringify({
         ? window.localStorage.getItem("solivate-language")
         : "id";
       setLanguage(savedLanguage || "id");
+
+      if (!window.matchMedia("(hover: none)").matches) {
+        document
+          .querySelectorAll(".service-console, .service-stat-strip article, .service-audience-card, .service-outcome-card, .service-feature-card, .service-workflow-grid article, .seo-faq-grid .faq-item")
+          .forEach((el) => {
+            let frame = 0;
+            el.addEventListener("mousemove", (event) => {
+              const pointer = event;
+              window.cancelAnimationFrame(frame);
+              frame = window.requestAnimationFrame(() => {
+                const rect = el.getBoundingClientRect();
+                const x = (pointer.clientX - (rect.left + rect.width / 2)) * 0.035;
+                const y = (pointer.clientY - (rect.top + rect.height / 2)) * 0.035;
+                el.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
+                el.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
+              });
+            });
+            el.addEventListener("mouseleave", () => {
+              window.cancelAnimationFrame(frame);
+              el.style.setProperty("--hover-x", "0px");
+              el.style.setProperty("--hover-y", "0px");
+            });
+          });
+      }
     </script>
   </body>
 </html>
