@@ -2,7 +2,7 @@
 import "../index.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { servicePages } from "../data/seo-pages";
+import { servicePageEnglish, servicePages } from "../data/seo-pages";
 
 type LocaleCopy = {
   id: string;
@@ -144,10 +144,10 @@ const i18n: Record<string, LocaleCopy> = {
 };
 
 const services = [
-  { icon: "UI", titleKey: "service.1.title", descKey: "service.1.desc", href: "/layanan/website-umkm" },
-  { icon: "</>", titleKey: "service.2.title", descKey: "service.2.desc", href: "/layanan/website-masjid-komunitas" },
-  { icon: "DB", titleKey: "service.3.title", descKey: "service.3.desc", href: "/layanan/website-event-konser" },
-  { icon: "24", titleKey: "service.4.title", descKey: "service.4.desc", href: "/layanan/jasa-pembuatan-website" }
+  { icon: "UI", titleKey: "service.1.title", descKey: "service.1.desc", href: "/layanan/sme-website" },
+  { icon: "</>", titleKey: "service.2.title", descKey: "service.2.desc", href: "/layanan/mosque-community-website" },
+  { icon: "DB", titleKey: "service.3.title", descKey: "service.3.desc", href: "/layanan/event-concert-website" },
+  { icon: "24", titleKey: "service.4.title", descKey: "service.4.desc", href: "/layanan/website-development" }
 ];
 
 const pricingPreview = [
@@ -200,7 +200,13 @@ const faqs = [
 
 const marqueeItems = ["marquee.ui", "marquee.web", "marquee.saas", "marquee.brand", "marquee.care", "marquee.auto"];
 const tx = (key: string) => i18n[key]?.id ?? key;
-const i18nJson = JSON.stringify(i18n);
+const serviceCategoryI18n = Object.fromEntries(
+  servicePages.map((page) => [
+    `service.category.${page.slug}`,
+    { id: page.eyebrow, en: servicePageEnglish[page.slug].eyebrow }
+  ])
+);
+const i18nJson = JSON.stringify({ ...i18n, ...serviceCategoryI18n });
 const siteUrl = "https://solivatestudio.com";
 const pageTitle = "Solivate Studio | Jasa Pembuatan Website UMKM, Event & Sistem Custom";
 const pageDescription = tx("meta.description");
@@ -401,7 +407,7 @@ const organizationSchema = JSON.stringify({
         </div>
         <div class="container service-link-cloud" aria-label="Halaman layanan Solivate Studio">
           {servicePages.map((page) => (
-            <a href={`/layanan/${page.slug}`}>{page.eyebrow}</a>
+            <a href={`/layanan/${page.slug}`} data-i18n={`service.category.${page.slug}`}>{page.eyebrow}</a>
           ))}
         </div>
       </section>

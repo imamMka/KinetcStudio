@@ -29,7 +29,7 @@ export const siteUrl = "https://solivatestudio.com";
 
 export const servicePages: ServicePage[] = [
   {
-    slug: "jasa-pembuatan-website",
+    slug: "website-development",
     eyebrow: "Jasa Pembuatan Website",
     title: "Jasa pembuatan website modern untuk bisnis, komunitas, dan event.",
     description:
@@ -45,7 +45,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-umkm",
+    slug: "sme-website",
     eyebrow: "Website UMKM",
     title: "Jasa pembuatan website UMKM untuk usaha kecil yang ingin naik kelas.",
     description:
@@ -61,7 +61,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-company-profile",
+    slug: "company-profile-website",
     eyebrow: "Website Company Profile",
     title: "Website company profile untuk brand yang ingin tampil profesional.",
     description:
@@ -77,7 +77,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-masjid-komunitas",
+    slug: "mosque-community-website",
     eyebrow: "Website Masjid & Komunitas",
     title: "Jasa pembuatan website masjid dan komunitas sosial yang transparan.",
     description:
@@ -93,7 +93,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-yayasan-panti-asuhan",
+    slug: "foundation-orphanage-website",
     eyebrow: "Website Yayasan & Panti Asuhan",
     title: "Website yayasan dan panti asuhan untuk donasi, kegiatan, dan transparansi.",
     description:
@@ -109,7 +109,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-event-konser",
+    slug: "event-concert-website",
     eyebrow: "Website Event & Konser",
     title: "Website event dan konser untuk informasi, registrasi, dan promosi acara.",
     description:
@@ -125,7 +125,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "undangan-digital",
+    slug: "digital-invitation",
     eyebrow: "Undangan Digital",
     title: "Website wedding invitation dan undangan digital custom yang personal.",
     description:
@@ -141,7 +141,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-barbershop",
+    slug: "barbershop-website",
     eyebrow: "Website Barbershop",
     title: "Website barbershop dengan sistem booking online yang praktis.",
     description:
@@ -157,7 +157,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
-    slug: "website-rental-mobil",
+    slug: "car-rental-website",
     eyebrow: "Website Rental Mobil",
     title: "Website rental mobil untuk katalog armada dan reservasi kendaraan.",
     description:
@@ -202,7 +202,7 @@ export const portfolioPages: PortfolioPage[] = [
 ];
 
 export const servicePageEnglish: Record<string, ServicePageTranslation> = {
-  "jasa-pembuatan-website": {
+  "website-development": {
     eyebrow: "Website Development Service",
     title: "Modern website development for businesses, communities, and events.",
     description: "Solivate Studio builds custom websites, landing pages, company profiles, SME websites, community platforms, event pages, and easy-to-use digital systems.",
@@ -215,7 +215,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can it be customized to our needs?", answer: "Yes. Pages, features, visuals, and integrations are adjusted to the project scope." }
     ]
   },
-  "website-umkm": {
+  "sme-website": {
     eyebrow: "SME Website",
     title: "SME website development for small businesses ready to level up.",
     description: "SME websites for business profiles, online product catalogs, promotional landing pages, and small business digitalization that builds customer trust.",
@@ -228,7 +228,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Is it suitable for a new business?", answer: "Yes, especially for businesses that want to look professional on Google and when sharing links with customers." }
     ]
   },
-  "website-company-profile": {
+  "company-profile-website": {
     eyebrow: "Company Profile Website",
     title: "Company profile websites for brands that want to look professional.",
     description: "Company profile websites for companies, schools, perfume brands, organizations, and service businesses that need a clean and SEO-friendly online profile.",
@@ -241,7 +241,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can it be multi-page?", answer: "Yes, especially when services, galleries, or portfolios need separate pages." }
     ]
   },
-  "website-masjid-komunitas": {
+  "mosque-community-website": {
     eyebrow: "Mosque & Community Website",
     title: "Mosque and social community websites built for transparency.",
     description: "Mosque websites, social community sites, and mosque cash transparency platforms for study schedules, activities, donations, and congregation information.",
@@ -254,7 +254,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can it be used for non-mosque communities?", answer: "Yes. This structure also fits social communities, foundations, and public organizations." }
     ]
   },
-  "website-yayasan-panti-asuhan": {
+  "foundation-orphanage-website": {
     eyebrow: "Foundation & Orphanage Website",
     title: "Foundation and orphanage websites for donations, activities, and transparency.",
     description: "Foundation and orphanage websites for activity publication, organization profiles, online donation platforms, and social program transparency.",
@@ -267,7 +267,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can it use a WhatsApp donation button?", answer: "Yes, WhatsApp buttons can be directed to admins with automatic message templates." }
     ]
   },
-  "website-event-konser": {
+  "event-concert-website": {
     eyebrow: "Event & Concert Website",
     title: "Event and concert websites for information, registration, and promotion.",
     description: "Online event registration platforms, concert websites, event landing pages, and information hubs that help participants register and understand event details.",
@@ -280,7 +280,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can it integrate Google Forms?", answer: "Yes, Google Forms or custom forms can be embedded based on event needs." }
     ]
   },
-  "undangan-digital": {
+  "digital-invitation": {
     eyebrow: "Digital Invitation",
     title: "Custom wedding invitation and digital invitation websites with a personal touch.",
     description: "Wedding invitation websites, birthday websites, interactive birthday greetings, RSVP online, and custom invitation websites.",
@@ -293,7 +293,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can it be used for birthdays?", answer: "Yes. Birthday websites can include greetings, photos, videos, and interactive visuals." }
     ]
   },
-  "website-barbershop": {
+  "barbershop-website": {
     eyebrow: "Barbershop Website",
     title: "Barbershop website with a practical online booking system.",
     description: "Barbershop website development, online booking systems, service catalogs, barber schedules, and promotional pages for haircut businesses.",
@@ -306,7 +306,7 @@ export const servicePageEnglish: Record<string, ServicePageTranslation> = {
       { question: "Can we start with a landing page first?", answer: "Yes. Early versions can start with a promotional landing page and WhatsApp booking button." }
     ]
   },
-  "website-rental-mobil": {
+  "car-rental-website": {
     eyebrow: "Car Rental Website",
     title: "Car rental website for fleet catalogs and vehicle reservations.",
     description: "Car rental website development, reservation systems, fleet catalogs, pricing details, and vehicle booking flows.",

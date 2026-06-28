@@ -14,7 +14,7 @@ const { page } = Astro.props;
 const pageEn = portfolioPageEnglish[page.slug];
 const canonical = `${siteUrl}/portfolio/${page.slug}`;
 const title = `${page.title} | Studi Kasus Solivate Studio`;
-const relatedServices = servicePages.filter((item) => ["website-masjid-komunitas", "jasa-pembuatan-website"].includes(item.slug));
+const relatedServices = servicePages.filter((item) => ["mosque-community-website", "website-development"].includes(item.slug));
 const staticI18n = {
   "nav.about": { id: "Tentang", en: "About" },
   "nav.services": { id: "Layanan", en: "Services" },
@@ -110,7 +110,7 @@ const schema = JSON.stringify({
                 <span data-i18n="case.live">Lihat Website Live</span>
                 <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
               </a>
-              <a class="btn-secondary" href="/layanan/website-masjid-komunitas" data-i18n="case.related">Layanan Terkait</a>
+              <a class="btn-secondary" href="/layanan/mosque-community-website" data-i18n="case.related">Layanan Terkait</a>
             </div>
           </div>
           <div class="case-preview-card">
