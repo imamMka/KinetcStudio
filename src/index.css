@@ -39,12 +39,14 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -73,6 +75,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+main,
+section,
+footer {
+  max-width: 100%;
 }
 
 ::selection {
@@ -2055,6 +2063,49 @@ h2:hover {
   transform: translate(2px, -2px) rotate(12deg);
 }
 
+.floating-wa {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 120;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(330px, calc(100vw - 36px));
+  min-height: 54px;
+  border: 1px solid rgba(6, 20, 39, 0.16);
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--ink);
+  padding: 8px 16px 8px 8px;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 0 22px 54px -28px rgba(6, 20, 39, 0.85);
+  transition: transform 260ms var(--ease-out), box-shadow 260ms ease, background 220ms ease;
+}
+
+.floating-wa:hover {
+  background: var(--white);
+  box-shadow: 0 28px 70px -32px rgba(6, 20, 39, 0.92);
+  transform: translateY(-4px);
+}
+
+.floating-wa-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--lime);
+}
+
+.floating-wa-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
 .seo-page {
   background: var(--paper);
 }
@@ -2201,6 +2252,8 @@ h2:hover {
 }
 
 .service-page .seo-hero {
+  max-width: 100%;
+  overflow: hidden;
   background:
     radial-gradient(circle at 82% 10%, rgba(215, 255, 63, 0.16), transparent 25%),
     radial-gradient(circle at 12% 22%, rgba(0, 180, 216, 0.22), transparent 28%),
@@ -2225,6 +2278,12 @@ h2:hover {
 .service-page .seo-hero-grid {
   min-height: clamp(680px, 84svh, 820px);
   padding-bottom: 34px;
+  max-width: min(100% - 48px, 1280px);
+  overflow: visible;
+}
+
+.service-page :where(.container, .seo-hero-grid, .seo-copy-grid, .seo-feature-grid, .seo-faq-grid, .service-stat-strip, .service-workflow-grid, .service-console, .service-audience-card, .service-outcome-card, .service-feature-card, .service-workflow-grid article, .faq-item) {
+  min-width: 0;
 }
 
 .service-hero-copy {
@@ -2237,6 +2296,8 @@ h2:hover {
 
 .service-console {
   position: relative;
+  width: 100%;
+  max-width: 100%;
   min-height: 560px;
   padding: 0;
   border-color: rgba(255, 255, 255, 0.18);
@@ -2673,8 +2734,16 @@ h2:hover {
 }
 
 @media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .container {
     width: calc(100% - 28px);
+    max-width: calc(100vw - 28px);
   }
 
   .header {
@@ -2817,6 +2886,25 @@ h2:hover {
     padding: 72px 0;
   }
 
+  .floating-wa {
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100vw - 24px);
+    min-height: 48px;
+    padding: 7px 13px 7px 7px;
+    font-size: 12px;
+  }
+
+  .floating-wa-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .floating-wa-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
   h2 {
     font-size: clamp(2rem, 10vw, 3.1rem);
     line-height: 1.05;
@@ -2875,8 +2963,24 @@ h2:hover {
 
   .service-page .seo-hero-grid {
     gap: 24px;
+    width: calc(100% - 28px);
+    max-width: calc(100vw - 28px);
     padding-top: 96px;
     padding-bottom: 26px;
+    overflow: hidden;
+  }
+
+  .service-page,
+  .service-page .seo-hero,
+  .service-page section,
+  .service-page .container {
+    overflow-x: clip;
+  }
+
+  .service-page .seo-hero::after {
+    inset-inline: 0;
+    width: 100%;
+    transform: none;
   }
 
   .seo-hero h1 {
@@ -2915,6 +3019,8 @@ h2:hover {
   }
 
   .service-console {
+    width: 100%;
+    max-width: 100%;
     border-radius: 24px;
   }
 
@@ -3025,6 +3131,8 @@ h2:hover {
   }
 
   .service-feature-card::after {
+    right: -28px;
+    bottom: -28px;
     width: 86px;
     height: 86px;
     border-radius: 28px;
