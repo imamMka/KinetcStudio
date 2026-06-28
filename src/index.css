@@ -1123,6 +1123,7 @@ h2:hover {
   align-items: center;
   gap: 8px;
   margin-top: auto;
+  padding-top: 22px;
   color: var(--navy);
   font-size: 14px;
   font-weight: 800;
@@ -2070,21 +2071,25 @@ h2:hover {
   z-index: 120;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
+  width: 56px;
   max-width: min(330px, calc(100vw - 36px));
-  min-height: 54px;
+  min-height: 56px;
   border: 1px solid rgba(6, 20, 39, 0.16);
   border-radius: 999px;
   background: var(--lime);
   color: var(--ink);
-  padding: 8px 16px 8px 8px;
+  padding: 8px;
   font-size: 13px;
   font-weight: 900;
   box-shadow: 0 22px 54px -28px rgba(6, 20, 39, 0.85);
-  transition: transform 260ms var(--ease-out), box-shadow 260ms ease, background 220ms ease;
+  white-space: nowrap;
+  transition: width 300ms var(--ease-out), transform 260ms var(--ease-out), box-shadow 260ms ease, background 220ms ease;
 }
 
-.floating-wa:hover {
+.floating-wa:hover,
+.floating-wa:focus-visible {
+  width: min(294px, calc(100vw - 36px));
   background: var(--white);
   box-shadow: 0 28px 70px -32px rgba(6, 20, 39, 0.92);
   transform: translateY(-4px);
@@ -2104,6 +2109,22 @@ h2:hover {
 .floating-wa-icon svg {
   width: 23px;
   height: 23px;
+}
+
+.floating-wa-label {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-left: 0;
+  transition: max-width 300ms var(--ease-out), opacity 180ms ease, padding-left 300ms var(--ease-out);
+}
+
+.floating-wa:hover .floating-wa-label,
+.floating-wa:focus-visible .floating-wa-label {
+  max-width: 230px;
+  opacity: 1;
+  padding-left: 10px;
 }
 
 .seo-page {
@@ -2889,15 +2910,26 @@ h2:hover {
   .floating-wa {
     right: 12px;
     bottom: 12px;
+    width: 48px;
     max-width: calc(100vw - 24px);
     min-height: 48px;
-    padding: 7px 13px 7px 7px;
+    padding: 7px;
     font-size: 12px;
   }
 
   .floating-wa-icon {
     width: 34px;
     height: 34px;
+  }
+
+  .floating-wa:hover,
+  .floating-wa:focus-visible {
+    width: min(262px, calc(100vw - 24px));
+  }
+
+  .floating-wa:hover .floating-wa-label,
+  .floating-wa:focus-visible .floating-wa-label {
+    max-width: 198px;
   }
 
   .floating-wa-icon svg {
