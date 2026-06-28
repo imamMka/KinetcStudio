@@ -1,5 +1,7 @@
 ---
 import "../index.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import { servicePages } from "../data/seo-pages";
 
 type LocaleCopy = {
@@ -141,15 +143,6 @@ const i18n: Record<string, LocaleCopy> = {
   "footer.top": { id: "Kembali ke atas", en: "Back to top" }
 };
 
-const navItems = [
-  { key: "nav.about", target: "about" },
-  { key: "nav.services", target: "services" },
-  { key: "nav.pricing", target: "pricing" },
-  { key: "nav.work", target: "work" },
-  { key: "nav.process", target: "process" },
-  { key: "nav.contact", target: "contact" }
-];
-
 const services = [
   { icon: "UI", titleKey: "service.1.title", descKey: "service.1.desc", href: "/layanan/website-umkm" },
   { icon: "</>", titleKey: "service.2.title", descKey: "service.2.desc", href: "/layanan/website-masjid-komunitas" },
@@ -287,36 +280,7 @@ const organizationSchema = JSON.stringify({
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
-    <header class="header" data-header>
-      <div class="wrap header-inner">
-        <button class="brand header-brand" type="button" data-top aria-label="Kembali ke atas">
-          <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" />
-        </button>
-
-        <nav class="nav" aria-label="Navigasi utama">
-          {navItems.map((item) => (
-            <button
-              class={`nav-link ${item.target === "about" ? "nav-link-primary" : ""}`}
-              type="button"
-              data-scroll={item.target}
-            >
-              <span data-i18n={item.key}>{tx(item.key)}</span>
-            </button>
-          ))}
-
-          <button class="nav-cta" type="button" data-scroll="contact">
-            <span class="nav-dot"></span>
-            <span data-i18n="nav.cta">{tx("nav.cta")}</span>
-            <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-          </button>
-
-          <div class="language-toggle" aria-label="Pilih bahasa">
-            <button class="active" type="button" data-lang-switch="id" aria-pressed="true">ID</button>
-            <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <Header home i18n />
 
     <main>
       <section class="hero">
@@ -570,49 +534,7 @@ const organizationSchema = JSON.stringify({
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-top">
-          <h2 data-i18n="footer.title">{tx("footer.title")}</h2>
-          <button class="btn-primary" type="button" data-scroll="contact">
-            <span data-i18n="footer.cta">{tx("footer.cta")}</span>
-            <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-          </button>
-        </div>
-
-        <div class="footer-grid">
-          <div class="footer-col footer-brand-col">
-            <span class="brand">
-              <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" loading="lazy" />
-            </span>
-            <p data-i18n="footer.desc">{tx("footer.desc")}</p>
-            <p class="footer-location">Bekasi, Indonesia</p>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer.nav">{tx("footer.nav")}</h4>
-            <a href="#about" data-i18n="nav.about">{tx("nav.about")}</a>
-            <a href="#services" data-i18n="nav.services">{tx("nav.services")}</a>
-            <a href="#pricing" data-i18n="nav.pricing">{tx("nav.pricing")}</a>
-            <a href="#work" data-i18n="nav.work">{tx("nav.work")}</a>
-            <a href="#process" data-i18n="nav.process">{tx("nav.process")}</a>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer.connect">{tx("footer.connect")}</h4>
-            <a href="mailto:solivatestudio@gmail.com">solivatestudio@gmail.com</a>
-            <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <span data-i18n="footer.copy">{tx("footer.copy")}</span>
-          <button class="footer-top-btn" type="button" data-top>
-            <span data-i18n="footer.top">{tx("footer.top")}</span>
-            <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-          </button>
-        </div>
-      </div>
-    </footer>
+    <Footer home i18n />
 
     <script is:inline type="application/ld+json" set:html={organizationSchema}></script>
     <script is:inline type="application/json" id="i18n-data" set:html={i18nJson}></script>

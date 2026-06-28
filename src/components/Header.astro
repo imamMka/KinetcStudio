@@ -1,0 +1,77 @@
+---
+type NavItem = {
+  label: string;
+  href: string;
+  key?: string;
+};
+
+const {
+  home = false,
+  i18n = false,
+  compact = false
+} = Astro.props;
+
+const navItems: NavItem[] = [
+  { label: "Tentang", href: "/#about", key: "nav.about" },
+  { label: "Layanan", href: "/#services", key: "nav.services" },
+  { label: "Harga", href: "/#pricing", key: "nav.pricing" },
+  { label: "Karya", href: "/#work", key: "nav.work" },
+  { label: "Proses", href: "/#process", key: "nav.process" },
+  { label: "Kontak", href: "/#contact", key: "nav.contact" }
+];
+
+const spanAttrs = (key?: string) => (i18n && key ? { "data-i18n": key } : {});
+---
+
+<header class={`header ${compact ? "is-scrolled is-compact" : ""}`} data-header>
+  <div class="wrap header-inner">
+    {home ? (
+      <button class="brand header-brand" type="button" data-top aria-label="Kembali ke atas">
+        <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" />
+      </button>
+    ) : (
+      <a class="brand header-brand" href="/" aria-label="Solivate Studio home">
+        <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" />
+      </a>
+    )}
+
+    <nav class="nav" aria-label="Navigasi utama">
+      {navItems.map((item, index) => (
+        home ? (
+          <button
+            class={`nav-link ${index === 0 ? "nav-link-primary" : ""}`}
+            type="button"
+            data-scroll={item.href.replace("/#", "")}
+          >
+            <span {...spanAttrs(item.key)}>{item.label}</span>
+          </button>
+        ) : (
+          <a class={`nav-link ${index === 0 ? "nav-link-primary" : ""}`} href={item.href}>
+            <span {...spanAttrs(item.key)}>{item.label}</span>
+          </a>
+        )
+      ))}
+
+      {home ? (
+        <button class="nav-cta" type="button" data-scroll="contact">
+          <span class="nav-dot"></span>
+          <span {...spanAttrs("nav.cta")}>Mulai Proyek</span>
+          <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+        </button>
+      ) : (
+        <a class="nav-cta" href="/#contact">
+          <span class="nav-dot"></span>
+          <span {...spanAttrs("nav.cta")}>Mulai Proyek</span>
+          <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+        </a>
+      )}
+
+      {i18n && (
+        <div class="language-toggle" aria-label="Pilih bahasa">
+          <button class="active" type="button" data-lang-switch="id" aria-pressed="true">ID</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
+      )}
+    </nav>
+  </div>
+</header>

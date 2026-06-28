@@ -1,0 +1,64 @@
+---
+const {
+  home = false,
+  i18n = false
+} = Astro.props;
+
+const attr = (key: string) => (i18n ? { "data-i18n": key } : {});
+const navLinks = [
+  ["Tentang", "/#about", "nav.about"],
+  ["Layanan", "/#services", "nav.services"],
+  ["Harga", "/#pricing", "nav.pricing"],
+  ["Karya", "/#work", "nav.work"],
+  ["Proses", "/#process", "nav.process"]
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <h2 {...attr("footer.title")}>Bangun sesuatu yang orang ingat.</h2>
+      {home ? (
+        <button class="btn-primary" type="button" data-scroll="contact">
+          <span {...attr("footer.cta")}>Mulai Proyek</span>
+          <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+        </button>
+      ) : (
+        <button class="btn-primary" type="button" data-home-contact>
+          <span {...attr("footer.cta")}>Mulai Proyek</span>
+          <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+        </button>
+      )}
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col footer-brand-col">
+        <span class="brand">
+          <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" loading="lazy" />
+        </span>
+        <p {...attr("footer.desc")}>Digital solution provider untuk UMKM, komunitas sosial, event, celebration, dan sistem custom yang ingin naik kelas secara digital.</p>
+        <p class="footer-location">Bekasi, Indonesia</p>
+      </div>
+      <div class="footer-col">
+        <h4 {...attr("footer.nav")}>Navigasi</h4>
+        {navLinks.map(([label, href, key]) => (
+          <a href={home ? href.replace("/#", "#") : href} {...attr(key)}>{label}</a>
+        ))}
+      </div>
+      <div class="footer-col">
+        <h4 {...attr("footer.connect")}>Kontak</h4>
+        <a href="mailto:solivatestudio@gmail.com">solivatestudio@gmail.com</a>
+        <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span {...attr("footer.copy")}>Copyright {new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.</span>
+      <button class="footer-top-btn" type="button" data-top>
+        <span {...attr("footer.top")}>Kembali ke atas</span>
+        <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+      </button>
+    </div>
+  </div>
+</footer>

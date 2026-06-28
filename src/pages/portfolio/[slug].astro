@@ -1,5 +1,7 @@
 ---
 import "../../index.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 import { portfolioPages, servicePages, siteUrl } from "../../data/seo-pages";
 
 export const getStaticPaths = () =>
@@ -50,24 +52,7 @@ const schema = JSON.stringify({
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
-    <header class="header is-scrolled is-compact">
-      <div class="wrap header-inner">
-        <a class="brand header-brand" href="/" aria-label="Solivate Studio home">
-          <img src="/solivate-logo.svg" alt="Solivate Studio" width="9935" height="1285" />
-        </a>
-        <nav class="nav" aria-label="Navigasi utama">
-          <a class="nav-link nav-link-primary" href="/#about"><span>Tentang</span></a>
-          <a class="nav-link" href="/#services"><span>Layanan</span></a>
-          <a class="nav-link" href="/pricing"><span>Harga</span></a>
-          <a class="nav-link" href="/#work"><span>Karya</span></a>
-          <a class="nav-cta" href="/#contact">
-            <span class="nav-dot"></span>
-            <span>Mulai Proyek</span>
-            <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
-          </a>
-        </nav>
-      </div>
-    </header>
+    <Header compact />
 
     <main class="seo-page">
       <section class="seo-hero portfolio-case-hero">
@@ -131,6 +116,27 @@ const schema = JSON.stringify({
       </section>
     </main>
 
+    <Footer />
     <script is:inline type="application/ld+json" set:html={schema}></script>
+    <script is:inline>
+      const header = document.querySelector("[data-header]");
+      const updateHeader = () => {
+        const y = Math.max(0, window.scrollY);
+        header?.classList.toggle("is-scrolled", y > 24);
+        header?.classList.toggle("is-compact", y > 64);
+      };
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      document.querySelectorAll("[data-top]").forEach((trigger) => {
+        trigger.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      });
+
+      document.querySelectorAll("[data-home-contact]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          window.location.href = "/#contact";
+        });
+      });
+    </script>
   </body>
 </html>
