@@ -121,8 +121,8 @@ const customFeatures = [
 
 const pricingI18n: Record<string, LocaleCopy> = {
   "meta.description": {
-    id: "Daftar harga layanan pembuatan website Solivate Studio untuk personal, UMKM, company profile, landing page, dan website custom eksklusif.",
-    en: "Solivate Studio website pricing for personal sites, SMEs, company profiles, landing pages, and exclusive custom websites."
+    id: "Daftar harga jasa pembuatan website Solivate Studio untuk birthday website, undangan digital, landing page UMKM, company profile, komunitas, event, dan website custom eksklusif.",
+    en: "Solivate Studio website pricing for birthday websites, digital invitations, SME landing pages, company profiles, communities, events, and exclusive custom websites."
   },
   "nav.about": { id: "Tentang", en: "About" },
   "nav.services": { id: "Layanan", en: "Services" },
@@ -247,7 +247,7 @@ const pricingI18n: Record<string, LocaleCopy> = {
   "custom.feature.6": { id: "Dukungan maintenance prioritas", en: "Priority maintenance support" },
   "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
   "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
-  "footer.desc": { id: "Studio desain dan pengembangan produk digital modern untuk brand yang ingin tampil premium dan siap bertumbuh.", en: "Modern digital product and web design studio for brands that want to look premium and grow." },
+  "footer.desc": { id: "Digital solution provider untuk UMKM, komunitas sosial, event, celebration, dan sistem custom yang ingin naik kelas secara digital.", en: "Digital solution provider for SMEs, social communities, events, celebrations, and custom systems ready to level up digitally." },
   "footer.nav": { id: "Navigasi", en: "Navigation" },
   "footer.connect": { id: "Kontak", en: "Connect" },
   "footer.top": { id: "Kembali ke atas", en: "Back to top" },
@@ -256,6 +256,42 @@ const pricingI18n: Record<string, LocaleCopy> = {
 
 const tx = (key: string) => pricingI18n[key]?.id ?? key;
 const pricingI18nJson = JSON.stringify(pricingI18n);
+const siteUrl = "https://solivatestudio.com";
+const pricingUrl = `${siteUrl}/pricing`;
+const pageTitle = "Daftar Harga Website Solivate Studio | Mulai Rp 49.000";
+const pageDescription = tx("meta.description");
+const pricingSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Jasa Pembuatan Website Solivate Studio",
+  provider: {
+    "@type": "Organization",
+    name: "Solivate Studio",
+    url: siteUrl,
+    logo: `${siteUrl}/solivate-logo.svg`,
+    email: "solivatestudio@gmail.com",
+    sameAs: ["https://www.instagram.com/solivatestudio/"]
+  },
+  areaServed: "Indonesia",
+  serviceType: "Website Development",
+  description: pageDescription,
+  offers: {
+    "@type": "AggregateOffer",
+    lowPrice: "49000",
+    highPrice: "2999000",
+    priceCurrency: "IDR",
+    offerCount: "7",
+    offers: [
+      { "@type": "Offer", name: "Birthday Website Basic", price: "49000", priceCurrency: "IDR" },
+      { "@type": "Offer", name: "Birthday Website Premium", price: "84900", priceCurrency: "IDR" },
+      { "@type": "Offer", name: "Party / Wedding Invitation Website", price: "99000", priceCurrency: "IDR" },
+      { "@type": "Offer", name: "Paket Basic Website", price: "249000", priceCurrency: "IDR" },
+      { "@type": "Offer", name: "Paket Standard Website", price: "299000", priceCurrency: "IDR" },
+      { "@type": "Offer", name: "Paket Premium Website", price: "499000", priceCurrency: "IDR" },
+      { "@type": "Offer", name: "Website Custom Eksklusif", price: "2999000", priceCurrency: "IDR" }
+    ]
+  }
+});
 ---
 
 <!doctype html>
@@ -263,12 +299,23 @@ const pricingI18nJson = JSON.stringify(pricingI18n);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content={tx("meta.description")}
-    />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content="daftar harga website, harga jasa website, jasa pembuatan website murah, birthday website, website undangan digital, website UMKM, website company profile, landing page UMKM, website custom, Solivate Studio" />
+    <meta name="author" content="Solivate Studio" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={pricingUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Solivate Studio" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={pricingUrl} />
+    <meta property="og:image" content={`${siteUrl}/solivate-logo.svg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={`${siteUrl}/solivate-logo.svg`} />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>Daftar Harga Website | Solivate Studio</title>
   </head>
   <body>
     <header class="header" data-header>
@@ -477,6 +524,7 @@ const pricingI18nJson = JSON.stringify(pricingI18n);
       </div>
     </footer>
 
+    <script is:inline type="application/ld+json" set:html={pricingSchema}></script>
     <script is:inline type="application/json" id="pricing-i18n-data" set:html={pricingI18nJson}></script>
     <script is:inline>
       const translations = JSON.parse(document.getElementById("pricing-i18n-data")?.textContent || "{}");
