@@ -697,15 +697,12 @@ const organizationSchema = JSON.stringify({
         submit?.setAttribute("disabled", "");
         if (submitText) submitText.textContent = translations["form.sending"]?.[activeLang] || "Mengirim...";
 
-        fetch("https://formsubmit.co/ajax/solivatestudio@gmail.com", {
+        fetch("/api/contact", {
           method: "POST",
           headers: {
-            Accept: "application/json",
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            _subject: `Brief baru Solivate Studio - ${formData.get("projectType") || "Website"}`,
-            _template: "table",
             name: formData.get("name"),
             contact: formData.get("contact"),
             projectType: formData.get("projectType"),
