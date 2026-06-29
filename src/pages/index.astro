@@ -336,6 +336,9 @@ const organizationSchema = JSON.stringify({
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={`${siteUrl}/solivate-logo.webp`} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       @media (max-width: 768px) {
         .seo-responsive-signal { display: block; }
@@ -415,7 +418,7 @@ const organizationSchema = JSON.stringify({
                   <div><i></i><i></i><i></i><i></i></div>
                 </div>
                 <div class="image-card">
-                  <img src="/images/portfolio_cloud_1781799732798.webp" alt="Solivate Studio Cloud Digital Solution Platform Showcase" width="1200" height="896" loading="eager" />
+                  <img src="/images/portfolio_cloud_1781799732798.webp" alt="Solivate Studio Cloud Digital Solution Platform Showcase" width="1200" height="896" loading="eager" fetchpriority="high" decoding="async" />
                   <span data-i18n="preview.badge">{tx("preview.badge")}</span>
                 </div>
               </div>
@@ -526,7 +529,7 @@ const organizationSchema = JSON.stringify({
         <div class="container work-grid">
           {works.map((item) => (
             <a class="work-card" href={item.url ?? "#contact"} target={item.url?.startsWith("http") ? "_blank" : undefined} rel={item.url?.startsWith("http") ? "noreferrer" : undefined}>
-              <img src={item.img} alt={item.title} width={item.width} height={item.height} loading="eager" />
+              <img src={item.img} alt={item.title} width={item.width} height={item.height} loading="lazy" decoding="async" />
               <div>
                 <span data-i18n={item.typeKey}>{tx(item.typeKey)}</span>
                 <h3>{item.title}</h3>
