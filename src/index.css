@@ -2183,12 +2183,13 @@ h2:hover {
 
 .hiring-hero h1,
 .apply-hero h1 {
-  max-width: 980px;
   margin: 0;
-  font-size: clamp(3rem, 6.2vw, 6.8rem);
+  max-width: 760px;
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 5vw, 5.7rem);
   font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.047em;
+  line-height: 1.02;
 }
 
 .hiring-status-panel,
