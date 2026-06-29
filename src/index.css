@@ -1092,10 +1092,10 @@ h2:hover {
     transform 260ms ease;
 }
 
-.feature-card h3,
+.feature-card .card-title,
 .service-card .card-heading,
-.process-grid h3 {
-  margin: 52px 0 12px;
+.process-grid .card-title {
+  margin: 36px 0 10px;
   font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -1135,8 +1135,8 @@ h2:hover {
   transform: translateX(2px);
 }
 
-.feature-card:hover h3,
-.process-grid article:hover h3 {
+.feature-card:hover .card-title,
+.process-grid article:hover .card-title {
   color: var(--navy);
 }
 
@@ -1356,8 +1356,8 @@ h2:hover {
   color: var(--ink);
 }
 
-.pricing-card h3,
-.pricing-detail-card h3 {
+.pricing-card .card-title,
+.pricing-detail-card .card-title {
   margin: 26px 0 12px;
   font-size: clamp(1.45rem, 2.2vw, 2rem);
   font-weight: 800;
@@ -4004,9 +4004,9 @@ h2:hover {
     padding: 24px;
   }
 
-  .feature-card h3,
+  .feature-card .card-title,
   .service-card .card-heading,
-  .process-grid h3 {
+  .process-grid .card-title {
     margin-top: 34px;
   }
 
