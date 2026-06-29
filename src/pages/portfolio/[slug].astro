@@ -19,15 +19,15 @@ const relatedServiceSlugs: Record<string, string[]> = {
   "cutbae-barbershop": ["barbershop-website", "website-development"],
   "makdian-bakery": ["sme-website", "company-profile-website"]
 };
-const clientNames: Record<string, string> = {
-  "masjid-raya-puri-telukjambe": "Masjid Raya Puri Telukjambe",
-  "cutbae-barbershop": "Cutbae Barbershop",
-  "makdian-bakery": "Makdian Bakery"
+const clientNames: Record<string, { id: string; en: string }> = {
+  "masjid-raya-puri-telukjambe": { id: "Masjid Raya Puri Telukjambe", en: "Masjid Raya Puri Telukjambe" },
+  "cutbae-barbershop": { id: "Cutbae Barbershop", en: "Cutbae Barbershop" },
+  "makdian-bakery": { id: "Makdian Bakery", en: "Makdian Bakery" }
 };
-const serviceNames: Record<string, string> = {
-  "masjid-raya-puri-telukjambe": "Website Masjid & Komunitas",
-  "cutbae-barbershop": "Website Barbershop",
-  "makdian-bakery": "Website UMKM"
+const serviceNames: Record<string, { id: string; en: string }> = {
+  "masjid-raya-puri-telukjambe": { id: "Website Masjid & Komunitas", en: "Mosque & Community Website" },
+  "cutbae-barbershop": { id: "Website Barbershop", en: "Barbershop Website" },
+  "makdian-bakery": { id: "Website UMKM", en: "SME Website" }
 };
 const relatedServices = servicePages.filter((item) => (relatedServiceSlugs[page.slug] ?? ["website-development"]).includes(item.slug));
 const primaryRelatedService = relatedServices[0]?.slug ?? "website-development";
@@ -48,6 +48,14 @@ const staticI18n = {
     en: "This project connects with website services that can be adjusted to your brand needs."
   },
   "related.link": { id: "Lihat layanan", en: "View service" },
+  "case.client_label": { id: "Klien", en: "Client" },
+  "case.year_label": { id: "Tahun", en: "Year" },
+  "case.category_label": { id: "Kategori", en: "Category" },
+  "case.category_value": { id: "Sistem Kustom", en: "Custom System" },
+  "case.highlights_title": { id: "Sorotan Utama", en: "Key Highlights" },
+  "case.highlights_subtitle": { id: "Fitur & Solusi Kunci Proyek", en: "Key Features & Project Solutions" },
+  "case.quote_text": { id: "Membantu mitra bertransformasi secara digital dengan alur informasi yang rapi, transparan, dan terpercaya.", en: "Helping partners transform digitally with neat, transparent, and trusted information flows." },
+  "case.stat_text": { id: "Kredibilitas Digital Terjamin & Siap Rilis", en: "Digital Credibility Guaranteed & Launch-Ready" },
   "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
   "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
   "footer.desc": {
@@ -63,6 +71,11 @@ const staticI18n = {
 const pageI18n = {
   "page.title": { id: page.title, en: pageEn.title },
   "page.description": { id: page.description, en: pageEn.description },
+  "case.client_name": clientNames[page.slug] ?? { id: "Mitra", en: "Partner" },
+  "case.service_name": serviceNames[page.slug] ?? { id: "Pengembangan Website", en: "Web Development" },
+  "case.section.0.headline": { id: "Apa Masalahnya?", en: "What Was the Challenge?" },
+  "case.section.1.headline": { id: "Bagaimana Kami Membantu?", en: "How Did We Help?" },
+  "case.section.2.headline": { id: "Apa Hasil Akhirnya?", en: "What Was the Outcome?" },
   ...Object.fromEntries(page.highlights.map((item, index) => [`highlight.${index}`, { id: item, en: pageEn.highlights[index] }])),
   ...Object.fromEntries(page.sections.flatMap((section, index) => [
     [`section.${index}.title`, { id: section.title, en: pageEn.sections[index].title }],
@@ -143,23 +156,23 @@ const gaId = import.meta.env.PUBLIC_GA_ID || "G-H1R8S8W5W6";
             <div class="case-meta-eyebrow">
               <span class="eyebrow" data-i18n="case.eyebrow">Studi Kasus</span>
               <span class="meta-dot"></span>
-              <span class="meta-service">{serviceNames[page.slug] ?? "Web Development"}</span>
+              <span class="meta-service" data-i18n="case.service_name">{serviceNames[page.slug]?.id ?? "Website"}</span>
             </div>
             <h1 class="case-title" data-i18n="page.title">{page.title}</h1>
             <p class="hero-text" data-i18n="page.description">{page.description}</p>
             
             <div class="case-metadata-bar">
               <div class="meta-item">
-                <small>Klien</small>
-                <strong>{clientNames[page.slug] ?? "Partner"}</strong>
+                <small data-i18n="case.client_label">Klien</small>
+                <strong data-i18n="case.client_name">{clientNames[page.slug]?.id ?? "Partner"}</strong>
               </div>
               <div class="meta-item">
-                <small>Tahun</small>
+                <small data-i18n="case.year_label">Tahun</small>
                 <strong>2026</strong>
               </div>
               <div class="meta-item">
-                <small>Kategori</small>
-                <strong>Tailored System</strong>
+                <small data-i18n="case.category_label">Kategori</small>
+                <strong data-i18n="case.category_value">Sistem Kustom</strong>
               </div>
             </div>
 
@@ -191,8 +204,8 @@ const gaId = import.meta.env.PUBLIC_GA_ID || "G-H1R8S8W5W6";
       <section class="section light">
         <div class="container">
           <div class="section-head center">
-            <p class="eyebrow" data-i18n="case.eyebrow">Sorotan Utama</p>
-            <h2>Fitur & Solusi Kunci Proyek</h2>
+            <p class="eyebrow" data-i18n="case.highlights_title">Sorotan Utama</p>
+            <h2 data-i18n="case.highlights_subtitle">Fitur & Solusi Kunci Proyek</h2>
           </div>
           <div class="seo-feature-grid">
             {page.highlights.map((item, index) => (
@@ -212,14 +225,14 @@ const gaId = import.meta.env.PUBLIC_GA_ID || "G-H1R8S8W5W6";
             <div class={`narrative-row ${index % 2 === 1 ? "reverse" : ""}`}>
               <div class="narrative-col text-col">
                 <span class="narrative-num">0{index + 1} / {section.title}</span>
-                <h2 class="narrative-title">{section.title === "Tantangan" ? "Apa Masalahnya?" : section.title === "Solusi" ? "Bagaimana Kami Membantu?" : "Apa Hasil Akhirnya?"}</h2>
+                <h2 class="narrative-title" data-i18n={`case.section.${index}.headline`}>{index === 0 ? "Apa Masalahnya?" : index === 1 ? "Bagaimana Kami Membantu?" : "Apa Hasil Akhirnya?"}</h2>
                 <p class="narrative-body" data-i18n={`section.${index}.body`}>{section.body}</p>
               </div>
               <div class="narrative-col visual-col">
                 {index === 0 && (
                   <div class="decorative-quote-card">
                     <span class="quote-icon">“</span>
-                    <p>Membantu mitra bertransformasi secara digital dengan alur informasi yang rapi, transparan, dan terpercaya.</p>
+                    <p data-i18n="case.quote_text">Membantu mitra bertransformasi secara digital dengan alur informasi yang rapi, transparan, dan terpercaya.</p>
                   </div>
                 )}
                 {index === 1 && (
@@ -234,7 +247,7 @@ const gaId = import.meta.env.PUBLIC_GA_ID || "G-H1R8S8W5W6";
                 {index === 2 && (
                   <div class="decorative-stat-card">
                     <strong>100%</strong>
-                    <p>Kredibilitas Digital Terjamin & Siap Rilis</p>
+                    <p data-i18n="case.stat_text">Kredibilitas Digital Terjamin & Siap Rilis</p>
                   </div>
                 )}
               </div>
