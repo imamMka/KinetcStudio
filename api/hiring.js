@@ -159,5 +159,55 @@ export default async function handler(request, response) {
     return response.status(502).json({ message: "Email failed to send." });
   }
 
+  const autoReplyHtml = `
+    <div style="font-family:Inter,Arial,sans-serif;line-height:1.7;color:#111827">
+      <h2 style="margin:0 0 16px;color:#023E8A">Pendaftaran kamu sudah diterima.</h2>
+      <p>Halo ${safeName}, terima kasih sudah mendaftar untuk bergabung bersama Solivate Studio.</p>
+      <p>Pendaftaran kamu untuk posisi <strong>${safePosition}</strong> sudah masuk ke tim kami. Kami akan meninjau data, portfolio/CV, dan alasan kamu ingin bergabung, lalu menghubungi kandidat yang sesuai melalui WhatsApp atau email.</p>
+      <table style="width:100%;border-collapse:collapse;margin-top:18px">
+        <tr><td style="padding:8px 0;font-weight:700;width:150px">Posisi</td><td style="padding:8px 0">${safePosition}</td></tr>
+        <tr><td style="padding:8px 0;font-weight:700">WhatsApp</td><td style="padding:8px 0">${safeWhatsapp}</td></tr>
+        <tr><td style="padding:8px 0;font-weight:700">Portfolio/CV</td><td style="padding:8px 0"><a href="${safePortfolio}" target="_blank" rel="noopener noreferrer">${safePortfolio}</a></td></tr>
+        <tr><td style="padding:8px 0;font-weight:700">Waktu kirim</td><td style="padding:8px 0">${submittedAt}</td></tr>
+      </table>
+      <p style="margin-top:22px;color:#4b5563">Jika ada update portfolio atau informasi tambahan, kamu bisa membalas email ini.</p>
+      <p style="margin:24px 0 0;font-weight:700;color:#023E8A">Solivate Studio</p>
+    </div>
+  `;
+
+  const autoReplyResponse = await fetch(RESEND_API_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: process.env.RESEND_FROM_EMAIL || FALLBACK_FROM_EMAIL,
+      to: [email],
+      reply_to: process.env.RESEND_TO_EMAIL || FALLBACK_TO_EMAIL,
+      subject: "Pendaftaran kamu sudah diterima - Solivate Studio",
+      html: autoReplyHtml,
+      text: [
+        `Halo ${name},`,
+        "",
+        "Terima kasih sudah mendaftar untuk bergabung bersama Solivate Studio.",
+        `Pendaftaran kamu untuk posisi ${position} sudah masuk ke tim kami.`,
+        "Kami akan meninjau data, portfolio/CV, dan alasan kamu ingin bergabung, lalu menghubungi kandidat yang sesuai melalui WhatsApp atau email.",
+        "",
+        `Posisi: ${position}`,
+        `WhatsApp: ${whatsapp}`,
+        `Portfolio/CV: ${portfolioUrl}`,
+        `Waktu kirim: ${submittedAt}`,
+        "",
+        "Solivate Studio",
+      ].join("\n"),
+    }),
+  });
+
+  if (!autoReplyResponse.ok) {
+    const detail = await autoReplyResponse.text();
+    console.error("Hiring auto-reply failed:", detail);
+  }
+
   return response.status(200).json({ ok: true });
 }
