@@ -11,8 +11,8 @@ type LocaleCopy = {
 
 const projectI18n: Record<string, LocaleCopy> = {
   "meta.description": {
-    id: "Showcase project Solivate Studio: website masjid, barbershop, bakery, UMKM, komunitas, event, dan solusi digital custom yang sudah dibangun.",
-    en: "Solivate Studio project showcase: mosque, barbershop, bakery, SME, community, event, and custom digital solution websites we have built."
+    id: "Showcase portfolio & project Solivate Studio: website masjid, barbershop booking online, bakery UMKM, komunitas, yayasan, undangan pernikahan digital, dan sistem custom.",
+    en: "Solivate Studio portfolio showcase: mosque, barbershop online booking, bakery SME, community, foundation, digital wedding invitation, and custom systems."
   },
   "nav.about": { id: "Tentang", en: "About" },
   "nav.services": { id: "Layanan", en: "Services" },
@@ -75,7 +75,7 @@ const portfolioI18n = Object.fromEntries(
 );
 
 const i18nJson = JSON.stringify({ ...projectI18n, ...portfolioI18n });
-const pageTitle = "Project Showcase Solivate Studio | Website UMKM, Komunitas & Brand";
+const pageTitle = "Project Showcase Solivate Studio | Website UMKM, Komunitas & Digital solution agency Indonesia";
 const pageDescription = projectI18n["meta.description"].id;
 const canonical = `${siteUrl}/project`;
 const collectionSchema = JSON.stringify({
@@ -108,7 +108,7 @@ const collectionSchema = JSON.stringify({
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <meta name="keywords" content="project Solivate Studio, portfolio Solivate Studio, website UMKM, website barbershop, website bakery, website masjid, jasa pembuatan website, digital solution provider Indonesia" />
+    <meta name="keywords" content="project Solivate Studio, portfolio Solivate Studio, website UMKM, website barbershop, website bakery, website masjid, jasa pembuatan website, digital solution provider Indonesia, jasa pembuatan website Solivate Studio, digital solution agency Indonesia, jasa digitalisasi UMKM" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />

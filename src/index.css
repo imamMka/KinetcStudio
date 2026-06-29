@@ -2493,6 +2493,37 @@ h2:hover {
   transform: translate(2px, -2px) rotate(12deg);
 }
 
+.footer-local-cloud {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--dark-line);
+}
+
+.footer-local-cloud h4 {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.footer-local-cloud .local-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.footer-local-cloud .local-links a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-local-cloud .local-links a:hover {
+  color: var(--cyan);
+}
+
 .floating-wa {
   position: fixed;
   right: max(18px, env(safe-area-inset-right));

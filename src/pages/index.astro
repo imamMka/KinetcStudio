@@ -11,8 +11,8 @@ type LocaleCopy = {
 
 const i18n: Record<string, LocaleCopy> = {
   "meta.description": {
-    id: "Solivate Studio adalah digital solution provider di Bekasi untuk jasa pembuatan website UMKM, company profile, komunitas, event, undangan digital, dan sistem custom.",
-    en: "Solivate Studio is a digital solution provider in Bekasi for SME websites, company profiles, communities, events, digital invitations, and custom systems."
+    id: "Solivate Studio adalah digital solution agency Indonesia di Bekasi yang menyediakan jasa pembuatan website Solivate Studio, digitalisasi UMKM, company profile, komunitas, event, dan sistem custom.",
+    en: "Solivate Studio is a digital solution agency in Indonesia and Bekasi providing website development, SME digitalization, company profiles, communities, events, and custom systems."
   },
   "nav.about": { id: "Tentang", en: "About" },
   "nav.services": { id: "Layanan", en: "Services" },
@@ -250,7 +250,7 @@ const serviceCategoryI18n = Object.fromEntries(
 );
 const i18nJson = JSON.stringify({ ...i18n, ...serviceCategoryI18n });
 const siteUrl = "https://solivatestudio.com";
-const pageTitle = "Solivate Studio | Jasa Pembuatan Website UMKM, Event & Sistem Custom";
+const pageTitle = "Solivate Studio | Jasa Pembuatan Website UMKM & Digital Solution Agency Indonesia";
 const pageDescription = tx("meta.description");
 const organizationSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -279,7 +279,10 @@ const organizationSchema = JSON.stringify({
     "website event",
     "website komunitas",
     "digital solution provider",
-    "Solivate Studio"
+    "Solivate Studio",
+    "jasa pembuatan website Solivate Studio",
+    "digital solution agency Indonesia",
+    "jasa digitalisasi UMKM"
   ],
   makesOffer: [
     { "@type": "Offer", name: "Website UMKM dan Company Profile" },
@@ -311,7 +314,7 @@ const organizationSchema = JSON.stringify({
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <meta name="keywords" content="Solivate Studio, jasa pembuatan website, jasa website UMKM, website company profile, website komunitas, website masjid, website event, website konser, wedding invitation, birthday website, website rental mobil, website barbershop, website panti asuhan, website custom, digital solution provider Bekasi" />
+    <meta name="keywords" content="Solivate Studio, jasa pembuatan website Solivate Studio, digital solution agency Indonesia, jasa digitalisasi UMKM, jasa pembuatan website, jasa website UMKM, website company profile, website komunitas, website masjid, website event, website konser, wedding invitation, birthday website, website rental mobil, website barbershop, website panti asuhan, website custom, digital solution provider Bekasi, web developer UMKM Bekasi" />
     <meta name="author" content="Solivate Studio" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={siteUrl} />

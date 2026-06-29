@@ -1,4 +1,6 @@
 ---
+import { targetCities } from "../data/seo-pages";
+
 const {
   home = false,
   i18n = false
@@ -50,6 +52,15 @@ const navLinks = [
         <a href="mailto:solivatestudio@gmail.com">solivatestudio@gmail.com</a>
         <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
         <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer-local-cloud">
+      <h4>Wilayah Layanan</h4>
+      <div class="local-links">
+        {targetCities.map((city) => (
+          <a href={`/jasa-pembuatan-website-${city.slug}`}>Jasa Website {city.name}</a>
+        ))}
       </div>
     </div>
 

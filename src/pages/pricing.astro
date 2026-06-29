@@ -123,8 +123,8 @@ const customFeatures = [
 
 const pricingI18n: Record<string, LocaleCopy> = {
   "meta.description": {
-    id: "Daftar harga jasa pembuatan website Solivate Studio untuk birthday website, undangan digital, landing page UMKM, company profile, komunitas, event, dan website custom eksklusif.",
-    en: "Solivate Studio website pricing for birthday websites, digital invitations, SME landing pages, company profiles, communities, events, and exclusive custom websites."
+    id: "Daftar harga jasa pembuatan website Solivate Studio murah: website UMKM, company profile, masjid, yayasan, undangan pernikahan digital custom, landing page promosi, booking barbershop, dan rental mobil.",
+    en: "Solivate Studio website pricing: SME sites, company profiles, mosque platforms, foundations, custom wedding invitations, promotional landing pages, barbershop booking, and car rentals."
   },
   "nav.about": { id: "Tentang", en: "About" },
   "nav.services": { id: "Layanan", en: "Services" },
@@ -261,7 +261,7 @@ const tx = (key: string) => pricingI18n[key]?.id ?? key;
 const pricingI18nJson = JSON.stringify(pricingI18n);
 const siteUrl = "https://solivatestudio.com";
 const pricingUrl = `${siteUrl}/pricing`;
-const pageTitle = "Daftar Harga Website Solivate Studio | Mulai Rp 49.000";
+const pageTitle = "Daftar Harga Jasa Pembuatan Website Solivate Studio Murah | Mulai Rp 49.000";
 const pageDescription = tx("meta.description");
 const pricingSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -304,7 +304,7 @@ const pricingSchema = JSON.stringify({
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <meta name="keywords" content="daftar harga website, harga jasa website, jasa pembuatan website murah, birthday website, website undangan digital, website UMKM, website company profile, landing page UMKM, website custom, Solivate Studio" />
+    <meta name="keywords" content="daftar harga website, harga jasa website, jasa pembuatan website murah, birthday website, website undangan digital, website UMKM, website company profile, landing page UMKM, website custom, Solivate Studio, jasa pembuatan website Solivate Studio, digital solution agency Indonesia, jasa buat website undangan nikah custom murah, jasa website masjid, sistem booking online barbershop" />
     <meta name="author" content="Solivate Studio" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={pricingUrl} />

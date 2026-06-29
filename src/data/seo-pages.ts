@@ -34,15 +34,19 @@ export const servicePages: ServicePage[] = [
   {
     slug: "website-development",
     eyebrow: "Jasa Pembuatan Website",
-    title: "Jasa pembuatan website modern untuk bisnis, komunitas, dan event.",
+    title: "Jasa Pembuatan Website Custom & Landing Page Professional",
     description:
-      "Solivate Studio menyediakan jasa pembuatan website custom, landing page, company profile, website UMKM, website komunitas, event, dan sistem digital yang mudah digunakan.",
+      "Solivate Studio menyediakan jasa pembuatan website Solivate Studio, landing page custom, company profile, website UMKM, website komunitas, event, dan sistem digital yang mudah digunakan.",
     keywords: [
       "jasa pembuatan website",
       "jasa website",
       "jasa web development",
       "digital solution provider",
       "jasa website custom",
+      "jasa pembuatan website Solivate Studio",
+      "digital solution agency Indonesia",
+      "jasa digitalisasi UMKM",
+      "software house Indonesia"
     ],
     heroPoints: [
       "Website responsif dan mobile friendly",
@@ -81,7 +85,7 @@ export const servicePages: ServicePage[] = [
     slug: "sme-website",
     eyebrow: "Website UMKM",
     title:
-      "Jasa pembuatan website UMKM untuk usaha kecil yang ingin naik kelas.",
+      "Jasa Pembuatan Website UMKM Murah & Digitalisasi Usaha Kecil",
     description:
       "Website UMKM untuk profil bisnis, katalog produk online, landing page promosi, dan digitalisasi usaha kecil agar lebih mudah dipercaya pelanggan.",
     keywords: [
@@ -90,6 +94,9 @@ export const servicePages: ServicePage[] = [
       "website profil bisnis murah",
       "jasa katalog produk online",
       "digitalisasi usaha kecil",
+      "digitalisasi UMKM",
+      "website untuk UMKM",
+      "berapa biaya bikin website"
     ],
     heroPoints: [
       "Profil bisnis dan katalog produk",
@@ -127,7 +134,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: "company-profile-website",
     eyebrow: "Website Company Profile",
-    title: "Website company profile untuk brand yang ingin tampil profesional.",
+    title: "Website Company Profile Perusahaan & Landing Page Produk",
     description:
       "Pembuatan website company profile untuk perusahaan, sekolah, brand parfum, organisasi, dan bisnis jasa yang butuh profil online rapi dan SEO friendly.",
     keywords: [
@@ -135,6 +142,8 @@ export const servicePages: ServicePage[] = [
       "jasa website company profile",
       "pembuatan website perusahaan murah",
       "pembuatan website company profile parfum",
+      "jasa pembuatan landing page produk parfum",
+      "cara membuat company profile online"
     ],
     heroPoints: [
       "Struktur profil perusahaan",
@@ -173,7 +182,7 @@ export const servicePages: ServicePage[] = [
     slug: "mosque-community-website",
     eyebrow: "Website Masjid & Komunitas",
     title:
-      "Jasa pembuatan website masjid dan komunitas sosial yang transparan.",
+      "Jasa Pembuatan Website Masjid & Platform Transparansi Kas",
     description:
       "Website masjid, komunitas sosial, dan platform transparansi kas masjid untuk jadwal kajian, kegiatan, infak, donasi, dan informasi jamaah.",
     keywords: [
@@ -182,6 +191,8 @@ export const servicePages: ServicePage[] = [
       "website kas masjid",
       "platform transparansi kas masjid",
       "digitalisasi komunitas sosial",
+      "jasa website masjid transparansi infak",
+      "website masjid modern"
     ],
     heroPoints: [
       "Jadwal kajian dan kegiatan",
@@ -220,7 +231,7 @@ export const servicePages: ServicePage[] = [
     slug: "foundation-orphanage-website",
     eyebrow: "Website Yayasan & Panti Asuhan",
     title:
-      "Website yayasan dan panti asuhan untuk donasi, kegiatan, dan transparansi.",
+      "Jasa Pembuatan Website Panti Asuhan & Yayasan Donasi Online",
     description:
       "Jasa pembuatan website panti asuhan dan yayasan untuk publikasi kegiatan, profil lembaga, platform donasi online, dan transparansi program sosial.",
     keywords: [
@@ -229,9 +240,11 @@ export const servicePages: ServicePage[] = [
       "digitalisasi yayasan",
       "platform donasi online panti asuhan",
       "website donasi online",
+      "jasa website panti asuhan",
+      "jasa website yayasan"
     ],
     heroPoints: [
-      "Profil lembaga dan program",
+      "Profil lembaga and program",
       "Publikasi kegiatan",
       "Informasi donasi online",
     ],
@@ -267,7 +280,7 @@ export const servicePages: ServicePage[] = [
     slug: "event-concert-website",
     eyebrow: "Website Event & Konser",
     title:
-      "Website event dan konser untuk informasi, registrasi, dan promosi acara.",
+      "Website Registrasi Event Online & Platform Manajemen Konser",
     description:
       "Platform registrasi online event, website konser, landing page acara, dan pusat informasi event agar peserta mudah daftar dan memahami detail acara.",
     keywords: [
@@ -276,6 +289,8 @@ export const servicePages: ServicePage[] = [
       "jasa pembuatan website konser",
       "jasa website event",
       "website event",
+      "jasa pembuatan website konser",
+      "platform registrasi online event"
     ],
     heroPoints: [
       "Landing page acara",
@@ -315,15 +330,19 @@ export const servicePages: ServicePage[] = [
     slug: "digital-invitation",
     eyebrow: "Undangan Digital",
     title:
-      "Website wedding invitation dan undangan digital custom yang personal.",
+      "Jasa Undangan Pernikahan Online & Wedding Invitation Digital",
     description:
-      "Jasa pembuatan undangan digital pernikahan, birthday website, ucapan ulang tahun interaktif, RSVP online, dan invitation website custom.",
+      "Jasa pembuatan undangan digital pernikahan, birthday website, ucapan ulang tahun website personal, RSVP online, dan invitation website custom.",
     keywords: [
       "jasa undangan pernikahan online",
       "website wedding invitation digital",
       "jasa pembuatan undangan digital pernikahan",
       "undangan ulang tahun online interaktif",
       "website birthday",
+      "jasa buat website undangan nikah custom murah",
+      "contoh website ucapan ulang tahun kreatif",
+      "ucapan ulang tahun website personal",
+      "undangan ulang tahun online"
     ],
     heroPoints: [
       "Wedding invitation",
@@ -362,7 +381,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: "barbershop-website",
     eyebrow: "Website Barbershop",
-    title: "Website barbershop dengan sistem booking online yang praktis.",
+    title: "Jasa Pembuatan Website Barbershop & Booking Online",
     description:
       "Jasa pembuatan website barbershop, sistem booking online barbershop, katalog layanan, jadwal barber, dan halaman promosi untuk bisnis pangkas rambut.",
     keywords: [
@@ -370,6 +389,7 @@ export const servicePages: ServicePage[] = [
       "sistem booking online barbershop",
       "website barbershop",
       "jasa booking online",
+      "booking online untuk barbershop"
     ],
     heroPoints: [
       "Booking online",
@@ -407,7 +427,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: "car-rental-website",
     eyebrow: "Website Rental Mobil",
-    title: "Website rental mobil untuk katalog armada dan reservasi kendaraan.",
+    title: "Jasa Pembuatan Website Rental Mobil & Reservasi Online",
     description:
       "Jasa pembuatan website rental mobil, aplikasi reservasi rental mobil, katalog armada, detail harga, dan sistem pemesanan kendaraan.",
     keywords: [
@@ -415,6 +435,7 @@ export const servicePages: ServicePage[] = [
       "aplikasi reservasi rental mobil",
       "website rental mobil",
       "sistem reservasi online",
+      "aplikasi sewa mobil"
     ],
     heroPoints: [
       "Katalog armada",
@@ -990,10 +1011,30 @@ export const portfolioPageEnglish: Record<string, PortfolioPageTranslation> = {
   },
 };
 
+export type CityPage = {
+  slug: string;
+  name: string;
+  type: string;
+};
+
+export const targetCities: CityPage[] = [
+  { slug: "bekasi", name: "Bekasi", type: "Kota" },
+  { slug: "jakarta", name: "Jakarta", type: "Daerah Khusus Ibukota" },
+  { slug: "tangerang", name: "Tangerang", type: "Kota" },
+  { slug: "depok", name: "Depok", type: "Kota" },
+  { slug: "bogor", name: "Bogor", type: "Kota" },
+  { slug: "bandung", name: "Bandung", type: "Kota" },
+  { slug: "surabaya", name: "Surabaya", type: "Kota" },
+  { slug: "semarang", name: "Semarang", type: "Kota" },
+  { slug: "medan", name: "Medan", type: "Kota" },
+  { slug: "makassar", name: "Makassar", type: "Kota" }
+];
+
 export const allSeoUrls = [
   "",
   "pricing",
   "project",
   ...servicePages.map((page) => `layanan/${page.slug}`),
   ...portfolioPages.map((page) => `portfolio/${page.slug}`),
+  ...targetCities.map((city) => `jasa-pembuatan-website-${city.slug}`),
 ];

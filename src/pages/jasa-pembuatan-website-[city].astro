@@ -1,0 +1,319 @@
+---
+import "../index.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { targetCities, servicePages, portfolioPages, siteUrl } from "../data/seo-pages";
+
+export const getStaticPaths = () =>
+  targetCities.map((city) => ({
+    params: { city: city.slug },
+    props: { city }
+  }));
+
+const { city } = Astro.props;
+const canonical = `${siteUrl}/jasa-pembuatan-website-${city.slug}`;
+const pageTitle = `Jasa Pembuatan Website ${city.name} Murah & Professional - Solivate Studio`;
+const pageDescription = `Solusi digital terbaik di ${city.name}. Jasa pembuatan website ${city.name} untuk UMKM, company profile, event, panti asuhan, masjid, dan sistem custom.`;
+
+const staticI18n = {
+  "nav.about": { id: "Tentang", en: "About" },
+  "nav.services": { id: "Layanan", en: "Services" },
+  "nav.pricing": { id: "Harga", en: "Pricing" },
+  "nav.work": { id: "Karya", en: "Work" },
+  "nav.process": { id: "Proses", en: "Process" },
+  "nav.contact": { id: "Kontak", en: "Contact" },
+  "nav.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "local.eyebrow": { id: `Digital Partner ${city.name}`, en: `Digital Partner ${city.name}` },
+  "local.title": {
+    id: `Jasa Pembuatan Website & Solusi Digital di ${city.name}`,
+    en: `Website Development & Digital Solutions in ${city.name}`
+  },
+  "local.description": {
+    id: `Membantu bisnis, UMKM, komunitas, dan event organizer di daerah ${city.name} dan sekitarnya bertumbuh melalui website modern, responsif, dan siap rilis.`,
+    en: `Helping businesses, SMEs, communities, and event organizers in the ${city.name} area and surroundings grow through modern, responsive, and launch-ready websites.`
+  },
+  "section.services": { id: "Fokus Layanan", en: "Our Services" },
+  "section.servicesTitle": {
+    id: "Layanan pembuatan website yang dirancang khusus untuk target pasar Anda.",
+    en: "Website creation services tailored specifically to your target market."
+  },
+  "section.servicesLead": {
+    id: "Dari landing page bisnis hingga platform donasi, kami membangun website yang cepat, aman, dan mudah dikelola.",
+    en: "From business landing pages to donation platforms, we build websites that are fast, secure, and easy to manage."
+  },
+  "section.whyUs": { id: "Keunggulan Kami", en: "Why Choose Us" },
+  "section.whyUsTitle": {
+    id: `Kenapa memilih Solivate Studio sebagai web developer mitra di ${city.name}?`,
+    en: `Why choose Solivate Studio as your web developer partner in ${city.name}?`
+  },
+  "why.1.title": { id: "Desain Premium & Custom", en: "Premium & Custom Design" },
+  "why.1.desc": { id: "Setiap website dirancang unik, tidak asal memakai template pasaran, agar brand Anda tampil menonjol.", en: "Each website is uniquely designed, not just using cheap templates, to make your brand stand out." },
+  "why.2.title": { id: "Optimasi SEO & Kecepatan", en: "SEO & Speed Optimization" },
+  "why.2.desc": { id: "Struktur website modern yang ringan dan ramah mesin pencari, membantu bisnis Anda lebih mudah ditemukan di Google.", en: "Modern, lightweight, and search-engine-friendly website structure, helping your business get found on Google." },
+  "why.3.title": { id: "Pendampingan & Support", en: "Ongoing Support & Support" },
+  "why.3.desc": { id: "Kami memberikan garansi bebas bug, setup domain/hosting, serta panduan pengelolaan lengkap bagi pemula.", en: "We provide bug-free warranties, domain/hosting setup, and a complete management guide for beginners." },
+  "section.cta": { id: `Siap kembangkan bisnis Anda di ${city.name}?`, en: `Ready to develop your business in ${city.name}?` },
+  "cta.button": { id: "Konsultasi Gratis", en: "Free Consultation" },
+  "pricing.button": { id: "Lihat Harga", en: "View Pricing" },
+  "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
+  "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
+  "footer.desc": {
+    id: "Digital solution provider untuk UMKM, komunitas sosial, event, celebration, dan sistem custom yang ingin naik kelas secara digital.",
+    en: "Digital solution provider for SMEs, social communities, events, celebrations, and custom systems ready to level up digitally."
+  },
+  "footer.nav": { id: "Navigasi", en: "Navigation" },
+  "footer.connect": { id: "Kontak", en: "Connect" },
+  "footer.copy": { id: `Copyright ${new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.`, en: `Copyright ${new Date().getFullYear()} Solivate Studio. All rights reserved.` },
+  "footer.top": { id: "Kembali ke atas", en: "Back to top" },
+  "floating.wa": { id: "Konsultasi sekarang, gratis!", en: "Free consultation now!" }
+};
+
+const serviceCategoryI18n = Object.fromEntries(
+  servicePages.flatMap((page, index) => [
+    [`service.category.${page.slug}`, { id: page.eyebrow, en: page.eyebrow }],
+    [`service.card.${index}.title`, { id: page.eyebrow, en: page.eyebrow }],
+    [`service.card.${index}.desc`, { id: page.description, en: page.description }]
+  ])
+);
+
+const i18nJson = JSON.stringify({ ...staticI18n, ...serviceCategoryI18n });
+const initialText = (key: string) => staticI18n[key as keyof typeof staticI18n]?.id ?? key;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  name: `Solivate Studio ${city.name}`,
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Solivate Studio",
+    url: siteUrl,
+    logo: `${siteUrl}/solivate-logo.webp`
+  },
+  url: canonical,
+  logo: `${siteUrl}/solivate-logo.webp`,
+  image: `${siteUrl}/solivate-logo.webp`,
+  email: "solivatestudio@gmail.com",
+  telephone: "+62-812-1911-8993",
+  priceRange: "Rp49000 - Rp2999000",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: city.name,
+    addressCountry: "ID"
+  },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: city.name
+  },
+  description: pageDescription,
+  keywords: [
+    `jasa pembuatan website ${city.name}`,
+    `jasa website ${city.name}`,
+    `web developer ${city.name}`,
+    `digital agency ${city.name}`,
+    `website UMKM ${city.name}`,
+    `website company profile ${city.name}`
+  ]
+});
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={`jasa pembuatan website ${city.name}, web developer ${city.name}, jasa website UMKM ${city.name}, digital agency ${city.name}, website custom ${city.name}, Solivate Studio ${city.name}`} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Solivate Studio" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${siteUrl}/solivate-logo.webp`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body>
+    <Header compact i18n />
+
+    <main class="seo-page local-page">
+      <section class="seo-hero">
+        <div class="hero-bg"></div>
+        <div class="container seo-hero-grid">
+          <div class="service-hero-copy">
+            <p class="eyebrow" data-i18n="local.eyebrow">{initialText("local.eyebrow")}</p>
+            <h1 data-i18n="local.title">{initialText("local.title")}</h1>
+            <p class="hero-text" data-i18n="local.description">{initialText("local.description")}</p>
+            <div class="hero-actions">
+              <a class="btn-primary" href="/#contact">
+                <span data-i18n="cta.button">{initialText("cta.button")}</span>
+                <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+              </a>
+              <a class="btn-secondary" href="/pricing" data-i18n="pricing.button">{initialText("pricing.button")}</a>
+            </div>
+          </div>
+          <div class="seo-hero-panel service-console">
+            <div class="service-console-top">
+              <span>Coverage Area Check</span>
+              <i>Online</i>
+            </div>
+            <div class="service-orbit" aria-hidden="true">
+              <span class="orbit-core">{city.name.substring(0, 2).toUpperCase()}</span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="service-console-list">
+              <span>Layanan Terpopuler di {city.name}</span>
+              <ul>
+                <li>Website Profil Bisnis & UMKM</li>
+                <li>Undangan Pernikahan Digital</li>
+                <li>Website Transparansi Masjid</li>
+                <li>Sistem Booking & Reservasi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light">
+        <div class="container section-head">
+          <p class="eyebrow" data-i18n="section.whyUs">{initialText("section.whyUs")}</p>
+          <h2 data-i18n="section.whyUsTitle">{initialText("section.whyUsTitle")}</h2>
+        </div>
+        <div class="container feature-grid">
+          <article class="feature-card">
+            <span>01</span>
+            <h3 data-i18n="why.1.title">{initialText("why.1.title")}</h3>
+            <p data-i18n="why.1.desc">{initialText("why.1.desc")}</p>
+          </article>
+          <article class="feature-card">
+            <span>02</span>
+            <h3 data-i18n="why.2.title">{initialText("why.2.title")}</h3>
+            <p data-i18n="why.2.desc">{initialText("why.2.desc")}</p>
+          </article>
+          <article class="feature-card">
+            <span>03</span>
+            <h3 data-i18n="why.3.title">{initialText("why.3.title")}</h3>
+            <p data-i18n="why.3.desc">{initialText("why.3.desc")}</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section services">
+        <div class="container section-head split">
+          <div>
+            <p class="eyebrow" data-i18n="section.services">{initialText("section.services")}</p>
+            <h2 data-i18n="section.servicesTitle">{initialText("section.servicesTitle")}</h2>
+          </div>
+          <p class="lead" data-i18n="section.servicesLead">{initialText("section.servicesLead")}</p>
+        </div>
+        <div class="container service-grid">
+          {servicePages.map((page, index) => (
+            <article class="service-card">
+              <div class="icon-box">0{index + 1}</div>
+              <h3 data-i18n={`service.card.${index}.title`}>{page.eyebrow}</h3>
+              <p data-i18n={`service.card.${index}.desc`}>{page.description}</p>
+              <a href={`/layanan/${page.slug}`}>
+                <span>Pelajari Selengkapnya</span>
+                <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section dark seo-cta">
+        <div class="container footer-top">
+          <h2 data-i18n="section.cta">{initialText("section.cta")}</h2>
+          <a class="btn-primary" href="/#contact">
+            <span data-i18n="cta.button">{initialText("cta.button")}</span>
+            <svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer i18n />
+    <script is:inline type="application/ld+json" set:html={schema}></script>
+    <script is:inline type="application/json" id="local-i18n-data" set:html={i18nJson}></script>
+    <script is:inline>
+      const translations = JSON.parse(document.getElementById("local-i18n-data")?.textContent || "{}");
+      const header = document.querySelector("[data-header]");
+      const updateHeader = () => {
+        const y = Math.max(0, window.scrollY);
+        header?.classList.toggle("is-scrolled", y > 24);
+        header?.classList.toggle("is-compact", y > 64);
+      };
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      document.querySelectorAll("[data-top]").forEach((trigger) => {
+        trigger.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      });
+
+      document.querySelectorAll("[data-home-contact]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          window.location.href = "/#contact";
+        });
+      });
+
+      const setLanguage = (lang, persist = false) => {
+        const activeLang = lang === "en" ? "en" : "id";
+        document.documentElement.lang = activeLang;
+        if (persist) {
+          window.localStorage.setItem("solivate-language", activeLang);
+          window.localStorage.setItem("solivate-language-manual", "true");
+        }
+
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          const next = translations[key]?.[activeLang];
+          if (next) node.textContent = next;
+        });
+
+        document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+          const active = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      };
+
+      document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang-switch"), true));
+      });
+      const savedLanguage = window.localStorage.getItem("solivate-language-manual") === "true"
+        ? window.localStorage.getItem("solivate-language")
+        : "id";
+      setLanguage(savedLanguage || "id");
+
+      if (!window.matchMedia("(hover: none)").matches) {
+        document
+          .querySelectorAll(".service-console, .feature-card, .service-card")
+          .forEach((el) => {
+            let frame = 0;
+            el.addEventListener("mousemove", (event) => {
+              const pointer = event;
+              window.cancelAnimationFrame(frame);
+              frame = window.requestAnimationFrame(() => {
+                const rect = el.getBoundingClientRect();
+                const x = (pointer.clientX - (rect.left + rect.width / 2)) * 0.035;
+                const y = (pointer.clientY - (rect.top + rect.height / 2)) * 0.035;
+                el.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
+                el.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
+              });
+            });
+            el.addEventListener("mouseleave", () => {
+              window.cancelAnimationFrame(frame);
+              el.style.setProperty("--hover-x", "0px");
+              el.style.setProperty("--hover-y", "0px");
+            });
+          });
+      }
+    </script>
+  </body>
+</html>
