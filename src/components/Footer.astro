@@ -55,7 +55,7 @@ const navLinks = [
       </div>
       <div class="footer-col">
         <p class="footer-col-title" {...attr("footer.connect")}>Kontak</p>
-        <a href="#" data-email-obfuscated class="footer-email-link">solivatestudio [at] gmail.com</a>
+        <a href="mailto:admin@solivate.com" class="footer-email-link">admin@solivate.com</a>
         <a href="https://wa.me/6281219118993" target="_blank" rel="noreferrer">WhatsApp</a>
         <a href="https://www.instagram.com/solivatestudio/" target="_blank" rel="noreferrer">Instagram</a>
       </div>
@@ -96,18 +96,4 @@ const navLinks = [
   <span class="floating-wa-label" {...attr("floating.wa")}>Konsultasi sekarang, gratis!</span>
 </a>
 
-<script is:inline>
-  document.querySelectorAll("[data-email-obfuscated]").forEach((el) => {
-    const user = "solivatestudio";
-    const domain = "gmail.com";
-    const email = `${user}@${domain}`;
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.href = `mailto:${email}`;
-    });
-    el.addEventListener("mouseover", () => {
-      el.setAttribute("href", `mailto:${email}`);
-      el.textContent = email;
-    });
-  });
-</script>
+
