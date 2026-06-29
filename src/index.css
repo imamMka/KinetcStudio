@@ -2374,8 +2374,8 @@ h2:hover {
 .footer-grid {
   position: relative;
   display: grid;
-  grid-template-columns: 1.4fr 0.7fr 1fr;
-  gap: clamp(28px, 5vw, 80px);
+  grid-template-columns: 1.4fr 0.7fr 0.7fr 1fr;
+  gap: clamp(28px, 4vw, 80px);
   padding: 52px 0;
   border-bottom: 1px solid var(--dark-line);
 }
