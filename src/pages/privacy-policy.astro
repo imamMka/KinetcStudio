@@ -18,6 +18,17 @@ const staticI18n = {
   "nav.cta": { id: "Mulai Proyek", en: "Start Project" },
   "policy.title": { id: "Kebijakan Privasi", en: "Privacy Policy" },
   "policy.lead": { id: "Bagaimana kami melindungi informasi Anda.", en: "How we protect and manage your information." },
+  "policy.sec1.title": { id: "1. Informasi yang Kami Kumpulkan", en: "1. Information We Collect" },
+  "policy.sec1.body": { id: "Kami mengumpulkan data yang Anda berikan langsung ketika menghubungi kami untuk konsultasi proyek, termasuk nama, alamat email, nomor telepon, dan rincian kebutuhan proyek Anda.", en: "We collect data you provide directly when contacting us for project consultation, including your name, email address, phone number, and details of your project requirements." },
+  "policy.sec2.title": { id: "2. Penggunaan Data Anda", en: "2. How We Use Your Data" },
+  "policy.sec2.body": { id: "Data yang kami kumpulkan hanya digunakan untuk:", en: "The data we collect is only used for:" },
+  "policy.sec2.li1": { id: "Menghubungi Anda kembali terkait konsultasi proyek.", en: "Contacting you back regarding project consultation." },
+  "policy.sec2.li2": { id: "Memberikan solusi digital, penawaran harga, dan pembaruan kontrak kerja.", en: "Providing digital solutions, price offers, and updates on work contracts." },
+  "policy.sec2.li3": { id: "Analisis performa website internal kami.", en: "Analyzing our internal website performance." },
+  "policy.sec3.title": { id: "3. Keamanan Data", en: "3. Data Security" },
+  "policy.sec3.body": { id: "Solivate Studio berkomitmen menjaga keamanan data pribadi Anda. Kami tidak akan pernah menjual, menyewakan, atau menyebarkan data pribadi Anda kepada pihak ketiga tanpa persetujuan Anda.", en: "Solivate Studio is committed to maintaining the security of your personal data. We will never sell, rent, or distribute your personal data to third parties without your consent." },
+  "policy.sec4.title": { id: "4. Cookie & Analitis", en: "4. Cookies & Analytics" },
+  "policy.sec4.body": { id: "Website kami menggunakan cookie analitis dasar (seperti Google Analytics) untuk memahami lalu lintas pengunjung dan meningkatkan pengalaman pengguna secara keseluruhan.", en: "Our website uses basic analytical cookies (such as Google Analytics) to understand visitor traffic and improve the overall user experience." },
   "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
   "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
   "footer.desc": {
@@ -26,6 +37,10 @@ const staticI18n = {
   },
   "footer.nav": { id: "Navigasi", en: "Navigation" },
   "footer.connect": { id: "Kontak", en: "Connect" },
+  "footer.legal": { id: "Kebijakan", en: "Policies" },
+  "footer.privacy": { id: "Kebijakan Privasi", en: "Privacy Policy" },
+  "footer.terms": { id: "Syarat & Ketentuan", en: "Terms & Conditions" },
+  "footer.revision": { id: "Kebijakan Revisi", en: "Revision Policy" },
   "footer.copy": { id: `Copyright ${new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.`, en: `Copyright ${new Date().getFullYear()} Solivate Studio. All rights reserved.` },
   "footer.top": { id: "Kembali ke atas", en: "Back to top" },
   "floating.wa": { id: "Konsultasi sekarang, gratis!", en: "Free consultation now!" }
@@ -83,22 +98,22 @@ const gaId = import.meta.env.PUBLIC_GA_ID || "G-H1R8S8W5W6";
           <p class="hero-text lead" data-i18n="policy.lead">{initialText("policy.lead")}</p>
           
           <div class="policy-content card-glass">
-            <h2>1. Informasi yang Kami Kumpulkan</h2>
-            <p>Kami mengumpulkan data yang Anda berikan langsung ketika menghubungi kami untuk konsultasi proyek, termasuk nama, alamat email, nomor telepon, dan rincian kebutuhan proyek Anda.</p>
-
-            <h2>2. Penggunaan Data Anda</h2>
-            <p>Data yang kami kumpulkan hanya digunakan untuk:</p>
+            <h2 data-i18n="policy.sec1.title">{initialText("policy.sec1.title")}</h2>
+            <p data-i18n="policy.sec1.body">{initialText("policy.sec1.body")}</p>
+ 
+            <h2 data-i18n="policy.sec2.title">{initialText("policy.sec2.title")}</h2>
+            <p data-i18n="policy.sec2.body">{initialText("policy.sec2.body")}</p>
             <ul>
-              <li>Menghubungi Anda kembali terkait konsultasi proyek.</li>
-              <li>Memberikan solusi digital, penawaran harga, dan pembaruan kontrak kerja.</li>
-              <li>Analisis performa website internal kami.</li>
+              <li data-i18n="policy.sec2.li1">{initialText("policy.sec2.li1")}</li>
+              <li data-i18n="policy.sec2.li2">{initialText("policy.sec2.li2")}</li>
+              <li data-i18n="policy.sec2.li3">{initialText("policy.sec2.li3")}</li>
             </ul>
-
-            <h2>3. Keamanan Data</h2>
-            <p>Solivate Studio berkomitmen menjaga keamanan data pribadi Anda. Kami tidak akan pernah menjual, menyewakan, atau menyebarkan data pribadi Anda kepada pihak ketiga tanpa persetujuan Anda.</p>
-
-            <h2>4. Cookie & Analitis</h2>
-            <p>Website kami menggunakan cookie analitis dasar (seperti Google Analytics) untuk memahami lalu lintas pengunjung dan meningkatkan pengalaman pengguna secara keseluruhan.</p>
+ 
+            <h2 data-i18n="policy.sec3.title">{initialText("policy.sec3.title")}</h2>
+            <p data-i18n="policy.sec3.body">{initialText("policy.sec3.body")}</p>
+ 
+            <h2 data-i18n="policy.sec4.title">{initialText("policy.sec4.title")}</h2>
+            <p data-i18n="policy.sec4.body">{initialText("policy.sec4.body")}</p>
           </div>
         </div>
       </section>

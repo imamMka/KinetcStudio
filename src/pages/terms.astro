@@ -18,6 +18,14 @@ const staticI18n = {
   "nav.cta": { id: "Mulai Proyek", en: "Start Project" },
   "terms.title": { id: "Syarat & Ketentuan", en: "Terms & Conditions" },
   "terms.lead": { id: "Aturan dan ketentuan pengerjaan proyek digital.", en: "Rules and terms of digital project execution." },
+  "terms.sec1.title": { id: "1. Ruang Lingkup Layanan", en: "1. Scope of Services" },
+  "terms.sec1.body": { id: "Solivate Studio menyediakan jasa pembuatan website, perancangan sistem informasi, platform digital, dan solusi teknologi lainnya sesuai dengan kesepakatan tertulis di Lembar Kesepakatan Proyek.", en: "Solivate Studio provides website creation services, information system design, digital platforms, and other technology solutions in accordance with the written agreement in the Project Agreement Sheet." },
+  "terms.sec2.title": { id: "2. Pembayaran & Uang Muka", en: "2. Payment & Down Payment" },
+  "terms.sec2.body": { id: "Setiap dimulainya pengerjaan proyek membutuhkan pembayaran uang muka (DP) sesuai dengan nominal paket yang dipilih. Sisa pembayaran wajib diselesaikan setelah website selesai dibangun dan siap untuk diluncurkan online.", en: "Every start of project work requires a down payment (DP) in accordance with the chosen package nominal. The remaining payment must be completed after the website is finished and ready to be launched online." },
+  "terms.sec3.title": { id: "3. Penggunaan Aset & Hak Cipta", en: "3. Asset Usage & Copyright" },
+  "terms.sec3.body": { id: "Klien wajib menyediakan aset teks, gambar, dan logo resmi untuk diletakkan di website. Setelah pelunasan, hak akses dan kode sumber situs web sepenuhnya menjadi hak milik klien.", en: "Clients are required to provide official text assets, images, and logos to be placed on the website. After full payment, the access rights and source code of the website fully belong to the client." },
+  "terms.sec4.title": { id: "4. Batasan Tanggung Jawab", en: "4. Limitation of Liability" },
+  "terms.sec4.body": { id: "Kami tidak bertanggung jawab atas kerugian bisnis, kesalahan konten yang diberikan oleh klien, atau gangguan pihak ketiga seperti hosting eksternal di luar pengawasan kami.", en: "We are not responsible for business losses, content errors provided by the client, or third-party disruptions such as external hosting outside our supervision." },
   "footer.title": { id: "Bangun sesuatu yang orang ingat.", en: "Let's build something people remember." },
   "footer.cta": { id: "Mulai Proyek", en: "Start Project" },
   "footer.desc": {
@@ -26,6 +34,10 @@ const staticI18n = {
   },
   "footer.nav": { id: "Navigasi", en: "Navigation" },
   "footer.connect": { id: "Kontak", en: "Connect" },
+  "footer.legal": { id: "Kebijakan", en: "Policies" },
+  "footer.privacy": { id: "Kebijakan Privasi", en: "Privacy Policy" },
+  "footer.terms": { id: "Syarat & Ketentuan", en: "Terms & Conditions" },
+  "footer.revision": { id: "Kebijakan Revisi", en: "Revision Policy" },
   "footer.copy": { id: `Copyright ${new Date().getFullYear()} Solivate Studio. Semua hak dilindungi.`, en: `Copyright ${new Date().getFullYear()} Solivate Studio. All rights reserved.` },
   "footer.top": { id: "Kembali ke atas", en: "Back to top" },
   "floating.wa": { id: "Konsultasi sekarang, gratis!", en: "Free consultation now!" }
@@ -83,17 +95,17 @@ const gaId = import.meta.env.PUBLIC_GA_ID || "G-H1R8S8W5W6";
           <p class="hero-text lead" data-i18n="terms.lead">{initialText("terms.lead")}</p>
           
           <div class="policy-content card-glass">
-            <h2>1. Ruang Lingkup Layanan</h2>
-            <p>Solivate Studio menyediakan jasa pembuatan website, perancangan sistem informasi, platform digital, dan solusi teknologi lainnya sesuai dengan kesepakatan tertulis di Lembar Kesepakatan Proyek.</p>
-
-            <h2>2. Pembayaran & Uang Muka</h2>
-            <p>Setiap dimulainya pengerjaan proyek membutuhkan pembayaran uang muka (DP) sesuai dengan nominal paket yang dipilih. Sisa pembayaran wajib diselesaikan setelah website selesai dibangun dan siap untuk diluncurkan online.</p>
-
-            <h2>3. Penggunaan Aset & Hak Cipta</h2>
-            <p>Klien wajib menyediakan aset teks, gambar, dan logo resmi untuk diletakkan di website. Setelah pelunasan, hak akses dan kode sumber situs web sepenuhnya menjadi hak milik klien.</p>
-
-            <h2>4. Batasan Tanggung Jawab</h2>
-            <p>Kami tidak bertanggung jawab atas kerugian bisnis, kesalahan konten yang diberikan oleh klien, atau gangguan pihak ketiga seperti hosting eksternal di luar pengawasan kami.</p>
+            <h2 data-i18n="terms.sec1.title">{initialText("terms.sec1.title")}</h2>
+            <p data-i18n="terms.sec1.body">{initialText("terms.sec1.body")}</p>
+ 
+            <h2 data-i18n="terms.sec2.title">{initialText("terms.sec2.title")}</h2>
+            <p data-i18n="terms.sec2.body">{initialText("terms.sec2.body")}</p>
+ 
+            <h2 data-i18n="terms.sec3.title">{initialText("terms.sec3.title")}</h2>
+            <p data-i18n="terms.sec3.body">{initialText("terms.sec3.body")}</p>
+ 
+            <h2 data-i18n="terms.sec4.title">{initialText("terms.sec4.title")}</h2>
+            <p data-i18n="terms.sec4.body">{initialText("terms.sec4.body")}</p>
           </div>
         </div>
       </section>
